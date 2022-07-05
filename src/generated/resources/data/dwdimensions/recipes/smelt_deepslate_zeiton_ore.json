@@ -2,9 +2,8 @@
   "type": "minecraft:smelting",
   "cookingtime": 200,
   "experience": 0.1,
-  "group": "zeiton",
   "ingredient": {
-    "item": "dwdimensions:zeiton_ore"
+    "item": "dwdimensions:deepslate_zeiton_ore"
   },
   "result": "dwdimensions:zeiton_7"
 }

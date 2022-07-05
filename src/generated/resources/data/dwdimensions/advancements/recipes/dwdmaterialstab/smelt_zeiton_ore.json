@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dwdimensions:smelt_zeiton_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_zeiton_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dwdimensions:zeiton_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_zeiton_ore",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dwdimensions:smelt_zeiton_ore"
+    ]
+  }
+}

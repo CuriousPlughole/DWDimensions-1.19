@@ -1,8 +1,7 @@
 {
-  "type": "minecraft:smelting",
-  "cookingtime": 200,
+  "type": "minecraft:blasting",
+  "cookingtime": 100,
   "experience": 0.1,
-  "group": "zeiton",
   "ingredient": {
     "item": "dwdimensions:deepslate_zeiton_ore"
   },

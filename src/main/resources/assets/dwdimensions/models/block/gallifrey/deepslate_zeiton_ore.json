@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "dwdimensions:blocks/gallifrey/deepslate_zeiton_ore"
-  }
-}
