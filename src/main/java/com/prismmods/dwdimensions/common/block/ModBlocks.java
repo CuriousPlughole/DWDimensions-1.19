@@ -2,12 +2,15 @@ package com.prismmods.dwdimensions.common.block;
 
 import com.prismmods.dwdimensions.DWDimensions;
 import com.prismmods.dwdimensions.common.ModCreativeTab;
+import com.prismmods.dwdimensions.common.block.custom.ModFlammableBlock;
+import com.prismmods.dwdimensions.common.block.custom.ModFlammableRotatedPillarBlock;
 import com.prismmods.dwdimensions.common.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -28,6 +31,17 @@ public class ModBlocks {
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F), UniformInt.of(0, 2)), ModCreativeTab.DWDMaterials);
     public static final RegistryObject<Block> DEEPSLATE_ZEITON_ORE = registerBlock("deepslate_zeiton_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(ZEITON_ORE.get()).color(MaterialColor.DEEPSLATE).strength(4.5F, 3.0F).sound(SoundType.DEEPSLATE), UniformInt.of(0, 2)), ModCreativeTab.DWDMaterials);
+
+    public static final RegistryObject<Block> PETRIFIED_LOG = registerBlock("petrified_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeTab.DWDMaterials);
+    public static final RegistryObject<Block> STRIPPED_PETRIFIED_LOG = registerBlock("stripped_petrified_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeTab.DWDMaterials);
+    public static final RegistryObject<Block> PETRIFIED_WOOD = registerBlock("petrified_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), ModCreativeTab.DWDMaterials);
+    public static final RegistryObject<Block> STRIPPED_PETRIFIED_WOOD = registerBlock("stripped_petrified_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), ModCreativeTab.DWDMaterials);
+    public static final RegistryObject<Block> PETRIFIED_PLANKS = registerBlock("petrified_planks",
+            () -> new ModFlammableBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeTab.DWDMaterials);
 
 
 

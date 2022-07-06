@@ -1,3 +1,8 @@
-// 1.19	2022-07-05T15:25:46.469409	LootTables
+// 1.19	2022-07-06T14:50:46.3098151	LootTables
 c075bce1a8f7ac5b43ba2b81c50ab82da6549a81 data/dwdimensions/loot_tables/blocks/deepslate_zeiton_ore.json
+3acaf1236b64392b03926545b7076b5556a51d2c data/dwdimensions/loot_tables/blocks/petrified_log.json
+1ec0cae14932f0b58266fee5a5972f3706c70755 data/dwdimensions/loot_tables/blocks/petrified_planks.json
+e91ec16b39f76a7d0731bcbeff9918ecda053d82 data/dwdimensions/loot_tables/blocks/petrified_wood.json
+74efe7815e2a5993763bf844d38297fc1dd17653 data/dwdimensions/loot_tables/blocks/stripped_petrified_log.json
+90963426a45a6a7bdce98a140cdfa98f7a47ed39 data/dwdimensions/loot_tables/blocks/stripped_petrified_wood.json
 9260f6e05349dad07efc715d09ff5c834649c4fd data/dwdimensions/loot_tables/blocks/zeiton_ore.json

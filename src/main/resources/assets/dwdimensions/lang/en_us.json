@@ -1,6 +1,11 @@
 {
+    "itemGroup.dwdmaterialstab": "DWD Materials",
     "item.dwdimensions.zeiton_7": "Zeiton 7 Crystal",
     "block.dwdimensions.zeiton_ore": "Zeiton 7 Ore",
     "block.dwdimensions.deepslate_zeiton_ore": "Deepslate Zeiton 7 Ore",
-    "itemGroup.dwdmaterialstab": "DWD Materials"
+    "block.dwdimensions.petrified_log" : "Petrified Log",
+    "block.dwdimensions.petrified_wood" : "Petrified Wood",
+    "block.dwdimensions.stripped_petrified_log" : "Stripped Petrified Log",
+    "block.dwdimensions.stripped_petrified_wood" : "Stripped Petrified Wood",
+    "block.dwdimensions.petrified_planks" : "Petrified Planks"
 }
