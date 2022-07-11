@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "dwdimensions:block/skaro_dirt",
+    "particle": "dwdimensions:block/skaro_dirt",
+    "side": "dwdimensions:block/skaro_grass_side",
+    "top": "dwdimensions:block/skaro_grass_top"
+  }
+}
