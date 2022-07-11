@@ -2,7 +2,7 @@ package com.prismmods.dwdimensions.datagen;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
-import com.prismmods.dwdimensions.datagen.loot.ModBlockLootTables;
+import com.prismmods.dwdimensions.datagen.loot.DWDBlockLootTables;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.loot.*;
 import net.minecraft.resources.ResourceLocation;
@@ -18,12 +18,12 @@ import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class ModLootTableProvider extends LootTableProvider {
+public class DWDLootTableProvider extends LootTableProvider {
 
     private final List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>>
-            loot_tables = ImmutableList.of(Pair.of(ModBlockLootTables::new, LootContextParamSets.BLOCK));
+            loot_tables = ImmutableList.of(Pair.of(DWDBlockLootTables::new, LootContextParamSets.BLOCK));
 
-    public ModLootTableProvider(DataGenerator p_124437_) {
+    public DWDLootTableProvider(DataGenerator p_124437_) {
         super(p_124437_);
     }
 

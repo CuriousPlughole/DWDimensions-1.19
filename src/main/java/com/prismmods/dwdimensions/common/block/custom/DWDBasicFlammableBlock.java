@@ -6,8 +6,8 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class ModFlammableBlock extends Block {
-    public ModFlammableBlock(Properties properties) {
+public class DWDBasicFlammableBlock extends Block {
+    public DWDBasicFlammableBlock(Properties properties) {
         super(properties);
     }
 

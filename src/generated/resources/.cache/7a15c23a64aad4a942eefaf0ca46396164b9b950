@@ -1,10 +1,12 @@
-// 1.19	2022-07-06T14:50:46.3098151	Block States: dwdimensions
+// 1.19	2022-07-11T11:25:01.5832165	Block States: dwdimensions
 47e61e6b5fa86520f2896f68bb22b5938ec5332d assets/dwdimensions/blockstates/deepslate_zeiton_ore.json
+f1c856b5dd6dd50d5b81de74066ec9819c0668cf assets/dwdimensions/blockstates/petrified_leaves.json
 2ce598590601ffaeac2cd43ca673fc6943f12394 assets/dwdimensions/blockstates/petrified_log.json
 78ca434b2e931b87bb87b69f46f8bba30f16fa6b assets/dwdimensions/blockstates/petrified_planks.json
 b606e9640640cc0ad7781038ed4a9fcb9422a8b1 assets/dwdimensions/blockstates/stripped_petrified_log.json
 e264e66f4879fd3cefb3aacbc91f93d81460e99a assets/dwdimensions/blockstates/zeiton_ore.json
 40ac3323d3467e7b4b42aec015a7b353761dff60 assets/dwdimensions/models/block/deepslate_zeiton_ore.json
+a2f7fd948d07068969878b32760152077829ccf1 assets/dwdimensions/models/block/petrified_leaves.json
 fd7caa8cdf87b6895c9554f7d85cc4a69f05c703 assets/dwdimensions/models/block/petrified_log.json
 7069d6fb0f3a30f914b467012a2c8f3be922dc7c assets/dwdimensions/models/block/petrified_log_horizontal.json
 860e165b2e4e0f0ed52f9de3255847f7ba09b536 assets/dwdimensions/models/block/petrified_planks.json

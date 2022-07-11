@@ -16,9 +16,9 @@ public class DataGenerators {
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
         //suspicious boolean
-        generator.addProvider(true, new ModRecipeProvider(generator));
-        generator.addProvider(true, new ModLootTableProvider(generator));
-        generator.addProvider(true, new ModBlockStateProvider(generator, existingFileHelper));
-        generator.addProvider(true, new ModItemModelProvider(generator, existingFileHelper));
+        generator.addProvider(true, new DWDRecipeProvider(generator));
+        generator.addProvider(true, new DWDLootTableProvider(generator));
+        generator.addProvider(true, new DWDBlockStateProvider(generator, existingFileHelper));
+        generator.addProvider(true, new DWDItemModelProvider(generator, existingFileHelper));
     }
 }

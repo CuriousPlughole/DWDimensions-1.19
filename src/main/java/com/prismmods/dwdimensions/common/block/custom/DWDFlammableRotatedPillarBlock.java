@@ -1,6 +1,6 @@
 package com.prismmods.dwdimensions.common.block.custom;
 
-import com.prismmods.dwdimensions.common.block.ModBlocks;
+import com.prismmods.dwdimensions.common.block.DWDBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.AxeItem;
@@ -11,8 +11,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.ToolAction;
 import org.jetbrains.annotations.Nullable;
 
-public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock {
-    public ModFlammableRotatedPillarBlock(Properties properties) {
+public class DWDFlammableRotatedPillarBlock extends RotatedPillarBlock {
+    public DWDFlammableRotatedPillarBlock(Properties properties) {
         super(properties);
     }
 
@@ -36,13 +36,13 @@ public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock {
     public BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction toolAction, boolean simulate) {
 
         if(context.getItemInHand().getItem() instanceof AxeItem) {
-            if(state.is(ModBlocks.PETRIFIED_LOG.get())) {
-                return ModBlocks.STRIPPED_PETRIFIED_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            if(state.is(DWDBlocks.PETRIFIED_LOG.get())) {
+                return DWDBlocks.STRIPPED_PETRIFIED_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             }
         }
         if(context.getItemInHand().getItem() instanceof AxeItem) {
-            if(state.is(ModBlocks.PETRIFIED_WOOD.get())) {
-                return ModBlocks.STRIPPED_PETRIFIED_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            if(state.is(DWDBlocks.PETRIFIED_WOOD.get())) {
+                return DWDBlocks.STRIPPED_PETRIFIED_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             }
         }
 

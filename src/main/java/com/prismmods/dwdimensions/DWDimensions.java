@@ -1,17 +1,21 @@
 package com.prismmods.dwdimensions;
 
 import com.mojang.logging.LogUtils;
-import com.prismmods.dwdimensions.common.block.ModBlocks;
-import com.prismmods.dwdimensions.common.item.ModItems;
-import net.minecraft.world.level.block.Blocks;
+import com.prismmods.dwdimensions.client.models.DWDModels;
+import com.prismmods.dwdimensions.common.block.DWDBlocks;
+import com.prismmods.dwdimensions.common.blockentities.DWDBlockEntities;
+import com.prismmods.dwdimensions.common.item.DWDItems;
+import com.prismmods.dwdimensions.util.ClientUtil;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
 @Mod(DWDimensions.MOD_ID)
@@ -22,11 +26,15 @@ public class DWDimensions {
     public DWDimensions() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ModItems.register(modEventBus);
-        ModBlocks.register(modEventBus);
+        DWDItems.register(modEventBus);
+        DWDBlocks.register(modEventBus);
+        DWDBlockEntities.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
+
+        DistExecutor.runWhenOn(Dist.CLIENT, () -> () -> modEventBus.addListener(this::doClientStuff));
+
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -38,5 +46,14 @@ public class DWDimensions {
         public static void onClientSetup(FMLClientSetupEvent event) {
 
         }
+    }
+
+    @SubscribeEvent
+    public void registerModels(EntityRenderersEvent.RegisterLayerDefinitions definitions) {
+        DWDModels.init(definitions);
+    }
+
+    private void doClientStuff(final FMLClientSetupEvent event) {
+        DistExecutor.runWhenOn(Dist.CLIENT, () -> ClientUtil::doClientStuff);
     }
 }
