@@ -1,5 +1,7 @@
 package com.prismmods.dwdimensions.common.block.custom;
 
+import com.prismmods.dwdimensions.common.block.DWDBlocks;
+import com.prismmods.dwdimensions.world.feature.DWDPlacedFeatures;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
@@ -82,7 +84,7 @@ public class DWDGrassBlock extends Block implements BonemealableBlock {
     @Override
     public void performBonemeal(ServerLevel level, RandomSource randomSource, BlockPos pos, BlockState state) {
         BlockPos blockpos = pos.above();
-        BlockState blockstate = Blocks.GRASS.defaultBlockState(); //The tallgrass to grow ontop
+        BlockState blockstate = DWDBlocks.SKARO_TALL_GRASS.get().defaultBlockState(); //The tallgrass to grow ontop
 
         label46:
         for(int i = 0; i < 128; ++i) {
@@ -96,24 +98,20 @@ public class DWDGrassBlock extends Block implements BonemealableBlock {
             }
 
             BlockState blockstate1 = level.getBlockState(blockpos1);
-            if (blockstate1.is(blockstate.getBlock()) && randomSource.nextInt(10) == 0) {
-                ((BonemealableBlock)blockstate.getBlock()).performBonemeal(level, randomSource, blockpos1, blockstate1);
-            }
+            //if (blockstate1.is(blockstate.getBlock()) && randomSource.nextInt(10) == 0) {
+            //    ((BonemealableBlock)blockstate.getBlock()).performBonemeal(level, randomSource, blockpos1, blockstate1);
+            //}
 
             if (blockstate1.isAir()) {
                 Holder<PlacedFeature> holder;
-                if (randomSource.nextInt(8) == 0) {
-                    List<ConfiguredFeature<?, ?>> list = level.getBiome(blockpos1).value().getGenerationSettings().getFlowerFeatures(); //Replace here with custom skaro plants feature
-                    if (list.isEmpty()) {
-                        continue;
-                    }
 
-                    holder = ((RandomPatchConfiguration)list.get(0).config()).feature();
-                } else {
-                    holder = VegetationPlacements.GRASS_BONEMEAL;
-                }
+                //Can add more stuff to determine flowers etc here
+                //holder = DWDPlacedFeatures.SKARO_GRASS_PATCH_PLACED.getHolder().get();
+                //holder = VegetationPlacements.GRASS_BONEMEAL;
+                holder = DWDPlacedFeatures.SKARO_GRASS_BONEMEAL.getHolder().get();
+                System.out.println("aaaa");
 
-                holder.value().place(level, level.getChunkSource().getGenerator(), randomSource, blockpos1);
+                holder.value().placeWithBiomeCheck(level, level.getChunkSource().getGenerator(), randomSource, blockpos1);
             }
         }
 

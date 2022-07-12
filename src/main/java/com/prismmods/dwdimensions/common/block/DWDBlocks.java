@@ -54,22 +54,21 @@ public class DWDBlocks {
     public static final RegistryObject<Block> SKARO_SAND = registerBlock("skaro_sand",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.SAND)), DWDCreativeTabs.DWDSkaro);
 
-    public static final RegistryObject<Block> SKARO_SHRUB = registerBlock("skaro_shrub", () -> new BushBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)), DWDCreativeTabs.DWDSkaro);
-    public static final RegistryObject<Block> SKARO_SHRUB_SMALL = registerBlock("skaro_shrub_small", () -> new BushBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> SKARO_SHRUB = registerBlock("skaro_shrub", () -> new DWDBushBlock(BlockBehaviour.Properties.copy(Blocks.GRASS), "large"), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> SKARO_SHRUB_SMALL = registerBlock("skaro_shrub_small", () -> new DWDBushBlock(BlockBehaviour.Properties.copy(Blocks.GRASS), "small"), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> SKARO_DEAD_SHRUB = registerBlock("skaro_dead_shrub", () -> new DeadBushBlock(BlockBehaviour.Properties.copy(Blocks.DEAD_BUSH)), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> SKARO_DEAD_SHRUB_SMALL = registerBlock("skaro_dead_shrub_small", () -> new DeadBushBlock(BlockBehaviour.Properties.copy(Blocks.DEAD_BUSH)), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> SKARO_PETRIFIED_SHRUB = registerBlock("skaro_petrified_shrub", () -> new DeadBushBlock(BlockBehaviour.Properties.copy(Blocks.DEAD_BUSH)), DWDCreativeTabs.DWDSkaro);
-    public static final RegistryObject<Block> SKARO_TALL_GRASS = registerBlock("skaro_tall_grass", () -> new BushBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> SKARO_TALL_GRASS = registerBlock("skaro_tall_grass", () -> new DWDBushBlock(BlockBehaviour.Properties.copy(Blocks.GRASS), "small"), DWDCreativeTabs.DWDSkaro);
     //Add some custom effects for petrified plants. Some blindness or something? Not all negative; maybe "adrenaline" -> gives haste/strength etc
     public static final RegistryObject<Block> SKARO_PETRIFIED_FLOWER_1 = registerBlock("petrified_flower_1", () -> new PetrifiedPlant(MobEffects.DAMAGE_BOOST, 6, BlockBehaviour.Properties.copy(Blocks.DANDELION).noOcclusion()), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> SKARO_PETRIFIED_FLOWER_2 = registerBlock("petrified_flower_2", () -> new PetrifiedPlant(MobEffects.DAMAGE_BOOST, 6, BlockBehaviour.Properties.copy(Blocks.DANDELION).noOcclusion()), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> SKARO_PETRIFIED_FUNGUS = registerBlock("petrified_fungus", () -> new PetrifiedPlant(MobEffects.DIG_SPEED, 6, BlockBehaviour.Properties.copy(Blocks.DANDELION).noOcclusion()), DWDCreativeTabs.DWDSkaro);
-
     public static final RegistryObject<Block> POTTED_SKARO_PETRIFIED_FLOWER_1 = registerBlockWithoutItem("potted_petrified_flower_1", () -> new FlowerPotBlock(SKARO_PETRIFIED_FLOWER_1.get(),BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
     public static final RegistryObject<Block> POTTED_SKARO_PETRIFIED_FLOWER_2 = registerBlockWithoutItem("potted_petrified_flower_2", () -> new FlowerPotBlock( SKARO_PETRIFIED_FLOWER_2.get(), BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
     public static final RegistryObject<Block> POTTED_SKARO_PETRIFIED_FUNGUS = registerBlockWithoutItem("potted_petrified_fungus", () -> new FlowerPotBlock( SKARO_PETRIFIED_FUNGUS.get(),BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
     //public static final RegistryObject<Block> SKARO_VARGA_PLANT = registerBlock("skaro_varga_plant", () -> new DeadBushBlock(BlockBehaviour.Properties.copy(Blocks.DEAD_BUSH)), DWDCreativeTabs.DWDSkaro);
-    //Stuff that needs fixing: Voxelshape sizes for some plants. Particle location. Item model.
+
 
 
 

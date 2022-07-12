@@ -6,6 +6,7 @@ import com.prismmods.dwdimensions.common.block.DWDBlocks;
 import com.prismmods.dwdimensions.common.blockentities.DWDBlockEntities;
 import com.prismmods.dwdimensions.common.item.DWDItems;
 import com.prismmods.dwdimensions.util.ClientUtil;
+import com.prismmods.dwdimensions.world.feature.DWDPlacedFeatures;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
@@ -31,6 +32,9 @@ public class DWDimensions {
         DWDItems.register(modEventBus);
         DWDBlocks.register(modEventBus);
         DWDBlockEntities.register(modEventBus);
+
+
+        DWDPlacedFeatures.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
