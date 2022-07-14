@@ -2,7 +2,8 @@ package com.prismmods.dwdimensions.common.block;
 
 import com.prismmods.dwdimensions.DWDimensions;
 import com.prismmods.dwdimensions.common.DWDCreativeTabs;
-import com.prismmods.dwdimensions.common.block.custom.*;
+import com.prismmods.dwdimensions.common.block.custom.TardisBlock;
+import com.prismmods.dwdimensions.common.block.custom.generic.*;
 import com.prismmods.dwdimensions.common.item.DWDItems;
 import com.prismmods.dwdimensions.world.feature.tree.PetrifiedTreeGrower;
 import net.minecraft.util.valueproviders.UniformInt;

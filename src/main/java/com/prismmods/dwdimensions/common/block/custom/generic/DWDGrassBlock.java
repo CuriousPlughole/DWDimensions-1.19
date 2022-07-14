@@ -1,4 +1,4 @@
-package com.prismmods.dwdimensions.common.block.custom;
+package com.prismmods.dwdimensions.common.block.custom.generic;
 
 import com.prismmods.dwdimensions.common.block.DWDBlocks;
 import com.prismmods.dwdimensions.world.feature.DWDPlacedFeatures;

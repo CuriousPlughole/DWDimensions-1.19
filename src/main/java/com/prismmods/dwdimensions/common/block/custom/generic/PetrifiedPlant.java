@@ -1,4 +1,4 @@
-package com.prismmods.dwdimensions.common.block.custom;
+package com.prismmods.dwdimensions.common.block.custom.generic;
 
 import com.mojang.math.Vector3d;
 import net.minecraft.core.BlockPos;

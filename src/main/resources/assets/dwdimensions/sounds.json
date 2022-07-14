@@ -1,0 +1,146 @@
+{
+  "entity.dalek.shoot": {
+    "category": "entity",
+    "subtitle": "entity.dalek.shoot",
+    "sounds": [
+      {
+        "name": "dwdimensions:entity/dalek/shoot"
+      }
+    ]
+  },
+  "entity.cyberman.stomping": {
+    "category": "entity",
+    "subtitle": "entity.cybeman.stomping",
+    "sounds": [
+      {
+        "name": "dwdimensions:entity/cyberman/stomping"
+      }
+    ]
+  },
+  "entity.dalek.arm_rotate": {
+    "category": "entity",
+    "subtitle": "entity.dalek.arm_rotate",
+    "sounds": [
+      {
+        "name": "dwdimensions:entity/dalek/arm_rotate"
+      }
+    ]
+  },
+  "entity.player.click": {
+    "category": "master",
+    "subtitle": "entity.player.click",
+    "sounds": [
+      {
+        "name": "dwdimensions:entity/player/click"
+      }
+    ]
+  },
+  "regeneration.regen_start": {
+    "category": "master",
+    "subtitle": "regeneration.regen_start",
+    "sounds": [
+      {
+        "name": "dwdimensions:regeneration/regen_start"
+      }
+    ]
+  },
+  "block.tardis.furniture.bookcase_open": {
+    "category": "blocks",
+    "subtitle": "block.tardis.furniture.bookcase_open",
+    "sounds": [
+      {
+        "name": "dwdimensions:block/tardis/furniture/bookcase_open"
+      }
+    ]
+  },
+  "block.tardis.furniture.bookcase_close": {
+    "category": "blocks",
+    "subtitle": "block.tardis.furniture.bookcase_close",
+    "sounds": [
+      {
+        "name": "dwdimensions:block/tardis/furniture/bookcase_close"
+      }
+    ]
+  },
+  "block.tardis.door_open_1": {
+    "category": "blocks",
+    "subtitle": "block.tardis.door_open_1",
+    "sounds": [
+      {
+        "name": "dwdimensions:block/tardis/door_open_1"
+      }
+    ]
+  },
+  "block.tardis.door_open_2": {
+    "category": "blocks",
+    "subtitle": "block.tardis.door_open_2",
+    "sounds": [
+      {
+        "name": "dwdimensions:block/tardis/door_open_2"
+      }
+    ]
+  },
+  "block.tardis.door_open_squeaky": {
+    "category": "blocks",
+    "subtitle": "block.tardis.door_open_squeaky",
+    "sounds": [
+      {
+        "name": "dwdimensions:block/tardis/door_open_squeaky"
+      }
+    ]
+  },
+  "block.tardis.door_close": {
+    "category": "blocks",
+    "subtitle": "block.tardis.door_close",
+    "sounds": [
+      {
+        "name": "dwdimensions:block/tardis/door_close"
+      }
+    ]
+  },
+  "block.tardis.door_close_squeaky": {
+    "category": "blocks",
+    "subtitle": "block.tardis.door_close_squeaky",
+    "sounds": [
+      {
+        "name": "dwdimensions:block/tardis/door_close_squeaky"
+      }
+    ]
+  },
+  "sonic.sonic_11_extend": {
+    "category": "ambient",
+    "subtitle": "sonic.sonic_11_extend",
+    "sounds": [
+      {
+        "name": "dwdimensions:sonic/sonic_11_extend"
+      }
+    ]
+  },
+  "sonic.sonic_11_retract": {
+    "category": "ambient",
+    "subtitle": "sonic.sonic_11_retract",
+    "sounds": [
+      {
+        "name": "dwdimensions:sonic/sonic_11_retract"
+      }
+    ]
+  },
+  "sonic.sonic_11_use_short": {
+    "category": "ambient",
+    "subtitle": "sonic.sonic_11_use_short",
+    "sounds": [
+      {
+        "name": "dwdimensions:sonic/sonic_11_use_short"
+      }
+    ]
+  },
+  "sonic.sonic_10_extend": {
+    "category": "ambient",
+    "subtitle": "sonic.sonic_10_extend",
+    "sounds": [
+      {
+        "name": "dwdimensions:sonic/sonic_10_extend"
+      }
+    ]
+  }
+}

@@ -88,4 +88,5 @@ public class TardisWhittakerModel extends EntityModel<Entity> {
         right_door.render(poseStack, buffer, packedLight, packedOverlay);
         body.render(poseStack, buffer, packedLight, packedOverlay);
     }
+
 }

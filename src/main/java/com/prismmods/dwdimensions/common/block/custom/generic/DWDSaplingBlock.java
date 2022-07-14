@@ -1,4 +1,4 @@
-package com.prismmods.dwdimensions.common.block.custom;
+package com.prismmods.dwdimensions.common.block.custom.generic;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;

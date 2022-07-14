@@ -12,6 +12,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.NotNull;
 
@@ -26,11 +27,11 @@ public class TardisRenderer implements BlockEntityRenderer<TardisBlockEntity>, B
     @Override
     public void render(TardisBlockEntity blockEntityIn, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int combinedLightIn, int combinedOverlayIn) {
 
-        float rotation = blockEntityIn.getRotation();
+        float rotation = blockEntityIn.getRotationInDeg();
 
         matrixStackIn.pushPose();
-        matrixStackIn.translate(0.5f, 1.5f, 0.5f);
-        matrixStackIn.scale(1.0f, 1.0f, 1.0f);
+        matrixStackIn.scale(0.62f, 0.62f, 0.62f);
+        matrixStackIn.translate(0.8f, 1.5f, 0.8f);
 
         matrixStackIn.mulPose(Vector3f.XP.rotationDegrees(180));
         matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(rotation));
@@ -50,7 +51,24 @@ public class TardisRenderer implements BlockEntityRenderer<TardisBlockEntity>, B
                 System.out.println("Unexpected chameleon: " + objectChameleon);
         }*/
 
-        ResourceLocation texture = new ResourceLocation(DWDimensions.MOD_ID, "textures/blocks/tardis/exterior/13th_doctor_tardis_exterior_on.png");
+        //DOOR STUFF
+        ModelPart rightDoor = tardisModel.getChild("right_door");
+        ModelPart leftDoor = tardisModel.getChild("left_door");
+        if(blockEntityIn.getDoorState() == "one_open") {
+            rightDoor.yRot = 0f;
+            leftDoor.yRot = 20.0f;
+        }
+        if(blockEntityIn.getDoorState() == "both_open") {
+            rightDoor.yRot = -20.0f;
+            leftDoor.yRot = 20.0f;
+        }
+        if(blockEntityIn.getDoorState() == "closed") {
+            rightDoor.yRot = 0.0f;
+            leftDoor.yRot = 0.0f;
+        }
+
+
+        ResourceLocation texture = new ResourceLocation(DWDimensions.MOD_ID, "textures/block/tardis/13th_doctor_tardis_exterior_on.png");
         tardisModel.render(matrixStackIn, bufferIn.getBuffer(RenderType.entityCutout(texture)), combinedLightIn, combinedOverlayIn, 1.0f, 1.0f, 1.0f, 1.0f);
 
         matrixStackIn.popPose();
@@ -58,7 +76,7 @@ public class TardisRenderer implements BlockEntityRenderer<TardisBlockEntity>, B
     }
 
     public ResourceLocation getTexture() {
-        return new ResourceLocation(DWDimensions.MOD_ID, "textures/blocks/tardis/exterior/13th_doctor_tardis_exterior_on.png");
+        return new ResourceLocation(DWDimensions.MOD_ID, "textures/block/tardis/13th_doctor_tardis_exterior_on.png");
     }
 
     @Override
