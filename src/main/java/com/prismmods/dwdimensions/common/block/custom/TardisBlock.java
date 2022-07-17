@@ -1,5 +1,6 @@
 package com.prismmods.dwdimensions.common.block.custom;
 
+import com.prismmods.dwdimensions.common.blockentities.DoorStatus;
 import com.prismmods.dwdimensions.common.blockentities.TardisBlockEntity;
 import com.prismmods.dwdimensions.common.sound.DWDSounds;
 import net.minecraft.client.sounds.SoundEngine;
@@ -43,9 +44,8 @@ public class TardisBlock extends BaseEntityBlock {
     @Override
     public VoxelShape getCollisionShape(BlockState blockState, BlockGetter getter, BlockPos pos, CollisionContext context) {
         BlockEntity tileentity = getter.getBlockEntity(pos);
-        if (tileentity instanceof TardisBlockEntity) {
-            TardisBlockEntity tardisTileEntity = (TardisBlockEntity) tileentity;
-            if (tardisTileEntity.getDoorState() == "closed") {
+        if (tileentity instanceof TardisBlockEntity tardisTileEntity) {
+            if (tardisTileEntity.getDoorState() == DoorStatus.CLOSED) {
                 return block_shape;
             } else {
                 return Block.box(0,0,0,0,0,0);
@@ -65,23 +65,22 @@ public class TardisBlock extends BaseEntityBlock {
             return InteractionResult.SUCCESS;
         }  else {
             BlockEntity blockEntity = level.getBlockEntity(blockPos);
-            if (blockEntity instanceof TardisBlockEntity) {
-                TardisBlockEntity tardisBlockEntity = (TardisBlockEntity) blockEntity;
+            if (blockEntity instanceof TardisBlockEntity tardisBlockEntity) {
                 SoundEvent doorSound;
-                String doorState = tardisBlockEntity.getDoorState();
+                DoorStatus doorState = tardisBlockEntity.getDoorState();
 
                 System.out.println(doorState);
 
-                if (doorState == "closed") {
+                if (doorState == DoorStatus.CLOSED) {
                     if (player.isCrouching()) {
-                        doorState = "both_open";
+                        doorState = DoorStatus.OPEN;
                         doorSound = DWDSounds.TARDIS_DOOR_OPEN_1.get();
                     } else {
-                        doorState = "one_open";
+                        doorState = DoorStatus.HALF_OPEN;
                         doorSound = DWDSounds.TARDIS_DOOR_OPEN_2.get();
                     }
                 } else {
-                    doorState = "closed";
+                    doorState = DoorStatus.CLOSED;
                     doorSound = DWDSounds.TARDIS_DOOR_CLOSE.get();
                 }
 

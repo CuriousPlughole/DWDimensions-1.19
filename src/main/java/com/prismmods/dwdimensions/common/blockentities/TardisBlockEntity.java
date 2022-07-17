@@ -5,23 +5,18 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
-import net.minecraft.network.protocol.Packet;
-import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
-import net.minecraft.util.Mth;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import org.jetbrains.annotations.NotNull;
 
 public class TardisBlockEntity extends BlockEntity implements BlockEntityTicker<TardisBlockEntity> {
 
     private boolean lightsOn = true;
     private int tardisID = 0;
-    private String doorState = "closed";
+    private DoorStatus doorState = DoorStatus.CLOSED;
     private float rotationInDeg = 0;
 
     //Snow stuff, dont have textures for this so leaving for now
@@ -34,23 +29,13 @@ public class TardisBlockEntity extends BlockEntity implements BlockEntityTicker<
 
     @Override
     public void onLoad() {
+        super.onLoad();
         Direction dir = this.getBlockState().getValue(TardisBlock.FACING);
         switch (dir) {
-            case NORTH:
-                rotationInDeg = 0.0f;
-                break;
-            case SOUTH:
-                rotationInDeg = 180.0f;
-                break;
-            case EAST:
-                rotationInDeg = 90.0f;
-                break;
-            case WEST:
-                rotationInDeg = 270.0f;
-                break;
-            default:
-                rotationInDeg = 0.0f;
-                break;
+            case SOUTH -> rotationInDeg = 180.0f;
+            case EAST -> rotationInDeg = 90.0f;
+            case WEST -> rotationInDeg = 270.0f;
+            default -> rotationInDeg = 0.0f;
         }
     }
 
@@ -58,22 +43,31 @@ public class TardisBlockEntity extends BlockEntity implements BlockEntityTicker<
     NBT DATA HANDLING
      */
 
-    public String getDoorState() {return doorState;}
-    public float getRotationInDeg() {return rotationInDeg;}
-    public void setDoorState(String state) {this.doorState = state;}
+    public DoorStatus getDoorState() {
+        return doorState;
+    }
+
+    public float getRotationInDeg() {
+        return rotationInDeg;
+    }
+
+    public void setDoorState(DoorStatus state) {
+        this.doorState = state;
+    }
 
     @Override
     public void load(@NotNull CompoundTag tag) {
         super.load(tag);
-        this.tardisID = (tag.getInt("tardisID"));
-        this.lightsOn = (tag.getBoolean("lightsOn"));
-        this.doorState = (tag.getString("doorStatus"));
-        this.rotationInDeg = (tag.getFloat("rotation"));
+        this.tardisID = tag.getInt("tardisID");
+        this.lightsOn = tag.getBoolean("lightsOn");
+        this.doorState = DoorStatus.getDoorStatusValue(tag.getString("doorStatus"));
+        this.rotationInDeg = tag.getFloat("rotation");
     }
+
     @Override
     public void saveAdditional(@NotNull CompoundTag tag) {
         super.saveAdditional(tag);
-        tag.putString("doorStatus", doorState);
+        tag.putString("doorStatus", doorState.getNbtName());
         tag.putBoolean("lightsOn", lightsOn);
         tag.putInt("tardisID", tardisID);
         tag.putFloat("rotation", rotationInDeg);
@@ -81,22 +75,20 @@ public class TardisBlockEntity extends BlockEntity implements BlockEntityTicker<
         //tag.putBoolean("snow", isSnowy);
         //tag.putInt("snow_cooldown", snowCoolDown);
     }
+
+
     @Override
     public ClientboundBlockEntityDataPacket getUpdatePacket() {
         return ClientboundBlockEntityDataPacket.create(this);
     }
 
-
-
     @Override
     public @NotNull CompoundTag getUpdateTag() {
-        CompoundTag tag = new CompoundTag();
-        tag.putString("doorStatus", doorState);
-        tag.putBoolean("lightsOn", lightsOn);
-        tag.putInt("tardisID", tardisID);
-        tag.putFloat("rotation", rotationInDeg);
-        return tag;
+        CompoundTag compoundTag = new CompoundTag();
+        saveAdditional(compoundTag);
+        return compoundTag;
     }
+
     @Override
     public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt) {
         super.onDataPacket(net, pkt);

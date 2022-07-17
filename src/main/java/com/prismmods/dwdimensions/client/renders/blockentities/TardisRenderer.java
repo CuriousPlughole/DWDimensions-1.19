@@ -4,6 +4,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Vector3f;
 import com.prismmods.dwdimensions.DWDimensions;
 import com.prismmods.dwdimensions.client.models.DWDModelLayers;
+import com.prismmods.dwdimensions.common.blockentities.DoorStatus;
 import com.prismmods.dwdimensions.common.blockentities.TardisBlockEntity;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -29,15 +30,15 @@ public class TardisRenderer implements BlockEntityRenderer<TardisBlockEntity>, B
         //DOOR STUFF
         ModelPart rightDoor = tardisModel.getChild("right_door");
         ModelPart leftDoor = tardisModel.getChild("left_door");
-        if(blockEntityIn.getDoorState() == "one_open") {
+        if(blockEntityIn.getDoorState() == DoorStatus.HALF_OPEN) {
             rightDoor.yRot = 0f;
             leftDoor.yRot = 20.0f;
         }
-        if(blockEntityIn.getDoorState() == "both_open") {
+        if(blockEntityIn.getDoorState() == DoorStatus.OPEN) {
             rightDoor.yRot = -20.0f;
             leftDoor.yRot = 20.0f;
         }
-        if(blockEntityIn.getDoorState() == "closed") {
+        if(blockEntityIn.getDoorState() == DoorStatus.CLOSED) {
             rightDoor.yRot = 0.0f;
             leftDoor.yRot = 0.0f;
         }
@@ -51,8 +52,7 @@ public class TardisRenderer implements BlockEntityRenderer<TardisBlockEntity>, B
         matrixStackIn.mulPose(Vector3f.XP.rotationDegrees(180));
         matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(rotation));
 
-        ResourceLocation texture = new ResourceLocation(DWDimensions.MOD_ID, "textures/block/tardis/13th_doctor_tardis_exterior_on.png");
-        tardisModel.render(matrixStackIn, bufferIn.getBuffer(RenderType.entityCutout(texture)), combinedLightIn, combinedOverlayIn, 1.0f, 1.0f, 1.0f, 1.0f);
+        tardisModel.render(matrixStackIn, bufferIn.getBuffer(RenderType.entityCutout(getTexture())), combinedLightIn, combinedOverlayIn, 1.0f, 1.0f, 1.0f, 1.0f);
 
         matrixStackIn.popPose();
     }
