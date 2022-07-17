@@ -1,5 +1,6 @@
-// 1.19	2022-07-12T11:56:26.0261698	Block States: dwdimensions
+// 1.19	2022-07-16T16:24:41.0401413	Block States: dwdimensions
 47e61e6b5fa86520f2896f68bb22b5938ec5332d assets/dwdimensions/blockstates/deepslate_zeiton_ore.json
+aaa4a96a4e42a688bfe3c93b40fd10f023ec1962 assets/dwdimensions/blockstates/handmine_trap.json
 28e8873958ea4b43a3e9d70e2c01ed5d6cae30ef assets/dwdimensions/blockstates/petrified_flower_1.json
 95fd6391f261fb44cb04741a5108ea4528dc4340 assets/dwdimensions/blockstates/petrified_flower_2.json
 645c0e55e4e2ba53b98da5b69eea9587a1569a44 assets/dwdimensions/blockstates/petrified_fungus.json
@@ -20,6 +21,7 @@ b606e9640640cc0ad7781038ed4a9fcb9422a8b1 assets/dwdimensions/blockstates/strippe
 9d9bee929e66f0074d7dec3a1a3d9587c0dc20c0 assets/dwdimensions/blockstates/stripped_petrified_wood.json
 e264e66f4879fd3cefb3aacbc91f93d81460e99a assets/dwdimensions/blockstates/zeiton_ore.json
 40ac3323d3467e7b4b42aec015a7b353761dff60 assets/dwdimensions/models/block/deepslate_zeiton_ore.json
+e3661b1419327317b181bd6bd52d83671cafbfbd assets/dwdimensions/models/block/handmine_trap.json
 12941c118bef7bf8f3304074954f6f6b5f1af31d assets/dwdimensions/models/block/petrified_flower_1.json
 5d1e9fb902a7c2e99cf49e5f04eca2f0a5b85869 assets/dwdimensions/models/block/petrified_flower_2.json
 ae502224c50df562a9a3bceed7395e96564ee576 assets/dwdimensions/models/block/petrified_fungus.json

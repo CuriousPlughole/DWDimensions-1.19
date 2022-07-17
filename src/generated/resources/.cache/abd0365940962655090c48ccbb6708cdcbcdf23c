@@ -1,5 +1,7 @@
-// 1.19	2022-07-12T12:13:04.0260331	Item Models: dwdimensions
+// 1.19	2022-07-17T17:54:25.8128669	Item Models: dwdimensions
 36d2d9f04812a903f0debffa0974cce18b17ed9b assets/dwdimensions/models/item/deepslate_zeiton_ore.json
+b2eda8633affe6da1a262a35b08a9ba96aed9e51 assets/dwdimensions/models/item/handmine.json
+6d22ffeea87426a57f0603b0a13d24ed2c006b17 assets/dwdimensions/models/item/handmine_trap.json
 a4f95f89483c024c8497322454a4156a5f7371b6 assets/dwdimensions/models/item/petrified_flower_1.json
 9a9131144425bb7cff177e09290e39ebb8927f2a assets/dwdimensions/models/item/petrified_flower_2.json
 e1315c1c67a4e6f2946f876ce262131c1d5e7754 assets/dwdimensions/models/item/petrified_fungus.json
@@ -19,5 +21,6 @@ b76eab392054cac3fa020e7a53aba31e0af61765 assets/dwdimensions/models/item/skaro_s
 7a466dcfcedb83b803882a44fa546e08db197813 assets/dwdimensions/models/item/skaro_tall_grass.json
 ba74311ace2fd3a8d7f6a37105cd187da591569f assets/dwdimensions/models/item/stripped_petrified_log.json
 144108777b486295a00a810c97d8f140c47a3a1a assets/dwdimensions/models/item/stripped_petrified_wood.json
+0e3a3d3f3722dffde6f839d0cb464f4e00cb2062 assets/dwdimensions/models/item/varga_berries.json
 d006139321955e75bcf405eba8dfe2049691ffeb assets/dwdimensions/models/item/zeiton_7.json
 4c3c582c0a7bc1da64c12f289f46a669bc501217 assets/dwdimensions/models/item/zeiton_ore.json

@@ -1,4 +1,4 @@
-package com.prismmods.dwdimensions.client.models;
+package com.prismmods.dwdimensions.client.models.blockentity.tardis;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -84,9 +84,15 @@ public class TardisWhittakerModel extends EntityModel<Entity> {
 
     @Override
     public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-        left_door.render(poseStack, buffer, packedLight, packedOverlay);
-        right_door.render(poseStack, buffer, packedLight, packedOverlay);
+        left_door.yRot =20;
+        right_door.yRot = 100;
+
+        //left_door.render(poseStack, buffer, packedLight, packedOverlay);
+        //right_door.render(poseStack, buffer, packedLight, packedOverlay);
         body.render(poseStack, buffer, packedLight, packedOverlay);
+
+
+
     }
 
 }

@@ -39,6 +39,8 @@ public class DWDBlockStateProvider extends BlockStateProvider {
         simpleBlock(DWDBlocks.SKARO_PETRIFIED_FLOWER_2.get(), models().cross(ForgeRegistries.BLOCKS.getKey(DWDBlocks.SKARO_PETRIFIED_FLOWER_2.get()).getPath(), blockTexture(DWDBlocks.SKARO_PETRIFIED_FLOWER_2.get())));
         simpleBlock(DWDBlocks.SKARO_PETRIFIED_FUNGUS.get(), models().cross(ForgeRegistries.BLOCKS.getKey(DWDBlocks.SKARO_PETRIFIED_FUNGUS.get()).getPath(), blockTexture(DWDBlocks.SKARO_PETRIFIED_FUNGUS.get())));
         simpleBlock(DWDBlocks.PETRIFIED_SAPLING.get(), models().cross(ForgeRegistries.BLOCKS.getKey(DWDBlocks.PETRIFIED_SAPLING.get()).getPath(), blockTexture(DWDBlocks.PETRIFIED_SAPLING.get())));
+        simpleBlock(DWDBlocks.HANDMINE_TRAP.get());
+
     }
 
 }

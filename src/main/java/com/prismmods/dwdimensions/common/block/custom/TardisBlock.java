@@ -26,6 +26,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
@@ -40,21 +41,39 @@ public class TardisBlock extends BaseEntityBlock {
     }
 
     @Override
+    public VoxelShape getCollisionShape(BlockState blockState, BlockGetter getter, BlockPos pos, CollisionContext context) {
+        BlockEntity tileentity = getter.getBlockEntity(pos);
+        if (tileentity instanceof TardisBlockEntity) {
+            TardisBlockEntity tardisTileEntity = (TardisBlockEntity) tileentity;
+            if (tardisTileEntity.getDoorState() == "closed") {
+                return block_shape;
+            } else {
+                return Block.box(0,0,0,0,0,0);
+            }
+        }
+        return block_shape;
+    }
+
+    @Override
+    public boolean collisionExtendsVertically(BlockState state, BlockGetter level, BlockPos pos, Entity collidingEntity) {
+        return true;
+    }
+
+    @Override
     public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         if(level.isClientSide) {
             return InteractionResult.SUCCESS;
-        } else if (player.isSpectator()) {
-            return InteractionResult.CONSUME;
-        } else {
+        }  else {
             BlockEntity blockEntity = level.getBlockEntity(blockPos);
             if (blockEntity instanceof TardisBlockEntity) {
-                TardisBlockEntity tardisBlockEntity = (TardisBlockEntity)blockEntity;
-
+                TardisBlockEntity tardisBlockEntity = (TardisBlockEntity) blockEntity;
                 SoundEvent doorSound;
-
                 String doorState = tardisBlockEntity.getDoorState();
-                if(doorState == "closed") {
-                    if(player.isCrouching()) {
+
+                System.out.println(doorState);
+
+                if (doorState == "closed") {
+                    if (player.isCrouching()) {
                         doorState = "both_open";
                         doorSound = DWDSounds.TARDIS_DOOR_OPEN_1.get();
                     } else {
@@ -65,17 +84,19 @@ public class TardisBlock extends BaseEntityBlock {
                     doorState = "closed";
                     doorSound = DWDSounds.TARDIS_DOOR_CLOSE.get();
                 }
+
                 tardisBlockEntity.setDoorState(doorState);
                 level.playSound(null, blockPos, doorSound, SoundSource.BLOCKS, 0.5f, 1.0f);
 
-
+                tardisBlockEntity.sendUpdates();
                 level.sendBlockUpdated(blockPos, blockState, blockState, 2);
-                return InteractionResult.SUCCESS;
+                return InteractionResult.CONSUME;
             } else {
-                return InteractionResult.PASS;
+                return InteractionResult.FAIL;
             }
         }
     }
+
 
     @Nullable
     @Override

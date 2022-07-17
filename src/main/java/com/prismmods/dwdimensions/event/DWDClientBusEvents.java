@@ -1,8 +1,9 @@
 package com.prismmods.dwdimensions.event;
 
 import com.prismmods.dwdimensions.DWDimensions;
-import com.prismmods.dwdimensions.client.models.DWDModels;
-import com.prismmods.dwdimensions.client.models.TardisWhittakerModel;
+import com.prismmods.dwdimensions.client.models.DWDModelLayers;
+import com.prismmods.dwdimensions.client.models.blockentity.tardis.TardisWhittakerModel;
+import com.prismmods.dwdimensions.client.models.entity.HandmineLeftModel;
 import com.prismmods.dwdimensions.client.models.entity.HandmineRightModel;
 import com.prismmods.dwdimensions.client.renders.blockentities.TardisRenderer;
 import com.prismmods.dwdimensions.client.renders.entity.HandmineRender;
@@ -29,33 +30,32 @@ public class DWDClientBusEvents {
 
     @SubscribeEvent
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
-        event.registerLayerDefinition(DWDModels.RIGHT_HANDMINE, HandmineRightModel::createBodyLayer);
-        event.registerLayerDefinition(DWDModels.TARDIS_WHITTAKER, TardisWhittakerModel::getModelData);
+        event.registerLayerDefinition(DWDModelLayers.RIGHT_HANDMINE, HandmineRightModel::createBodyLayer);
+        event.registerLayerDefinition(DWDModelLayers.LEFT_HANDMINE, HandmineLeftModel::createBodyLayer);
+        event.registerLayerDefinition(DWDModelLayers.TARDIS_WHITTAKER, TardisWhittakerModel::getModelData);
     }
 
 
     @SubscribeEvent
     public static void clientSetup(final FMLClientSetupEvent event) {
-        //BlockEntityRenderers.register(DWDBlockEntities.TARDIS.get(), TardisRenderer::new);
 
         EntityRenderers.register(DWDEntityTypes.HANDMINE.get(), HandmineRender::new);
 
         ItemBlockRenderTypes.setRenderLayer(DWDBlocks.PETRIFIED_LEAVES.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(DWDBlocks.PETRIFIED_SAPLING.get(), RenderType.cutout());
-
         ItemBlockRenderTypes.setRenderLayer(DWDBlocks.SKARO_SHRUB.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(DWDBlocks.SKARO_SHRUB_SMALL.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(DWDBlocks.SKARO_DEAD_SHRUB.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(DWDBlocks.SKARO_DEAD_SHRUB_SMALL.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(DWDBlocks.SKARO_TALL_GRASS.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(DWDBlocks.SKARO_PETRIFIED_SHRUB.get(), RenderType.cutout());
-
         ItemBlockRenderTypes.setRenderLayer(DWDBlocks.SKARO_PETRIFIED_FLOWER_1.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(DWDBlocks.POTTED_SKARO_PETRIFIED_FLOWER_1.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(DWDBlocks.SKARO_PETRIFIED_FLOWER_2.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(DWDBlocks.POTTED_SKARO_PETRIFIED_FLOWER_2.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(DWDBlocks.SKARO_PETRIFIED_FUNGUS.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(DWDBlocks.POTTED_SKARO_PETRIFIED_FUNGUS.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(DWDBlocks.VARGA_BUSH.get(), RenderType.cutout());
 
     }
 

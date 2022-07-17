@@ -2,7 +2,9 @@ package com.prismmods.dwdimensions.common.block;
 
 import com.prismmods.dwdimensions.DWDimensions;
 import com.prismmods.dwdimensions.common.DWDCreativeTabs;
+import com.prismmods.dwdimensions.common.block.custom.HandmineTrapBlock;
 import com.prismmods.dwdimensions.common.block.custom.TardisBlock;
+import com.prismmods.dwdimensions.common.block.custom.VargaPlant;
 import com.prismmods.dwdimensions.common.block.custom.generic.*;
 import com.prismmods.dwdimensions.common.item.DWDItems;
 import com.prismmods.dwdimensions.world.feature.tree.PetrifiedTreeGrower;
@@ -53,7 +55,7 @@ public class DWDBlocks {
     public static final RegistryObject<Block> SKARO_GRASS = registerBlock("skaro_grass",
             () -> new DWDGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK), () -> SKARO_DIRT.get()), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> SKARO_SAND = registerBlock("skaro_sand",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.SAND)), DWDCreativeTabs.DWDSkaro);
+            () -> new SandBlock(11098145, BlockBehaviour.Properties.copy(Blocks.SAND)), DWDCreativeTabs.DWDSkaro);
 
     public static final RegistryObject<Block> SKARO_SHRUB = registerBlock("skaro_shrub", () -> new DWDBushBlock(BlockBehaviour.Properties.copy(Blocks.GRASS), "large"), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> SKARO_SHRUB_SMALL = registerBlock("skaro_shrub_small", () -> new DWDBushBlock(BlockBehaviour.Properties.copy(Blocks.GRASS), "small"), DWDCreativeTabs.DWDSkaro);
@@ -68,10 +70,8 @@ public class DWDBlocks {
     public static final RegistryObject<Block> POTTED_SKARO_PETRIFIED_FLOWER_1 = registerBlockWithoutItem("potted_petrified_flower_1", () -> new FlowerPotBlock(SKARO_PETRIFIED_FLOWER_1.get(),BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
     public static final RegistryObject<Block> POTTED_SKARO_PETRIFIED_FLOWER_2 = registerBlockWithoutItem("potted_petrified_flower_2", () -> new FlowerPotBlock( SKARO_PETRIFIED_FLOWER_2.get(), BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
     public static final RegistryObject<Block> POTTED_SKARO_PETRIFIED_FUNGUS = registerBlockWithoutItem("potted_petrified_fungus", () -> new FlowerPotBlock( SKARO_PETRIFIED_FUNGUS.get(),BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
-    //public static final RegistryObject<Block> SKARO_VARGA_PLANT = registerBlock("skaro_varga_plant", () -> new DeadBushBlock(BlockBehaviour.Properties.copy(Blocks.DEAD_BUSH)), DWDCreativeTabs.DWDSkaro);
-
-
-
+    public static final RegistryObject<Block> VARGA_BUSH = registerBlock("varga_bush", () -> new VargaPlant(MobEffects.DAMAGE_BOOST, 6, BlockBehaviour.Properties.copy(Blocks.SWEET_BERRY_BUSH).noOcclusion()), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> HANDMINE_TRAP = registerBlock("handmine_trap", () -> new HandmineTrapBlock(BlockBehaviour.Properties.copy(Blocks.DIRT)), DWDCreativeTabs.DWDSkaro);
 
     //Registry Methods
 

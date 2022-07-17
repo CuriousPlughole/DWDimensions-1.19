@@ -23,6 +23,8 @@ public class DWDItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         simpleItem(DWDItems.ZEITON_7);
+        simpleItem(DWDItems.HANDMINE);
+        simpleItem(DWDItems.VARGA_BERRIES);
 
         blockItemModel(DWDBlocks.DEEPSLATE_ZEITON_ORE);
         blockItemModel(DWDBlocks.ZEITON_ORE);
@@ -35,6 +37,8 @@ public class DWDItemModelProvider extends ItemModelProvider {
         blockItemModel(DWDBlocks.SKARO_SAND);
         blockItemModel(DWDBlocks.STRIPPED_PETRIFIED_WOOD);
         blockItemModel(DWDBlocks.STRIPPED_PETRIFIED_LOG);
+        blockItemModel(DWDBlocks.HANDMINE_TRAP);
+
         plantItem(DWDBlocks.SKARO_PETRIFIED_FLOWER_1);
         plantItem(DWDBlocks.SKARO_PETRIFIED_FLOWER_2);
         plantItem(DWDBlocks.SKARO_PETRIFIED_FUNGUS);
