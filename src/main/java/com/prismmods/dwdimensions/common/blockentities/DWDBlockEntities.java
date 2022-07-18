@@ -13,7 +13,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class DWDBlockEntities {
 
-    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, DWDimensions.MOD_ID);
+    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, DWDimensions.MOD_ID);
 
     public static final RegistryObject<BlockEntityType<TardisBlockEntity>> TARDIS = BLOCK_ENTITIES.register("tardis",
             () -> registerBlockEntity(TardisBlockEntity::new, DWDBlocks.TARDIS.get()));
