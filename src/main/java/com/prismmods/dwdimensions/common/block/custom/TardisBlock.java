@@ -1,9 +1,11 @@
 package com.prismmods.dwdimensions.common.block.custom;
 
-import com.prismmods.dwdimensions.common.blockentities.DoorStatus;
-import com.prismmods.dwdimensions.common.blockentities.TardisBlockEntity;
+import com.prismmods.dwdimensions.common.blockentities.tardis.Chameleon;
+import com.prismmods.dwdimensions.common.blockentities.tardis.DoorStatus;
+import com.prismmods.dwdimensions.common.blockentities.tardis.TardisBlockEntity;
+import com.prismmods.dwdimensions.common.item.DWDItems;
+import com.prismmods.dwdimensions.common.item.custom.StattenheimRemoteItem;
 import com.prismmods.dwdimensions.common.sound.DWDSounds;
-import net.minecraft.client.sounds.SoundEngine;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
@@ -13,6 +15,8 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -35,7 +39,7 @@ public class TardisBlock extends BaseEntityBlock {
 
     public static final BooleanProperty LIT = BlockStateProperties.LIT;
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
-    private static final VoxelShape block_shape = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 40.0D, 16.0D);
+    private static final VoxelShape block_shape = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 32.0D, 16.0D);
 
     public TardisBlock(Properties properties) {
         super(properties.noCollission());
@@ -68,25 +72,41 @@ public class TardisBlock extends BaseEntityBlock {
             if (blockEntity instanceof TardisBlockEntity tardisBlockEntity) {
                 SoundEvent doorSound;
                 DoorStatus doorState = tardisBlockEntity.getDoorState();
+                Boolean lightsOn = tardisBlockEntity.getLightState();
+                Chameleon chameleon = tardisBlockEntity.getChameleon();
 
-                System.out.println(doorState);
-
-                if (doorState == DoorStatus.CLOSED) {
-                    if (player.isCrouching()) {
-                        doorState = DoorStatus.OPEN;
-                        doorSound = DWDSounds.TARDIS_DOOR_OPEN_1.get();
+                if(player.getItemInHand(hand).isEmpty()) {
+                    if (doorState == DoorStatus.CLOSED) {
+                        if (player.isCrouching()) {
+                            doorState = DoorStatus.OPEN;
+                            doorSound = DWDSounds.TARDIS_DOOR_OPEN_1.get();
+                        } else {
+                            doorState = DoorStatus.HALF_OPEN;
+                            doorSound = DWDSounds.TARDIS_DOOR_OPEN_2.get();
+                        }
                     } else {
-                        doorState = DoorStatus.HALF_OPEN;
-                        doorSound = DWDSounds.TARDIS_DOOR_OPEN_2.get();
+                        doorState = DoorStatus.CLOSED;
+                        doorSound = DWDSounds.TARDIS_DOOR_CLOSE.get();
                     }
-                } else {
-                    doorState = DoorStatus.CLOSED;
-                    doorSound = DWDSounds.TARDIS_DOOR_CLOSE.get();
+
+                    tardisBlockEntity.setDoorState(doorState);
+                    level.playSound(null, blockPos, doorSound, SoundSource.BLOCKS, 0.5f, 1.0f);
                 }
 
-                tardisBlockEntity.setDoorState(doorState);
-                level.playSound(null, blockPos, doorSound, SoundSource.BLOCKS, 0.5f, 1.0f);
+                if(player.getItemInHand(hand).is(DWDItems.STATTENHEIM_REMOTE.get())) {
+                    ItemStack itemStack = player.getItemInHand(hand);
+                    StattenheimRemoteItem remoteItem = (StattenheimRemoteItem)itemStack.getItem();
+                    StattenheimRemoteItem.Mode mode = remoteItem.getMode(itemStack);
 
+                    if(mode == StattenheimRemoteItem.Mode.CHAMELEON) {
+                        tardisBlockEntity.setChameleon(Chameleon.nextChameleon(chameleon));
+                    }
+
+                    if(mode == StattenheimRemoteItem.Mode.LIGHTS) {
+                        Boolean newLightsState = (lightsOn) ? false : true;
+                        tardisBlockEntity.setLightState(newLightsState);
+                    }
+                }
                 tardisBlockEntity.sendUpdates();
                 level.sendBlockUpdated(blockPos, blockState, blockState, 2);
                 return InteractionResult.CONSUME;
@@ -95,7 +115,6 @@ public class TardisBlock extends BaseEntityBlock {
             }
         }
     }
-
 
     @Nullable
     @Override

@@ -1,6 +1,7 @@
-package com.prismmods.dwdimensions.common.blockentities;
+package com.prismmods.dwdimensions.common.blockentities.tardis;
 
 import com.prismmods.dwdimensions.common.block.custom.TardisBlock;
+import com.prismmods.dwdimensions.common.blockentities.DWDBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -12,12 +13,16 @@ import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class TardisBlockEntity extends BlockEntity implements BlockEntityTicker<TardisBlockEntity> {
 
     private boolean lightsOn = true;
     private int tardisID = 0;
     private DoorStatus doorState = DoorStatus.CLOSED;
     private float rotationInDeg = 0;
+    private Chameleon chameleon = Chameleon.WHITTAKER;
 
     //Snow stuff, dont have textures for this so leaving for now
     //private boolean isSnowy = false;
@@ -47,13 +52,27 @@ public class TardisBlockEntity extends BlockEntity implements BlockEntityTicker<
         return doorState;
     }
 
+    public void setDoorState(DoorStatus state) {
+        this.doorState = state;
+    }
+
+    public Chameleon getChameleon() {
+        return chameleon;
+    }
+
+    public void setChameleon(Chameleon skin) {this.chameleon = skin;}
+
     public float getRotationInDeg() {
         return rotationInDeg;
     }
 
-    public void setDoorState(DoorStatus state) {
-        this.doorState = state;
+    public boolean getLightState() {
+        return lightsOn;
     }
+    public void setLightState(Boolean state) {
+        this.lightsOn = state;
+    }
+
 
     @Override
     public void load(@NotNull CompoundTag tag) {
@@ -62,6 +81,7 @@ public class TardisBlockEntity extends BlockEntity implements BlockEntityTicker<
         this.lightsOn = tag.getBoolean("lightsOn");
         this.doorState = DoorStatus.getDoorStatusValue(tag.getString("doorStatus"));
         this.rotationInDeg = tag.getFloat("rotation");
+        this.chameleon = Chameleon.getChameleonValue(tag.getString("chameleon"));
     }
 
     @Override
@@ -71,6 +91,7 @@ public class TardisBlockEntity extends BlockEntity implements BlockEntityTicker<
         tag.putBoolean("lightsOn", lightsOn);
         tag.putInt("tardisID", tardisID);
         tag.putFloat("rotation", rotationInDeg);
+        tag.putString("chameleon", chameleon.getNbtName());
 
         //tag.putBoolean("snow", isSnowy);
         //tag.putInt("snow_cooldown", snowCoolDown);

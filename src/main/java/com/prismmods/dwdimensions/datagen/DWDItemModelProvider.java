@@ -25,6 +25,7 @@ public class DWDItemModelProvider extends ItemModelProvider {
         simpleItem(DWDItems.ZEITON_7);
         simpleItem(DWDItems.HANDMINE);
         simpleItem(DWDItems.VARGA_BERRIES);
+        simpleItem(DWDItems.STATTENHEIM_REMOTE);
 
         blockItemModel(DWDBlocks.DEEPSLATE_ZEITON_ORE);
         blockItemModel(DWDBlocks.ZEITON_ORE);

@@ -2,6 +2,7 @@ package com.prismmods.dwdimensions.common.blockentities;
 
 import com.prismmods.dwdimensions.DWDimensions;
 import com.prismmods.dwdimensions.common.block.DWDBlocks;
+import com.prismmods.dwdimensions.common.blockentities.tardis.TardisBlockEntity;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;

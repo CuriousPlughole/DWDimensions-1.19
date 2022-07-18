@@ -1,4 +1,4 @@
-package com.prismmods.dwdimensions.common.blockentities;
+package com.prismmods.dwdimensions.common.blockentities.tardis;
 
 public enum DoorStatus {
     OPEN("open"), HALF_OPEN("half_open"), CLOSED("closed");

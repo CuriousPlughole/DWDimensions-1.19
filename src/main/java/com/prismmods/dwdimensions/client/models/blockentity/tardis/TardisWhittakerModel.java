@@ -3,11 +3,9 @@ package com.prismmods.dwdimensions.client.models.blockentity.tardis;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import org.jetbrains.annotations.NotNull;
 
@@ -23,7 +21,7 @@ public class TardisWhittakerModel extends EntityModel<Entity> {
         this.body = root.getChild("body");
     }
 
-    public static LayerDefinition getModelData() {
+    public static LayerDefinition createBodyLayer() {
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
 
@@ -84,11 +82,8 @@ public class TardisWhittakerModel extends EntityModel<Entity> {
 
     @Override
     public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-        left_door.yRot =20;
-        right_door.yRot = 100;
-
-        //left_door.render(poseStack, buffer, packedLight, packedOverlay);
-        //right_door.render(poseStack, buffer, packedLight, packedOverlay);
+        left_door.render(poseStack, buffer, packedLight, packedOverlay);
+        right_door.render(poseStack, buffer, packedLight, packedOverlay);
         body.render(poseStack, buffer, packedLight, packedOverlay);
 
 

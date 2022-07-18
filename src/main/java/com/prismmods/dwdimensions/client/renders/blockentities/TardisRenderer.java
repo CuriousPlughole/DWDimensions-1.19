@@ -4,8 +4,10 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Vector3f;
 import com.prismmods.dwdimensions.DWDimensions;
 import com.prismmods.dwdimensions.client.models.DWDModelLayers;
-import com.prismmods.dwdimensions.common.blockentities.DoorStatus;
-import com.prismmods.dwdimensions.common.blockentities.TardisBlockEntity;
+import com.prismmods.dwdimensions.common.blockentities.tardis.Chameleon;
+import com.prismmods.dwdimensions.common.blockentities.tardis.DoorStatus;
+import com.prismmods.dwdimensions.common.blockentities.tardis.TardisBlockEntity;
+import com.prismmods.dwdimensions.util.ClientUtil;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -26,6 +28,9 @@ public class TardisRenderer implements BlockEntityRenderer<TardisBlockEntity>, B
     public void render(TardisBlockEntity blockEntityIn, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int combinedLightIn, int combinedOverlayIn) {
 
         float rotation = blockEntityIn.getRotationInDeg();
+        boolean lights = blockEntityIn.getLightState();
+
+        tardisModel = ClientUtil.getTardisModel(blockEntityIn.getChameleon());
 
         //DOOR STUFF
         ModelPart rightDoor = tardisModel.getChild("right_door");
@@ -43,8 +48,6 @@ public class TardisRenderer implements BlockEntityRenderer<TardisBlockEntity>, B
             leftDoor.yRot = 0.0f;
         }
 
-        //System.out.println(rightDoor.yRot);
-
         matrixStackIn.pushPose();
         matrixStackIn.scale(0.62f, 0.62f, 0.62f);
         matrixStackIn.translate(0.8f, 1.5f, 0.8f);
@@ -52,13 +55,24 @@ public class TardisRenderer implements BlockEntityRenderer<TardisBlockEntity>, B
         matrixStackIn.mulPose(Vector3f.XP.rotationDegrees(180));
         matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(rotation));
 
-        tardisModel.render(matrixStackIn, bufferIn.getBuffer(RenderType.entityCutout(getTexture())), combinedLightIn, combinedOverlayIn, 1.0f, 1.0f, 1.0f, 1.0f);
+        tardisModel.render(matrixStackIn, bufferIn.getBuffer(RenderType.entityCutout(getTexture(lights, blockEntityIn.getChameleon()))), combinedLightIn, combinedOverlayIn, 1.0f, 1.0f, 1.0f, 1.0f);
 
         matrixStackIn.popPose();
     }
 
-    public ResourceLocation getTexture() {
-        return new ResourceLocation(DWDimensions.MOD_ID, "textures/block/tardis/13th_doctor_tardis_exterior_on.png");
+    public ResourceLocation getTexture(Boolean lightsOn, Chameleon chameleon) {
+        String lights_modifier = (lightsOn) ? "_on" : "_off";
+        String texture;
+        switch (chameleon) {
+            case CAPALDI -> texture = "12th_doctor_tardis_exterior";
+            case SMITH_SCORCHED -> texture = "11th_doctor_tardis_exterior_scorched";
+            case SMITH_7B -> texture = "11th_doctor_tardis_exterior_7b";
+            case SMITH -> texture = "11th_doctor_tardis_exterior";
+            case TENNANT -> texture = "10th_doctor_tardis_exterior";
+            case ECCLESTON -> texture = "9th_doctor_tardis_exterior";
+            default -> texture = "13th_doctor_tardis_exterior"; //WHITTAKER included here
+        }
+        return new ResourceLocation(DWDimensions.MOD_ID, "textures/block/tardis/"+texture+lights_modifier+".png");
     }
 
     @Override

@@ -2,6 +2,8 @@ package com.prismmods.dwdimensions.event;
 
 import com.prismmods.dwdimensions.DWDimensions;
 import com.prismmods.dwdimensions.client.models.DWDModelLayers;
+import com.prismmods.dwdimensions.client.models.blockentity.tardis.TardisSmithCapaldiModel;
+import com.prismmods.dwdimensions.client.models.blockentity.tardis.TardisTennantEcclestonModel;
 import com.prismmods.dwdimensions.client.models.blockentity.tardis.TardisWhittakerModel;
 import com.prismmods.dwdimensions.client.models.entity.HandmineLeftModel;
 import com.prismmods.dwdimensions.client.models.entity.HandmineRightModel;
@@ -32,7 +34,9 @@ public class DWDClientBusEvents {
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(DWDModelLayers.RIGHT_HANDMINE, HandmineRightModel::createBodyLayer);
         event.registerLayerDefinition(DWDModelLayers.LEFT_HANDMINE, HandmineLeftModel::createBodyLayer);
-        event.registerLayerDefinition(DWDModelLayers.TARDIS_WHITTAKER, TardisWhittakerModel::getModelData);
+        event.registerLayerDefinition(DWDModelLayers.TARDIS_WHITTAKER, TardisWhittakerModel::createBodyLayer);
+        event.registerLayerDefinition(DWDModelLayers.TARDIS_SMITH_CAPALDI, TardisSmithCapaldiModel::createBodyLayer);
+        event.registerLayerDefinition(DWDModelLayers.TARDIS_TENNANT_ECCLESTON, TardisTennantEcclestonModel::createBodyLayer);
     }
 
 

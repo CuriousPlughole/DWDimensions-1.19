@@ -1,6 +1,9 @@
 {
     "itemGroup.dwdmaterialstab": "DWD Materials",
     "itemGroup.dwdskarotab": "Skaro",
+    "item.dwdimensions.stattenheim_remote": "Stattenheim Remote",
+    "item.dwdimensions.stattenheim_remote.lights": "Set Stattenheim remote to lights mode",
+    "item.dwdimensions.stattenheim_remote.chameleon" : "Set Stattenheim remote to Chameleon mode",
     "item.dwdimensions.zeiton_7": "Zeiton 7 Crystal",
     "block.dwdimensions.zeiton_ore": "Zeiton 7 Ore",
     "block.dwdimensions.deepslate_zeiton_ore": "Deepslate Zeiton 7 Ore",
