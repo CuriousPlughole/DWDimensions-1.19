@@ -2,6 +2,7 @@ package com.prismmods.dwdimensions.datagen;
 
 import com.prismmods.dwdimensions.DWDimensions;
 import com.prismmods.dwdimensions.common.block.DWDBlocks;
+import com.prismmods.dwdimensions.common.fluid.DWDFluids;
 import com.prismmods.dwdimensions.common.item.DWDItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
@@ -26,11 +27,16 @@ public class DWDItemModelProvider extends ItemModelProvider {
         simpleItem(DWDItems.HANDMINE);
         simpleItem(DWDItems.VARGA_BERRIES);
         simpleItem(DWDItems.STATTENHEIM_REMOTE);
+        simpleItem(DWDFluids.RADIOACTIVE_WATER_BUCKET);
 
         blockItemModel(DWDBlocks.DEEPSLATE_ZEITON_ORE);
         blockItemModel(DWDBlocks.ZEITON_ORE);
         blockItemModel(DWDBlocks.PETRIFIED_LEAVES);
+        blockItemModel(DWDBlocks.PETRIFIED_JUNGLE_LEAVES);
+        blockItemModel(DWDBlocks.SKARO_BUSH);
         blockItemModel(DWDBlocks.PETRIFIED_LOG);
+        blockItemModel(DWDBlocks.PETRIFIED_JUNGLE_LOG);
+        blockItemModel(DWDBlocks.PETRIFIED_JUNGLE_WOOD);
         blockItemModel(DWDBlocks.PETRIFIED_PLANKS);
         blockItemModel(DWDBlocks.PETRIFIED_WOOD);
         blockItemModel(DWDBlocks.SKARO_DIRT);
@@ -39,6 +45,12 @@ public class DWDItemModelProvider extends ItemModelProvider {
         blockItemModel(DWDBlocks.STRIPPED_PETRIFIED_WOOD);
         blockItemModel(DWDBlocks.STRIPPED_PETRIFIED_LOG);
         blockItemModel(DWDBlocks.HANDMINE_TRAP);
+        blockItemModel(DWDBlocks.SKARO_MUD);
+        blockItemModel(DWDBlocks.SKARO_STONE);
+        blockItemModel(DWDBlocks.SKARO_COBBLESTONE);
+        blockItemModel(DWDBlocks.SKARO_PACKED_MUD);
+        blockItemModel(DWDBlocks.SKARO_QUICKSAND);
+        blockItemModel(DWDBlocks.SKARO_GRAVEL);
 
         plantItem(DWDBlocks.SKARO_PETRIFIED_FLOWER_1);
         plantItem(DWDBlocks.SKARO_PETRIFIED_FLOWER_2);
@@ -50,6 +62,7 @@ public class DWDItemModelProvider extends ItemModelProvider {
         plantItem(DWDBlocks.SKARO_PETRIFIED_SHRUB);
         plantItem(DWDBlocks.SKARO_SHRUB);
         plantItem(DWDBlocks.SKARO_SHRUB_SMALL);
+        plantItem(DWDBlocks.PETRIFIED_JUNGLE_SAPLING);
 
 
         /* Method for automatically registering blockItems. Probably gonna cause more issues than its worth though.
@@ -83,7 +96,7 @@ public class DWDItemModelProvider extends ItemModelProvider {
             return withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(),
                     new ResourceLocation(DWDimensions.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath()));
         } catch(Exception e) {
-            System.out.println("**** Attention required for item model: "+ block);
+            System.out.println("**** Attention required for item model: "+ ForgeRegistries.BLOCKS.getKey(block.get()).getPath());
             return null;
         }
 

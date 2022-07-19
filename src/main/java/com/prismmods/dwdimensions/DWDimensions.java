@@ -4,17 +4,21 @@ import com.mojang.logging.LogUtils;
 import com.prismmods.dwdimensions.common.block.DWDBlocks;
 import com.prismmods.dwdimensions.common.blockentities.DWDBlockEntities;
 import com.prismmods.dwdimensions.common.entity.DWDEntityTypes;
+import com.prismmods.dwdimensions.common.fluid.DWDFluids;
 import com.prismmods.dwdimensions.common.item.DWDItems;
 import com.prismmods.dwdimensions.common.sound.DWDSounds;
 import com.prismmods.dwdimensions.world.dimension.DWDDimensionReg;
 import com.prismmods.dwdimensions.world.feature.DWDPlacedFeatures;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fluids.FluidInteractionRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
 @Mod(DWDimensions.MOD_ID)
@@ -30,7 +34,7 @@ public class DWDimensions {
         DWDBlocks.register(modEventBus);
         DWDEntityTypes.register(modEventBus);
         DWDBlockEntities.register(modEventBus);
-
+        DWDFluids.register(modEventBus);
 
         DWDPlacedFeatures.register(modEventBus);
         DWDDimensionReg.register();
@@ -38,15 +42,31 @@ public class DWDimensions {
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
 
-        //DistExecutor.runWhenOn(Dist.CLIENT, () -> () -> modEventBus.addListener(this::doClientStuff));
-
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+
+
+
+        //Lava onto radioactive water
+        FluidInteractionRegistry.addInteraction(DWDFluids.RADIOACTIVE_WATER_TYPE.get(),
+                new FluidInteractionRegistry.InteractionInformation(ForgeMod.LAVA_TYPE.get(), Blocks.STONE.defaultBlockState()));
+        //Radioactive water onto lava
+        FluidInteractionRegistry.addInteraction(ForgeMod.LAVA_TYPE.get(),
+                new FluidInteractionRegistry.InteractionInformation(DWDFluids.RADIOACTIVE_WATER_TYPE.get(), Blocks.OBSIDIAN.defaultBlockState()));
+
+        //Radioactive water onto normal water
+        FluidInteractionRegistry.addInteraction(ForgeMod.WATER_TYPE.get(),
+                new FluidInteractionRegistry.InteractionInformation(DWDFluids.RADIOACTIVE_WATER_TYPE.get(), state -> state.isSource() ? Blocks.WATER.defaultBlockState() : Blocks.WATER.defaultBlockState()));
+
+
         event.enqueueWork(() -> {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(DWDBlocks.SKARO_PETRIFIED_FLOWER_1.getId(), DWDBlocks.POTTED_SKARO_PETRIFIED_FLOWER_1);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(DWDBlocks.SKARO_PETRIFIED_FLOWER_2.getId(), DWDBlocks.POTTED_SKARO_PETRIFIED_FLOWER_2);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(DWDBlocks.SKARO_PETRIFIED_FUNGUS.getId(), DWDBlocks.POTTED_SKARO_PETRIFIED_FUNGUS);
+            ForgeRegistries.FLUIDS.forEach(fluid ->
+                    LOGGER.info("Fluid {} has FluidType {}", ForgeRegistries.FLUIDS.getKey(fluid), ForgeRegistries.FLUID_TYPES.get().getKey(fluid.getFluidType())));
+
         });
 
     }

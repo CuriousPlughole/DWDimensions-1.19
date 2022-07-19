@@ -4,7 +4,9 @@
     "dwdimensions:petrified_log",
     "dwdimensions:petrified_wood",
     "dwdimensions:stripped_petrified_log",
-    "dwdimensions:stripped_petrified_wood"
+    "dwdimensions:stripped_petrified_wood",
+    "dwdimensions:petrified_jungle_log",
+    "dwdimensions:petrified_jungle_wood"
   ]
 
 }

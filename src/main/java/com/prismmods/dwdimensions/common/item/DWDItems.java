@@ -3,6 +3,7 @@ package com.prismmods.dwdimensions.common.item;
 import com.prismmods.dwdimensions.DWDimensions;
 import com.prismmods.dwdimensions.common.DWDCreativeTabs;
 import com.prismmods.dwdimensions.common.block.DWDBlocks;
+import com.prismmods.dwdimensions.common.item.custom.IAmPissedOff;
 import com.prismmods.dwdimensions.common.item.custom.StattenheimRemoteItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
@@ -23,6 +24,7 @@ public class DWDItems {
 
     //Temporary functionality. For dev purposes
     public static final RegistryObject<Item> STATTENHEIM_REMOTE = ITEMS.register("stattenheim_remote", () -> new StattenheimRemoteItem(new Item.Properties().stacksTo(1).tab(DWDCreativeTabs.DWDMaterials)));
+    public static final RegistryObject<Item> FUCK_YOU = ITEMS.register("fuck_off", () -> new IAmPissedOff(new Item.Properties().stacksTo(1).tab(DWDCreativeTabs.DWDMaterials)));
 
 
 }

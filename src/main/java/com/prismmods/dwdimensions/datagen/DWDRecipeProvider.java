@@ -34,6 +34,8 @@ public class DWDRecipeProvider extends RecipeProvider implements IConditionBuild
         RecipeProvider.planksFromLogs(pFinishedRecipeConsumer, DWDBlocks.PETRIFIED_PLANKS.get(), DWDTags.Items.PETRIFIED_LOGS);
         RecipeProvider.woodFromLogs(pFinishedRecipeConsumer, DWDBlocks.PETRIFIED_WOOD.get(), DWDBlocks.PETRIFIED_LOG.get());
         RecipeProvider.woodFromLogs(pFinishedRecipeConsumer, DWDBlocks.STRIPPED_PETRIFIED_WOOD.get(), DWDBlocks.STRIPPED_PETRIFIED_LOG.get());
+        RecipeProvider.woodFromLogs(pFinishedRecipeConsumer, DWDBlocks.PETRIFIED_JUNGLE_WOOD.get(), DWDBlocks.PETRIFIED_JUNGLE_LOG.get());
+
 
         //Parameters: item to smelt, result, experience gained, cooking time.
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(DWDBlocks.ZEITON_ORE.get().asItem()), DWDItems.ZEITON_7.get(), 0.1F, 200)

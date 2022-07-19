@@ -35,6 +35,16 @@ public class DWDBlocks {
     public static final RegistryObject<Block> DEEPSLATE_ZEITON_ORE = registerBlock("deepslate_zeiton_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(ZEITON_ORE.get()).color(MaterialColor.DEEPSLATE).strength(4.5F, 3.0F).sound(SoundType.DEEPSLATE), UniformInt.of(0, 2)), DWDCreativeTabs.DWDMaterials);
 
+    /*
+    SKARO
+     */
+
+    //TODO: Add some custom effects for petrified plants. Some blindness or something? Not all negative; maybe "adrenaline" -> gives haste/strength etc
+    //TODO: Need custom tree grower for petrified jungle tree
+    //TODO: Make custom class for quicksand
+    //TODO: Special block types (Fences, stairs, slabs, etc)
+
+    //Wood
     public static final RegistryObject<Block> PETRIFIED_LOG = registerBlock("petrified_log",
             () -> new DWDFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> STRIPPED_PETRIFIED_LOG = registerBlock("stripped_petrified_log",
@@ -45,25 +55,22 @@ public class DWDBlocks {
             () -> new DWDFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> PETRIFIED_PLANKS = registerBlock("petrified_planks",
             () -> new DWDBasicFlammableBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), DWDCreativeTabs.DWDSkaro);
-
-    public static final RegistryObject<Block> PETRIFIED_LEAVES = registerBlock("petrified_leaves",
-            () -> new DWDLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), DWDCreativeTabs.DWDSkaro);
-    public static final RegistryObject<Block> PETRIFIED_SAPLING = registerBlock("petrified_sapling",
-            () -> new SaplingBlock(new PetrifiedTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), DWDCreativeTabs.DWDSkaro);
-    public static final RegistryObject<Block> SKARO_DIRT = registerBlock("skaro_dirt",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT)), DWDCreativeTabs.DWDSkaro);
-    public static final RegistryObject<Block> SKARO_GRASS = registerBlock("skaro_grass",
-            () -> new DWDGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK), () -> SKARO_DIRT.get()), DWDCreativeTabs.DWDSkaro);
-    public static final RegistryObject<Block> SKARO_SAND = registerBlock("skaro_sand",
-            () -> new SandBlock(11098145, BlockBehaviour.Properties.copy(Blocks.SAND)), DWDCreativeTabs.DWDSkaro);
-
+    public static final RegistryObject<Block> PETRIFIED_JUNGLE_LOG = registerBlock("petrified_jungle_log",
+            () -> new DWDFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> PETRIFIED_JUNGLE_WOOD = registerBlock("petrified_jungle_wood",
+            () -> new DWDFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), DWDCreativeTabs.DWDSkaro);
+    //Vegetation
+    public static final RegistryObject<Block> PETRIFIED_LEAVES = registerBlock("petrified_leaves", () -> new DWDLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> PETRIFIED_JUNGLE_LEAVES = registerBlock("petrified_jungle_leaves", () -> new DWDLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> PETRIFIED_SAPLING = registerBlock("petrified_sapling", () -> new SaplingBlock(new PetrifiedTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> PETRIFIED_JUNGLE_SAPLING = registerBlock("petrified_jungle_sapling", () -> new SaplingBlock(new PetrifiedTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> SKARO_BUSH = registerBlock("skaro_bush", () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> SKARO_SHRUB = registerBlock("skaro_shrub", () -> new DWDBushBlock(BlockBehaviour.Properties.copy(Blocks.GRASS), "large"), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> SKARO_SHRUB_SMALL = registerBlock("skaro_shrub_small", () -> new DWDBushBlock(BlockBehaviour.Properties.copy(Blocks.GRASS), "small"), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> SKARO_DEAD_SHRUB = registerBlock("skaro_dead_shrub", () -> new DeadBushBlock(BlockBehaviour.Properties.copy(Blocks.DEAD_BUSH)), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> SKARO_DEAD_SHRUB_SMALL = registerBlock("skaro_dead_shrub_small", () -> new DeadBushBlock(BlockBehaviour.Properties.copy(Blocks.DEAD_BUSH)), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> SKARO_PETRIFIED_SHRUB = registerBlock("skaro_petrified_shrub", () -> new DeadBushBlock(BlockBehaviour.Properties.copy(Blocks.DEAD_BUSH)), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> SKARO_TALL_GRASS = registerBlock("skaro_tall_grass", () -> new DWDBushBlock(BlockBehaviour.Properties.copy(Blocks.GRASS), "small"), DWDCreativeTabs.DWDSkaro);
-    //Add some custom effects for petrified plants. Some blindness or something? Not all negative; maybe "adrenaline" -> gives haste/strength etc
     public static final RegistryObject<Block> SKARO_PETRIFIED_FLOWER_1 = registerBlock("petrified_flower_1", () -> new PetrifiedPlant(MobEffects.DAMAGE_BOOST, 6, BlockBehaviour.Properties.copy(Blocks.DANDELION).noOcclusion()), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> SKARO_PETRIFIED_FLOWER_2 = registerBlock("petrified_flower_2", () -> new PetrifiedPlant(MobEffects.DAMAGE_BOOST, 6, BlockBehaviour.Properties.copy(Blocks.DANDELION).noOcclusion()), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> SKARO_PETRIFIED_FUNGUS = registerBlock("petrified_fungus", () -> new PetrifiedPlant(MobEffects.DIG_SPEED, 6, BlockBehaviour.Properties.copy(Blocks.DANDELION).noOcclusion()), DWDCreativeTabs.DWDSkaro);
@@ -71,9 +78,31 @@ public class DWDBlocks {
     public static final RegistryObject<Block> POTTED_SKARO_PETRIFIED_FLOWER_2 = registerBlockWithoutItem("potted_petrified_flower_2", () -> new FlowerPotBlock( SKARO_PETRIFIED_FLOWER_2.get(), BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
     public static final RegistryObject<Block> POTTED_SKARO_PETRIFIED_FUNGUS = registerBlockWithoutItem("potted_petrified_fungus", () -> new FlowerPotBlock( SKARO_PETRIFIED_FUNGUS.get(),BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
     public static final RegistryObject<Block> VARGA_BUSH = registerBlock("varga_bush", () -> new VargaPlant(MobEffects.DAMAGE_BOOST, 6, BlockBehaviour.Properties.copy(Blocks.SWEET_BERRY_BUSH).noOcclusion()), DWDCreativeTabs.DWDSkaro);
+    //Special Blocks
     public static final RegistryObject<Block> HANDMINE_TRAP = registerBlock("handmine_trap", () -> new HandmineTrapBlock(BlockBehaviour.Properties.copy(Blocks.DIRT)), DWDCreativeTabs.DWDSkaro);
+    //Basic ground blocks
+    public static final RegistryObject<Block> SKARO_DIRT = registerBlock("skaro_dirt",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> SKARO_GRASS = registerBlock("skaro_grass",
+            () -> new DWDGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK), () -> SKARO_DIRT.get()), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> SKARO_SAND = registerBlock("skaro_sand",
+            () -> new SandBlock(11098145, BlockBehaviour.Properties.copy(Blocks.SAND)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> SKARO_COBBLESTONE = registerBlock("skaro_cobblestone",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> SKARO_STONE = registerBlock("skaro_stone",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> SKARO_GRAVEL = registerBlock("skaro_gravel",
+            () -> new GravelBlock(BlockBehaviour.Properties.copy(Blocks.GRAVEL)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> SKARO_MUD = registerBlock("skaro_mud",
+            () -> new MudBlock(BlockBehaviour.Properties.copy(Blocks.MUD)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> SKARO_PACKED_MUD = registerBlock("skaro_packed_mud",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.PACKED_MUD)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> SKARO_QUICKSAND = registerBlock("skaro_quicksand",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.SAND)), DWDCreativeTabs.DWDSkaro);
 
-    //Registry Methods
+    /*
+    REGISTRY METHODS
+     */
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

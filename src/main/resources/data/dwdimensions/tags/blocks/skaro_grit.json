@@ -1,7 +1,9 @@
 {
   "replace": false,
   "values": [
-    "dwdimensions:skaro_sand"
+    "dwdimensions:skaro_sand",
+    "dwdimensions:skaro_gravel",
+    "dwdimensions:skaro_packed_mud"
   ]
 
 }

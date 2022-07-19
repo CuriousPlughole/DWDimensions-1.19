@@ -36,12 +36,12 @@ public class DWDFlammableRotatedPillarBlock extends RotatedPillarBlock {
     public BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction toolAction, boolean simulate) {
 
         if(context.getItemInHand().getItem() instanceof AxeItem) {
-            if(state.is(DWDBlocks.PETRIFIED_LOG.get())) {
+            if(state.is(DWDBlocks.PETRIFIED_LOG.get()) || state.is(DWDBlocks.PETRIFIED_JUNGLE_LOG.get())) {
                 return DWDBlocks.STRIPPED_PETRIFIED_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             }
         }
         if(context.getItemInHand().getItem() instanceof AxeItem) {
-            if(state.is(DWDBlocks.PETRIFIED_WOOD.get())) {
+            if(state.is(DWDBlocks.PETRIFIED_WOOD.get()) || state.is(DWDBlocks.PETRIFIED_JUNGLE_WOOD.get())) {
                 return DWDBlocks.STRIPPED_PETRIFIED_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             }
         }
