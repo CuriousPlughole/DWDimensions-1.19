@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "dwdimensions:block/stripped_petrified_jungle_log",
+    "side": "dwdimensions:block/stripped_petrified_jungle_log"
+  }
+}

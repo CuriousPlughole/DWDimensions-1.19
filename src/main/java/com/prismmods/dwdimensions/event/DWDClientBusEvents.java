@@ -11,6 +11,7 @@ import com.prismmods.dwdimensions.client.renders.blockentities.TardisRenderer;
 import com.prismmods.dwdimensions.client.renders.entity.HandmineRender;
 import com.prismmods.dwdimensions.common.block.DWDBlocks;
 import com.prismmods.dwdimensions.common.blockentities.DWDBlockEntities;
+import com.prismmods.dwdimensions.common.blockentities.sign.DWDWoodTypes;
 import com.prismmods.dwdimensions.common.entity.DWDEntityTypes;
 import com.prismmods.dwdimensions.common.fluid.DWDFluids;
 import com.prismmods.dwdimensions.util.DWDColorManager;
@@ -19,9 +20,12 @@ import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.GrassColor;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -76,6 +80,12 @@ public class DWDClientBusEvents {
         ItemBlockRenderTypes.setRenderLayer(DWDBlocks.POTTED_SKARO_PETRIFIED_FUNGUS.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(DWDBlocks.VARGA_BUSH.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(DWDBlocks.SKARO_GRASS.get(), RenderType.cutout());
+
+        ItemBlockRenderTypes.setRenderLayer(DWDBlocks.PETRIFIED_PLANK_DOOR.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(DWDBlocks.PETRIFIED_PLANK_TRAPDOOR.get(), RenderType.cutout());
+
+        WoodType.register(DWDWoodTypes.PETRIFIED);
+        BlockEntityRenderers.register(DWDBlockEntities.SIGN_BLOCK_ENTITIES.get(), SignRenderer::new);
 
         Stream.of(DWDFluids.RADIOACTIVE_WATER_FLUID, DWDFluids.RADIOACTIVE_WATER_FLOWING).map(RegistryObject::get)
                 .forEach(fluid -> ItemBlockRenderTypes.setRenderLayer(fluid, RenderType.translucent()));

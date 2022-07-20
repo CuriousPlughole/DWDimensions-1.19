@@ -8,6 +8,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.state.BlockState;
@@ -128,7 +129,10 @@ public class TardisBlockEntity extends BlockEntity implements BlockEntityTicker<
 
     @Override
     public void tick(Level level, BlockPos pos, BlockState state, TardisBlockEntity tardis) {
-
+        /*
+        if(level.getBlockState(pos.below()) == Blocks.AIR.defaultBlockState()) {
+            //Some flying animation perhaps
+        }*/
 
     }
 

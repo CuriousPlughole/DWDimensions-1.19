@@ -51,6 +51,21 @@ public class DWDItemModelProvider extends ItemModelProvider {
         blockItemModel(DWDBlocks.SKARO_PACKED_MUD);
         blockItemModel(DWDBlocks.SKARO_QUICKSAND);
         blockItemModel(DWDBlocks.SKARO_GRAVEL);
+        blockItemModel(DWDBlocks.SKARO_HIGHLANDS_STONE);
+        blockItemModel(DWDBlocks.SKARO_HIGHLANDS_COBBLESTONE);
+        blockItemModel(DWDBlocks.STRIPPED_PETRIFIED_JUNGLE_WOOD);
+        blockItemModel(DWDBlocks.STRIPPED_PETRIFIED_JUNGLE_LOG);
+        blockItemModel(DWDBlocks.PETRIFIED_JUNGLE_PLANKS);
+        blockItemModel(DWDBlocks.PETRIFIED_PLANK_STAIRS);
+        blockItemModel(DWDBlocks.PETRIFIED_PLANK_SLAB);
+        blockItemModel(DWDBlocks.PETRIFIED_PLANK_FENCE_GATE);
+        blockItemModel(DWDBlocks.PETRIFIED_PLANK_PRESSURE_PLATE);
+
+        specialInventoryModel(DWDBlocks.PETRIFIED_PLANK_BUTTON);
+        flatItemfromBlock(DWDBlocks.PETRIFIED_PLANK_DOOR);
+        trapdoorInventoryModel(DWDBlocks.PETRIFIED_PLANK_TRAPDOOR);
+        specialInventoryModel(DWDBlocks.PETRIFIED_PLANK_FENCE);
+        simpleItem(DWDItems.PETRIFIED_PLANK_SIGN);
 
         plantItem(DWDBlocks.SKARO_PETRIFIED_FLOWER_1);
         plantItem(DWDBlocks.SKARO_PETRIFIED_FLOWER_2);
@@ -91,6 +106,12 @@ public class DWDItemModelProvider extends ItemModelProvider {
                 new ResourceLocation(DWDimensions.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath()));
     }
 
+    private ItemModelBuilder flatItemfromBlock(RegistryObject<Block> block) {
+        return withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(DWDimensions.MOD_ID, "item/" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath()));
+    }
+
     private ItemModelBuilder blockItemModel(RegistryObject<Block> block) {
         try {
             return withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(),
@@ -100,6 +121,26 @@ public class DWDItemModelProvider extends ItemModelProvider {
             return null;
         }
 
+    }
+
+    private ItemModelBuilder specialInventoryModel(RegistryObject<Block> block) {
+        try {
+            return withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(),
+                    new ResourceLocation(DWDimensions.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath()+"_inventory"));
+        } catch(Exception e) {
+            System.out.println("**** Attention required for item model: "+ ForgeRegistries.BLOCKS.getKey(block.get()).getPath());
+            return null;
+        }
+    }
+
+    private ItemModelBuilder trapdoorInventoryModel(RegistryObject<Block> block) {
+        try {
+            return withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(),
+                    new ResourceLocation(DWDimensions.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath()+"_bottom"));
+        } catch(Exception e) {
+            System.out.println("**** Attention required for item model: "+ ForgeRegistries.BLOCKS.getKey(block.get()).getPath());
+            return null;
+        }
     }
 
 

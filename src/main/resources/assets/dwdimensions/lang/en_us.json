@@ -42,5 +42,10 @@
     "block.dwdimensions.skaro_mud" : "Skaro Mud",
     "block.dwdimensions.skaro_packed_mud" : "Skaro Packed Mud",
     "block.dwdimensions.skaro_quicksand" : "Skaro Quicksand",
+    "block.dwdimensions.skaro_highlands_stone" : "Skaro Highlands Stone",
+    "block.dwdimensions.skaro_highlands_cobblestone" : "Skaro Highlands Cobblestone",
+    "block.dwdimensions.petrified_jungle_planks" : "Petrified Jungle Planks",
+    "block.dwdimensions.stripped_petrified_jungle_log" : "Stripped Petrified Jungle Log",
+    "block.dwdimensions.stripped_petrified_jungle_wood" : "Stripped Petrified Jungle Wood",
     "block.dwdimensions.tardis" : "TARDIS (Decorational for now)"
 }

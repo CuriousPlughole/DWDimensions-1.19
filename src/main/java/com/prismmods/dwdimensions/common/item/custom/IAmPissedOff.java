@@ -18,7 +18,7 @@ public class IAmPissedOff extends Item {
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         PrimedTnt tnt = new PrimedTnt(level, player.xo, player.yo, player.zo, player);
         Vec3 lookAt = player.getLookAngle();
-        tnt.setDeltaMovement(lookAt.multiply(10,10,10));
+        tnt.setDeltaMovement(lookAt.multiply(5,5,5));
         tnt.setFuse(30);
 
         level.addFreshEntity(tnt);

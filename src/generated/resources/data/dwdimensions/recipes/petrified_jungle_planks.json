@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "dwdimensions:petrified_jungle_logs"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "dwdimensions:petrified_jungle_planks"
+  }
+}

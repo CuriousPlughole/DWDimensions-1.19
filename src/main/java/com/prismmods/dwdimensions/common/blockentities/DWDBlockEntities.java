@@ -2,6 +2,7 @@ package com.prismmods.dwdimensions.common.blockentities;
 
 import com.prismmods.dwdimensions.DWDimensions;
 import com.prismmods.dwdimensions.common.block.DWDBlocks;
+import com.prismmods.dwdimensions.common.blockentities.sign.DWDSignBlockEntity;
 import com.prismmods.dwdimensions.common.blockentities.tardis.TardisBlockEntity;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -18,11 +19,16 @@ public class DWDBlockEntities {
     public static final RegistryObject<BlockEntityType<TardisBlockEntity>> TARDIS = BLOCK_ENTITIES.register("tardis",
             () -> registerBlockEntity(TardisBlockEntity::new, DWDBlocks.TARDIS.get()));
 
+    public static final RegistryObject<BlockEntityType<DWDSignBlockEntity>> SIGN_BLOCK_ENTITIES = BLOCK_ENTITIES.register("sign_block_entity",
+            () -> BlockEntityType.Builder.of(DWDSignBlockEntity::new, DWDBlocks.PETRIFIED_PLANK_WALL_SIGN.get(), DWDBlocks.PETRIFIED_PLANK_SIGN.get()).build(null));
+
+
+    /*
+    REGISTRY
+     */
     private static <T extends BlockEntity> BlockEntityType<T> registerBlockEntity(BlockEntityType.BlockEntitySupplier<T> blockEntity, Block validBlock) {
         return BlockEntityType.Builder.of(blockEntity, validBlock).build(null);
-
     }
-
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

@@ -37,6 +37,7 @@ public class DWDBlockLootTables extends BlockLoot {
         this.dropSelf(DWDBlocks.PETRIFIED_JUNGLE_WOOD.get());
         this.dropSelf(DWDBlocks.PETRIFIED_WOOD.get());
         this.dropSelf(DWDBlocks.PETRIFIED_PLANKS.get());
+        this.dropSelf(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get());
         this.dropSelf(DWDBlocks.PETRIFIED_SAPLING.get());
         this.dropSelf(DWDBlocks.PETRIFIED_JUNGLE_SAPLING.get());
         this.dropSelf(DWDBlocks.SKARO_DIRT.get());
@@ -47,6 +48,18 @@ public class DWDBlockLootTables extends BlockLoot {
         this.dropSelf(DWDBlocks.SKARO_PACKED_MUD.get());
         this.dropSelf(DWDBlocks.SKARO_GRAVEL.get());
         this.dropSelf(DWDBlocks.SKARO_QUICKSAND.get());
+        this.dropSelf(DWDBlocks.SKARO_HIGHLANDS_STONE.get());
+        this.dropSelf(DWDBlocks.SKARO_HIGHLANDS_COBBLESTONE.get());
+        this.dropSelf(DWDBlocks.STRIPPED_PETRIFIED_JUNGLE_WOOD.get());
+        this.dropSelf(DWDBlocks.STRIPPED_PETRIFIED_JUNGLE_LOG.get());
+        this.dropSelf(DWDBlocks.PETRIFIED_PLANK_STAIRS.get());
+        this.dropSelf(DWDBlocks.PETRIFIED_PLANK_SLAB.get());
+        this.dropSelf(DWDBlocks.PETRIFIED_PLANK_FENCE.get());
+        this.dropSelf(DWDBlocks.PETRIFIED_PLANK_FENCE_GATE.get());
+        this.dropSelf(DWDBlocks.PETRIFIED_PLANK_BUTTON.get());
+        this.dropSelf(DWDBlocks.PETRIFIED_PLANK_PRESSURE_PLATE.get());
+        this.dropSelf(DWDBlocks.PETRIFIED_PLANK_DOOR.get());
+        this.dropSelf(DWDBlocks.PETRIFIED_PLANK_TRAPDOOR.get());
 
         this.dropSelf(DWDBlocks.SKARO_PETRIFIED_FLOWER_1.get());
         this.dropSelf(DWDBlocks.SKARO_PETRIFIED_FLOWER_2.get());
@@ -66,6 +79,8 @@ public class DWDBlockLootTables extends BlockLoot {
         this.add(DWDBlocks.SKARO_BUSH.get(), (block) -> createShearsDispatchTable(block, applyExplosionDecay(block, LootItem.lootTableItem(Items.STICK).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F))))));
         this.add(DWDBlocks.VARGA_BUSH.get(), (block) -> applyExplosionDecay(block, LootTable.lootTable().withPool(LootPool.lootPool().when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(DWDBlocks.VARGA_BUSH.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(VargaPlant.AGE, 3))).add(LootItem.lootTableItem(DWDItems.VARGA_BERRIES.get())).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F))).apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE))).withPool(LootPool.lootPool().when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(DWDBlocks.VARGA_BUSH.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(VargaPlant.AGE, 2))).add(LootItem.lootTableItem(DWDItems.VARGA_BERRIES.get())).apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))).apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))));
         this.add(DWDBlocks.SKARO_STONE.get(), (block) -> createSingleItemTableWithSilkTouch(block, DWDBlocks.SKARO_COBBLESTONE.get()));
+        this.add(DWDBlocks.PETRIFIED_PLANK_SIGN.get(), (block) -> createSingleItemTable(DWDItems.PETRIFIED_PLANK_SIGN.get()));
+        this.add(DWDBlocks.PETRIFIED_PLANK_WALL_SIGN.get(), (block) -> createSingleItemTable(DWDItems.PETRIFIED_PLANK_SIGN.get()));
 
     }
 

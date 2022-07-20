@@ -6,6 +6,8 @@ import com.prismmods.dwdimensions.common.block.custom.HandmineTrapBlock;
 import com.prismmods.dwdimensions.common.block.custom.TardisBlock;
 import com.prismmods.dwdimensions.common.block.custom.VargaPlant;
 import com.prismmods.dwdimensions.common.block.custom.generic.*;
+import com.prismmods.dwdimensions.common.block.custom.generic.flammable.*;
+import com.prismmods.dwdimensions.common.blockentities.sign.DWDWoodTypes;
 import com.prismmods.dwdimensions.common.item.DWDItems;
 import com.prismmods.dwdimensions.world.feature.tree.PetrifiedTreeGrower;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -55,10 +57,38 @@ public class DWDBlocks {
             () -> new DWDFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> PETRIFIED_PLANKS = registerBlock("petrified_planks",
             () -> new DWDBasicFlammableBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> PETRIFIED_JUNGLE_PLANKS = registerBlock("petrified_jungle_planks",
+            () -> new DWDBasicFlammableBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> PETRIFIED_JUNGLE_LOG = registerBlock("petrified_jungle_log",
+            () -> new DWDFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> STRIPPED_PETRIFIED_JUNGLE_LOG = registerBlock("stripped_petrified_jungle_log",
             () -> new DWDFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> PETRIFIED_JUNGLE_WOOD = registerBlock("petrified_jungle_wood",
             () -> new DWDFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> STRIPPED_PETRIFIED_JUNGLE_WOOD = registerBlock("stripped_petrified_jungle_wood",
+            () -> new DWDFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), DWDCreativeTabs.DWDSkaro);
+    //Wood shaped blocks [Stair, slab, fence, fence gate, trapdoor, door, button, pressure plate, sign] {boat - item/entity}
+    public static final RegistryObject<Block> PETRIFIED_PLANK_STAIRS = registerBlock("petrified_plank_stairs",
+            () -> new DWDFlammableStairBlock(()-> PETRIFIED_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> PETRIFIED_PLANK_SLAB = registerBlock("petrified_plank_slab",
+            () -> new DWDFlammableSlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> PETRIFIED_PLANK_FENCE = registerBlock("petrified_plank_fence",
+            () -> new DWDFlammableFenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> PETRIFIED_PLANK_FENCE_GATE = registerBlock("petrified_plank_fence_gate",
+            () -> new DWDFlammableFenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> PETRIFIED_PLANK_TRAPDOOR = registerBlock("petrified_plank_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).noOcclusion()), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> PETRIFIED_PLANK_DOOR = registerBlock("petrified_plank_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).noOcclusion()), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> PETRIFIED_PLANK_BUTTON = registerBlock("petrified_plank_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).noCollission()), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> PETRIFIED_PLANK_PRESSURE_PLATE = registerBlock("petrified_plank_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING ,BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> PETRIFIED_PLANK_WALL_SIGN = registerBlockWithoutItem("petrified_plank_wall_sign",
+            () -> new DWDWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), DWDWoodTypes.PETRIFIED));
+    public static final RegistryObject<Block> PETRIFIED_PLANK_SIGN = registerBlockWithoutItem("petrified_plank_sign",
+            () -> new DWDStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), DWDWoodTypes.PETRIFIED));
+
     //Vegetation
     public static final RegistryObject<Block> PETRIFIED_LEAVES = registerBlock("petrified_leaves", () -> new DWDLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> PETRIFIED_JUNGLE_LEAVES = registerBlock("petrified_jungle_leaves", () -> new DWDLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), DWDCreativeTabs.DWDSkaro);
@@ -99,6 +129,10 @@ public class DWDBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.PACKED_MUD)), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> SKARO_QUICKSAND = registerBlock("skaro_quicksand",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.SAND)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> SKARO_HIGHLANDS_STONE = registerBlock("skaro_highlands_stone",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> SKARO_HIGHLANDS_COBBLESTONE = registerBlock("skaro_highlands_cobblestone",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)), DWDCreativeTabs.DWDSkaro);
 
     /*
     REGISTRY METHODS

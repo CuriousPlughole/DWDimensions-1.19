@@ -91,7 +91,7 @@ public class HandmineTrapBlock extends Block {
             level.playSound((Player)entity, pos, SoundEvents.SPIDER_STEP, SoundSource.BLOCKS, 0.7f, 1.0f);
 
             //trap activated so just change to dirt
-            level.setBlock(pos, DWDBlocks.SKARO_DIRT.get().defaultBlockState(), 3);
+            level.setBlock(pos, DWDBlocks.SKARO_MUD.get().defaultBlockState(), 3);
         }
         super.stepOn(level, pos, state, entity);
     }

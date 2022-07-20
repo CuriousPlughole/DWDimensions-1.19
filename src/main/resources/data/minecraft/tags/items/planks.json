@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "dwdimensions:petrified_planks"
+    "dwdimensions:petrified_planks",
+    "dwdimensions:petrified_jungle_planks"
   ]
 }

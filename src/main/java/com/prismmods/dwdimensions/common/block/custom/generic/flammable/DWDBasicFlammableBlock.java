@@ -1,4 +1,4 @@
-package com.prismmods.dwdimensions.common.block.custom.generic;
+package com.prismmods.dwdimensions.common.block.custom.generic.flammable;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

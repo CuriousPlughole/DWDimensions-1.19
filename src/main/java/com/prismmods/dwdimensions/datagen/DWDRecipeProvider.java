@@ -32,10 +32,21 @@ public class DWDRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pFinishedRecipeConsumer);*/
 
         RecipeProvider.planksFromLogs(pFinishedRecipeConsumer, DWDBlocks.PETRIFIED_PLANKS.get(), DWDTags.Items.PETRIFIED_LOGS);
+        RecipeProvider.planksFromLogs(pFinishedRecipeConsumer, DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get(), DWDTags.Items.PETRIFIED_JUNGLE_LOGS);
         RecipeProvider.woodFromLogs(pFinishedRecipeConsumer, DWDBlocks.PETRIFIED_WOOD.get(), DWDBlocks.PETRIFIED_LOG.get());
         RecipeProvider.woodFromLogs(pFinishedRecipeConsumer, DWDBlocks.STRIPPED_PETRIFIED_WOOD.get(), DWDBlocks.STRIPPED_PETRIFIED_LOG.get());
         RecipeProvider.woodFromLogs(pFinishedRecipeConsumer, DWDBlocks.PETRIFIED_JUNGLE_WOOD.get(), DWDBlocks.PETRIFIED_JUNGLE_LOG.get());
+        RecipeProvider.woodFromLogs(pFinishedRecipeConsumer, DWDBlocks.STRIPPED_PETRIFIED_JUNGLE_WOOD.get(), DWDBlocks.STRIPPED_PETRIFIED_JUNGLE_LOG.get());
 
+        RecipeProvider.slabBuilder(DWDBlocks.PETRIFIED_PLANK_SLAB.get(), Ingredient.of(DWDBlocks.PETRIFIED_PLANKS.get().asItem()));
+        RecipeProvider.stairBuilder(DWDBlocks.PETRIFIED_PLANK_STAIRS.get(), Ingredient.of(DWDBlocks.PETRIFIED_PLANKS.get().asItem()));
+        RecipeProvider.fenceBuilder(DWDBlocks.PETRIFIED_PLANK_FENCE.get(), Ingredient.of(DWDBlocks.PETRIFIED_PLANKS.get().asItem()));
+        RecipeProvider.fenceGateBuilder(DWDBlocks.PETRIFIED_PLANK_FENCE_GATE.get(), Ingredient.of(DWDBlocks.PETRIFIED_PLANKS.get().asItem()));
+        RecipeProvider.buttonBuilder(DWDBlocks.PETRIFIED_PLANK_BUTTON.get(), Ingredient.of(DWDBlocks.PETRIFIED_PLANKS.get().asItem()));
+        RecipeProvider.pressurePlateBuilder(DWDBlocks.PETRIFIED_PLANK_PRESSURE_PLATE.get(), Ingredient.of(DWDBlocks.PETRIFIED_PLANKS.get().asItem()));
+        RecipeProvider.doorBuilder(DWDBlocks.PETRIFIED_PLANK_DOOR.get(), Ingredient.of(DWDBlocks.PETRIFIED_PLANKS.get().asItem()));
+        RecipeProvider.trapdoorBuilder(DWDBlocks.PETRIFIED_PLANK_TRAPDOOR.get(), Ingredient.of(DWDBlocks.PETRIFIED_PLANKS.get().asItem()));
+        RecipeProvider.signBuilder(DWDItems.PETRIFIED_PLANK_SIGN.get(), Ingredient.of(DWDBlocks.PETRIFIED_PLANKS.get().asItem()));
 
         //Parameters: item to smelt, result, experience gained, cooking time.
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(DWDBlocks.ZEITON_ORE.get().asItem()), DWDItems.ZEITON_7.get(), 0.1F, 200)
