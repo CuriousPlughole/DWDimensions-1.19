@@ -10,9 +10,10 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = DWDimensions.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DWDEventBusEvents {
 
+    /*
     @SubscribeEvent
     public void entityAttributeEvent(EntityAttributeCreationEvent event) {
         event.put(DWDEntityTypes.HANDMINE.get(), HandmineEntity.createAttributes());
-    }
+    }*/
 
 }

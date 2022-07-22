@@ -26,12 +26,12 @@
       }
     ]
   },
-  "entity.player.click": {
+  "entity.player.snap": {
     "category": "master",
-    "subtitle": "entity.player.click",
+    "subtitle": "entity.player.snap",
     "sounds": [
       {
-        "name": "dwdimensions:entity/player/click"
+        "name": "dwdimensions:entity/player/snap"
       }
     ]
   },

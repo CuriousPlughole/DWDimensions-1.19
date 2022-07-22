@@ -8,14 +8,18 @@ import com.prismmods.dwdimensions.client.models.blockentity.tardis.TardisWhittak
 import com.prismmods.dwdimensions.client.models.entity.HandmineLeftModel;
 import com.prismmods.dwdimensions.client.models.entity.HandmineRightModel;
 import com.prismmods.dwdimensions.client.renders.blockentities.TardisRenderer;
+import com.prismmods.dwdimensions.client.renders.entity.FallingTardisRenderer;
 import com.prismmods.dwdimensions.client.renders.entity.HandmineRender;
 import com.prismmods.dwdimensions.common.block.DWDBlocks;
 import com.prismmods.dwdimensions.common.blockentities.DWDBlockEntities;
 import com.prismmods.dwdimensions.common.blockentities.sign.DWDWoodTypes;
 import com.prismmods.dwdimensions.common.entity.DWDEntityTypes;
 import com.prismmods.dwdimensions.common.fluid.DWDFluids;
+import com.prismmods.dwdimensions.util.ClientUtil;
 import com.prismmods.dwdimensions.util.DWDColorManager;
 import com.prismmods.dwdimensions.util.GrassColorChanger;
+import com.prismmods.dwdimensions.util.KeyboardHelper;
+import net.minecraft.client.KeyMapping;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -30,7 +34,9 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
+import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.client.extensions.common.IClientFluidTypeExtensions;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -56,10 +62,12 @@ public class DWDClientBusEvents {
         event.registerLayerDefinition(DWDModelLayers.TARDIS_TENNANT_ECCLESTON, TardisTennantEcclestonModel::createBodyLayer);
     }
 
+    //FIXME: Need to remove the .setRenderLayer. Instead add "render_type": "cutout" etc. to the json block model. -> Datagen
     @SubscribeEvent
     public static void clientSetup(final FMLClientSetupEvent event) {
 
         EntityRenderers.register(DWDEntityTypes.HANDMINE.get(), HandmineRender::new);
+        EntityRenderers.register(DWDEntityTypes.FALLING_TARDIS.get(), FallingTardisRenderer::new);
 
         ItemBlockRenderTypes.setRenderLayer(DWDBlocks.PETRIFIED_LEAVES.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(DWDBlocks.PETRIFIED_JUNGLE_LEAVES.get(), RenderType.cutout());
@@ -114,6 +122,11 @@ public class DWDClientBusEvents {
     @SubscribeEvent
     public void pleaseWork(RegisterColorHandlersEvent.Block event) {
         DWDColorManager.onBlockColorsInit(event.getBlockColors());
+    }
+
+    @SubscribeEvent
+    public static void registerKeyBinds(RegisterKeyMappingsEvent event) {
+        event.register(KeyboardHelper.tardisDoor);
     }
 
 }

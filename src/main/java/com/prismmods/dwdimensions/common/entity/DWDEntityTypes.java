@@ -1,6 +1,7 @@
 package com.prismmods.dwdimensions.common.entity;
 
 import com.prismmods.dwdimensions.DWDimensions;
+import com.prismmods.dwdimensions.common.entity.custom.FallingTardisEntity;
 import com.prismmods.dwdimensions.common.entity.custom.HandmineEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -16,6 +17,10 @@ public class DWDEntityTypes {
 
     public static final RegistryObject<EntityType<HandmineEntity>> HANDMINE = ENTITY_TYPES.register("handmine",
             () -> EntityType.Builder.of(HandmineEntity::new, MobCategory.MONSTER).sized(0.3f, 0.3f).build(new ResourceLocation(DWDimensions.MOD_ID, "handmine").toString()));
+
+    public static final RegistryObject<EntityType<FallingTardisEntity>> FALLING_TARDIS = ENTITY_TYPES.register("falling_tardis",
+            () -> EntityType.Builder.of(FallingTardisEntity::new, MobCategory.MISC).sized(0.3f, 0.3f).build(new ResourceLocation(DWDimensions.MOD_ID, "falling_tardis").toString()));
+
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

@@ -3,6 +3,7 @@ package com.prismmods.dwdimensions.common.block.custom;
 import com.prismmods.dwdimensions.common.blockentities.tardis.Chameleon;
 import com.prismmods.dwdimensions.common.blockentities.tardis.DoorStatus;
 import com.prismmods.dwdimensions.common.blockentities.tardis.TardisBlockEntity;
+import com.prismmods.dwdimensions.common.entity.custom.FallingTardisEntity;
 import com.prismmods.dwdimensions.common.item.DWDItems;
 import com.prismmods.dwdimensions.common.item.custom.StattenheimRemoteItem;
 import com.prismmods.dwdimensions.common.sound.DWDSounds;
@@ -12,8 +13,10 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
@@ -35,7 +38,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-public class TardisBlock extends BaseEntityBlock{
+public class TardisBlock extends BaseEntityBlock implements Fallable{
 
     public static final BooleanProperty LIT = BlockStateProperties.LIT;
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
@@ -167,5 +170,27 @@ public class TardisBlock extends BaseEntityBlock{
                 tardisBlockEntity.tick(level, blockPos, blockState, tardisBlockEntity);
             }
         };
+    }
+
+    //TODO: mess with these values for damage
+    protected void falling(FallingTardisEntity fallingBlockEntity) {
+        fallingBlockEntity.setHurtsEntities(2.0F, 40);
+    }
+
+    //TODO: make custom damage source for falling tardis
+    public DamageSource getFallDamageSource() {
+        return DamageSource.ANVIL;
+    }
+
+    public static void onLand(Level level, BlockPos pos, BlockState state, BlockState state1, FallingTardisEntity entity) {
+        BlockEntity newBlockEntityNeedsData = level.getBlockEntity(pos);
+        if(newBlockEntityNeedsData instanceof TardisBlockEntity) {
+            TardisBlockEntity tardisBlockEntity = (TardisBlockEntity) newBlockEntityNeedsData;
+            tardisBlockEntity.setDoorState(DoorStatus.getDoorStatusValue(entity.getDoorState()));
+            tardisBlockEntity.setChameleon(Chameleon.getChameleonValue(entity.getChameleon()));
+            tardisBlockEntity.setLightState(entity.getLights());
+            tardisBlockEntity.setChanged();
+        }
+        System.out.println("Falling Tardis Landed!");
     }
 }

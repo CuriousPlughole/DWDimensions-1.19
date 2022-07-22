@@ -2,16 +2,23 @@ package com.prismmods.dwdimensions.common.blockentities.tardis;
 
 import com.prismmods.dwdimensions.common.block.custom.TardisBlock;
 import com.prismmods.dwdimensions.common.blockentities.DWDBlockEntities;
+import com.prismmods.dwdimensions.common.entity.custom.FallingTardisEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.BlockParticleOption;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.Material;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.LinkedList;
@@ -66,6 +73,8 @@ public class TardisBlockEntity extends BlockEntity implements BlockEntityTicker<
     public float getRotationInDeg() {
         return rotationInDeg;
     }
+
+    public int getTardisID() {return tardisID;}
 
     public boolean getLightState() {
         return lightsOn;
@@ -133,7 +142,23 @@ public class TardisBlockEntity extends BlockEntity implements BlockEntityTicker<
         if(level.getBlockState(pos.below()) == Blocks.AIR.defaultBlockState()) {
             //Some flying animation perhaps
         }*/
-
+        if (isFree(level.getBlockState(pos.below())) && pos.getY() >= level.getMinBuildHeight()) {
+            FallingTardisEntity fallingblockentity = FallingTardisEntity.fall(level, pos, state);
+            this.falling(fallingblockentity);
+        }
     }
+
+    protected void falling(FallingTardisEntity p_53206_) {
+    }
+
+    protected int getDelayAfterPlace() {
+        return 2;
+    }
+
+    public static boolean isFree(BlockState state) {
+        Material material = state.getMaterial();
+        return state.isAir() || state.is(BlockTags.FIRE) || material.isLiquid() || material.isReplaceable();
+    }
+
 
 }

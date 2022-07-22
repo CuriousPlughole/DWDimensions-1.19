@@ -18,10 +18,11 @@ public class DWDSounds {
     public static final RegistryObject<SoundEvent> TARDIS_DOOR_CLOSE_SQUEAKY = registerSoundEvent("block.tardis.door_close_squeaky");
     public static final RegistryObject<SoundEvent> TARDIS_DOOR_CLOSE = registerSoundEvent("block.tardis.door_close");
 
+    public static final RegistryObject<SoundEvent> FINGER_SNAP = registerSoundEvent("entity.player.snap");
+
     private static RegistryObject<SoundEvent> registerSoundEvent(String name) {
         return SOUND_EVENTS.register(name, () -> new SoundEvent(new ResourceLocation(DWDimensions.MOD_ID, name)));
     }
-
     public static void register(IEventBus eventBus) {
         SOUND_EVENTS.register(eventBus);
     }

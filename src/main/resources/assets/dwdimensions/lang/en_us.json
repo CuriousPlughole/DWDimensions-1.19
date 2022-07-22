@@ -47,5 +47,7 @@
     "block.dwdimensions.petrified_jungle_planks" : "Petrified Jungle Planks",
     "block.dwdimensions.stripped_petrified_jungle_log" : "Stripped Petrified Jungle Log",
     "block.dwdimensions.stripped_petrified_jungle_wood" : "Stripped Petrified Jungle Wood",
-    "block.dwdimensions.tardis" : "TARDIS (Decorational for now)"
+    "block.dwdimensions.tardis" : "TARDIS (Decorational for now)",
+    "key.categories.dwdimensions": "DWDimensions",
+    "key.dwdimensions.tardis_door": "Tardis Door"
 }

@@ -5,9 +5,11 @@ import com.prismmods.dwdimensions.common.block.DWDBlocks;
 import com.prismmods.dwdimensions.common.blockentities.DWDBlockEntities;
 import com.prismmods.dwdimensions.common.blockentities.sign.DWDWoodTypes;
 import com.prismmods.dwdimensions.common.entity.DWDEntityTypes;
+import com.prismmods.dwdimensions.common.entity.custom.HandmineEntity;
 import com.prismmods.dwdimensions.common.fluid.DWDFluids;
 import com.prismmods.dwdimensions.common.item.DWDItems;
 import com.prismmods.dwdimensions.common.sound.DWDSounds;
+import com.prismmods.dwdimensions.network.Network;
 import com.prismmods.dwdimensions.world.dimension.DWDDimensionReg;
 import com.prismmods.dwdimensions.world.feature.DWDPlacedFeatures;
 import net.minecraft.client.renderer.Sheets;
@@ -15,18 +17,20 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fluids.FluidInteractionRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 
 @Mod(DWDimensions.MOD_ID)
 public class DWDimensions {
     public static final String MOD_ID = "dwdimensions";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public DWDimensions() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -37,16 +41,19 @@ public class DWDimensions {
         DWDEntityTypes.register(modEventBus);
         DWDBlockEntities.register(modEventBus);
         DWDFluids.register(modEventBus);
-
         DWDPlacedFeatures.register(modEventBus);
         DWDDimensionReg.register();
 
         modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(this::onAttributeAssign);
         MinecraftForge.EVENT_BUS.register(this);
 
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event) {
+    private void commonSetup(final @NotNull FMLCommonSetupEvent event) {
+
+        Network.registerMessages();
+
         //Lava onto radioactive water
         FluidInteractionRegistry.addInteraction(DWDFluids.RADIOACTIVE_WATER_TYPE.get(),
                 new FluidInteractionRegistry.InteractionInformation(ForgeMod.LAVA_TYPE.get(), Blocks.STONE.defaultBlockState()));
@@ -63,12 +70,14 @@ public class DWDimensions {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(DWDBlocks.SKARO_PETRIFIED_FLOWER_1.getId(), DWDBlocks.POTTED_SKARO_PETRIFIED_FLOWER_1);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(DWDBlocks.SKARO_PETRIFIED_FLOWER_2.getId(), DWDBlocks.POTTED_SKARO_PETRIFIED_FLOWER_2);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(DWDBlocks.SKARO_PETRIFIED_FUNGUS.getId(), DWDBlocks.POTTED_SKARO_PETRIFIED_FUNGUS);
-            ForgeRegistries.FLUIDS.forEach(fluid ->
-                    LOGGER.info("Fluid {} has FluidType {}", ForgeRegistries.FLUIDS.getKey(fluid), ForgeRegistries.FLUID_TYPES.get().getKey(fluid.getFluidType())));
 
             Sheets.addWoodType(DWDWoodTypes.PETRIFIED);
 
         });
-
     }
+
+    public void onAttributeAssign(EntityAttributeCreationEvent event) {
+        event.put(DWDEntityTypes.HANDMINE.get(), HandmineEntity.createAttributes());
+    }
+
 }
