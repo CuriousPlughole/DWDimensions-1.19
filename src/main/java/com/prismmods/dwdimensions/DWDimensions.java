@@ -10,6 +10,7 @@ import com.prismmods.dwdimensions.common.fluid.DWDFluids;
 import com.prismmods.dwdimensions.common.item.DWDItems;
 import com.prismmods.dwdimensions.common.sound.DWDSounds;
 import com.prismmods.dwdimensions.network.Network;
+import com.prismmods.dwdimensions.world.biomes.DWDBiomes;
 import com.prismmods.dwdimensions.world.dimension.DWDDimensionReg;
 import com.prismmods.dwdimensions.world.feature.DWDPlacedFeatures;
 import net.minecraft.client.renderer.Sheets;
@@ -42,7 +43,12 @@ public class DWDimensions {
         DWDBlockEntities.register(modEventBus);
         DWDFluids.register(modEventBus);
         DWDPlacedFeatures.register(modEventBus);
+
+        DWDBiomes.BIOMES.register(modEventBus);
+
         DWDDimensionReg.register();
+
+
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::onAttributeAssign);
@@ -70,8 +76,9 @@ public class DWDimensions {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(DWDBlocks.SKARO_PETRIFIED_FLOWER_1.getId(), DWDBlocks.POTTED_SKARO_PETRIFIED_FLOWER_1);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(DWDBlocks.SKARO_PETRIFIED_FLOWER_2.getId(), DWDBlocks.POTTED_SKARO_PETRIFIED_FLOWER_2);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(DWDBlocks.SKARO_PETRIFIED_FUNGUS.getId(), DWDBlocks.POTTED_SKARO_PETRIFIED_FUNGUS);
-
             Sheets.addWoodType(DWDWoodTypes.PETRIFIED);
+
+            DWDBiomes.registerBiomeKeys();
 
         });
     }

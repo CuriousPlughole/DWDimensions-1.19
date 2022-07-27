@@ -107,39 +107,39 @@
       }
     ]
   },
-  "sonic.sonic_11_extend": {
+  "sonic.smith.extend": {
     "category": "ambient",
-    "subtitle": "sonic.sonic_11_extend",
+    "subtitle": "sonic.smith.extend",
     "sounds": [
       {
-        "name": "dwdimensions:sonic/sonic_11_extend"
+        "name": "dwdimensions:sonic/smith/extend"
       }
     ]
   },
-  "sonic.sonic_11_retract": {
+  "sonic.smith.retract": {
     "category": "ambient",
-    "subtitle": "sonic.sonic_11_retract",
+    "subtitle": "sonic.smith.retract",
     "sounds": [
       {
-        "name": "dwdimensions:sonic/sonic_11_retract"
+        "name": "dwdimensions:sonic/smith/retract"
       }
     ]
   },
-  "sonic.sonic_11_use_short": {
+  "sonic.smith.use_short": {
     "category": "ambient",
-    "subtitle": "sonic.sonic_11_use_short",
+    "subtitle": "sonic.smith.use_short",
     "sounds": [
       {
-        "name": "dwdimensions:sonic/sonic_11_use_short"
+        "name": "dwdimensions:sonic/smith/use_short"
       }
     ]
   },
-  "sonic.sonic_10_extend": {
+  "sonic.sonic.tennant.extend": {
     "category": "ambient",
-    "subtitle": "sonic.sonic_10_extend",
+    "subtitle": "sonic.sonic.tennant.extend",
     "sounds": [
       {
-        "name": "dwdimensions:sonic/sonic_10_extend"
+        "name": "dwdimensions:sonic/tennant/extend"
       }
     ]
   }

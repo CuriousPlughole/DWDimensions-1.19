@@ -20,6 +20,12 @@ public class DWDSounds {
 
     public static final RegistryObject<SoundEvent> FINGER_SNAP = registerSoundEvent("entity.player.snap");
 
+    public static final RegistryObject<SoundEvent> SONIC_11_EXTEND = registerSoundEvent("sonic.smith.extend");
+    public static final RegistryObject<SoundEvent> SONIC_11_RETRACT = registerSoundEvent("sonic.smith.retract");
+    public static final RegistryObject<SoundEvent> SONIC_11_USE_SHORT = registerSoundEvent("sonic.smith.use_short");
+    public static final RegistryObject<SoundEvent> SONIC_10_EXTEND = registerSoundEvent("sonic.tennant.extend");
+
+
     private static RegistryObject<SoundEvent> registerSoundEvent(String name) {
         return SOUND_EVENTS.register(name, () -> new SoundEvent(new ResourceLocation(DWDimensions.MOD_ID, name)));
     }

@@ -1,0 +1,35 @@
+{
+  "temperature": 0.4,
+  "downfall": 0.7,
+  "precipitation": "rain",
+  "effects": {
+    "sky_color": 10526626,
+    "fog_color": 12235968,
+    "water_color": 4159204,
+    "water_fog_color": 329011,
+    "grass_color": 6500914,
+    "foliage_color": 2172951,
+    "ambient_sound": "WIND",
+    "music": {
+      "sound": "CUSTOMMUSIC",
+      "min_delay": 0,
+      "max_delay": 0,
+      "replace_current_music": false
+    },
+    "particle": {
+      "options": {
+        "type": "minecraft:white_ash"
+      },
+      "probability": 0.2
+    }
+  },
+  "spawners": {},
+  "spawn_costs": {},
+  "carvers": {
+    "air": [
+      "minecraft:canyon",
+      "minecraft:cave"
+    ]
+  },
+  "features": []
+}
