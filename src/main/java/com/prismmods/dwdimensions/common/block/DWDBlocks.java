@@ -9,7 +9,8 @@ import com.prismmods.dwdimensions.common.block.custom.generic.*;
 import com.prismmods.dwdimensions.common.block.custom.generic.flammable.*;
 import com.prismmods.dwdimensions.common.blockentities.sign.DWDWoodTypes;
 import com.prismmods.dwdimensions.common.item.DWDItems;
-import com.prismmods.dwdimensions.world.feature.tree.PetrifiedTreeGrower;
+import com.prismmods.dwdimensions.world.feature.tree.grower.PetrifiedJungleTreeGrower;
+import com.prismmods.dwdimensions.world.feature.tree.grower.PetrifiedTreeGrower;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
@@ -42,7 +43,6 @@ public class DWDBlocks {
      */
 
     //TODO: Add some custom effects for petrified plants. Some blindness or something? Not all negative; maybe "adrenaline" -> gives haste/strength etc
-    //TODO: Need custom tree grower for petrified jungle tree
     //TODO: Make custom class for quicksand
     //TODO: Special block types (Fences, stairs, slabs, etc)
 
@@ -93,7 +93,7 @@ public class DWDBlocks {
     public static final RegistryObject<Block> PETRIFIED_LEAVES = registerBlock("petrified_leaves", () -> new DWDLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> PETRIFIED_JUNGLE_LEAVES = registerBlock("petrified_jungle_leaves", () -> new DWDLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> PETRIFIED_SAPLING = registerBlock("petrified_sapling", () -> new SaplingBlock(new PetrifiedTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), DWDCreativeTabs.DWDSkaro);
-    public static final RegistryObject<Block> PETRIFIED_JUNGLE_SAPLING = registerBlock("petrified_jungle_sapling", () -> new SaplingBlock(new PetrifiedTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> PETRIFIED_JUNGLE_SAPLING = registerBlock("petrified_jungle_sapling", () -> new SaplingBlock(new PetrifiedJungleTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> SKARO_BUSH = registerBlock("skaro_bush", () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> SKARO_SHRUB = registerBlock("skaro_shrub", () -> new DWDBushBlock(BlockBehaviour.Properties.copy(Blocks.GRASS), "large"), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> SKARO_SHRUB_SMALL = registerBlock("skaro_shrub_small", () -> new DWDBushBlock(BlockBehaviour.Properties.copy(Blocks.GRASS), "small"), DWDCreativeTabs.DWDSkaro);

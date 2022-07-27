@@ -1,6 +1,7 @@
 package com.prismmods.dwdimensions.world.feature;
 
 import com.prismmods.dwdimensions.DWDimensions;
+import com.prismmods.dwdimensions.world.feature.tree.DWDConfiguredTrees;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.VegetationFeatures;
@@ -21,8 +22,12 @@ public class DWDPlacedFeatures {
 
     //Placing the tree in the world
     public static final RegistryObject<PlacedFeature> PETRIFIED_PLACED = PLACED_FEATURES.register("petrified_placed",
-            () -> new PlacedFeature((Holder<ConfiguredFeature<?,?>>)(Holder<? extends ConfiguredFeature<?,?>>) DWDConfiguredFeatures.PETRIFIED_SPAWN,
+            () -> new PlacedFeature((Holder<ConfiguredFeature<?,?>>)(Holder<? extends ConfiguredFeature<?,?>>) DWDConfiguredTrees.PETRIFIED_SPAWN,
             VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2)))); //base number of spawns, chance to spawn:, x more
+
+    public static final RegistryObject<PlacedFeature> PETRIFIED_JUNGLE_PLACED = PLACED_FEATURES.register("petrified_jungle_placed",
+            () -> new PlacedFeature((Holder<ConfiguredFeature<?,?>>)(Holder<? extends ConfiguredFeature<?,?>>) DWDConfiguredTrees.PETRIFIED_JUNGLE_SPAWN,
+                    VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2)))); //base number of spawns, chance to spawn:, x more
 
     public static final RegistryObject<PlacedFeature> SKARO_GRASS_PATCH_PLACED = PLACED_FEATURES.register("skaro_patch_grass_placed",
             () -> new PlacedFeature((Holder<ConfiguredFeature<?,?>>)(Holder<? extends ConfiguredFeature<?,?>>) DWDConfiguredFeatures.NORMAL_PATCH_SKARO_GRASS,
