@@ -40,7 +40,6 @@ public class DWDItemModelProvider extends ItemModelProvider {
         blockItemModel(DWDBlocks.PETRIFIED_PLANKS);
         blockItemModel(DWDBlocks.PETRIFIED_WOOD);
         blockItemModel(DWDBlocks.SKARO_DIRT);
-        blockItemModel(DWDBlocks.SKARO_GRASS);
         blockItemModel(DWDBlocks.SKARO_SAND);
         blockItemModel(DWDBlocks.STRIPPED_PETRIFIED_WOOD);
         blockItemModel(DWDBlocks.STRIPPED_PETRIFIED_LOG);

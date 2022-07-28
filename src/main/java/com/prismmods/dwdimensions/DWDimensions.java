@@ -13,9 +13,12 @@ import com.prismmods.dwdimensions.network.Network;
 import com.prismmods.dwdimensions.world.biomes.DWDBiomes;
 import com.prismmods.dwdimensions.world.dimension.DWDDimensionReg;
 import com.prismmods.dwdimensions.world.feature.DWDPlacedFeatures;
+import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.Sheets;
+import net.minecraft.world.level.GrassColor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
@@ -52,6 +55,7 @@ public class DWDimensions {
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::onAttributeAssign);
+        modEventBus.addListener(this::testColor);
         MinecraftForge.EVENT_BUS.register(this);
 
     }
@@ -86,6 +90,13 @@ public class DWDimensions {
 
     public void onAttributeAssign(EntityAttributeCreationEvent event) {
         event.put(DWDEntityTypes.HANDMINE.get(), HandmineEntity.createAttributes());
+    }
+
+    public void testColor(RegisterColorHandlersEvent.Block event) {
+        System.out.println("I am going to kill you.");
+        event.register((state, worldIn, pos, tintIndex) -> worldIn != null && pos != null
+                ? BiomeColors.getAverageGrassColor(worldIn, pos)
+                : GrassColor.get(0.5D, 1.0D), DWDBlocks.SKARO_GRASS.get());
     }
 
 }

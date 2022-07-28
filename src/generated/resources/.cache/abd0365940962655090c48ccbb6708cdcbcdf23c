@@ -1,4 +1,4 @@
-// 1.19	2022-07-28T16:46:24.1015035	Item Models: dwdimensions
+// 1.19	2022-07-28T18:57:33.3124123	Item Models: dwdimensions
 36d2d9f04812a903f0debffa0974cce18b17ed9b assets/dwdimensions/models/item/deepslate_zeiton_ore.json
 b2eda8633affe6da1a262a35b08a9ba96aed9e51 assets/dwdimensions/models/item/handmine.json
 6d22ffeea87426a57f0603b0a13d24ed2c006b17 assets/dwdimensions/models/item/handmine_trap.json
@@ -39,7 +39,6 @@ c567572e7001d15d62cb708a36a233ab9be0a642 assets/dwdimensions/models/item/skaro_b
 309e9661cf19fffe549c256a84ca418989ed6b9b assets/dwdimensions/models/item/skaro_dead_shrub.json
 97dbd420b536c9ebb653b75aa04b77f15ceb8ca4 assets/dwdimensions/models/item/skaro_dead_shrub_small.json
 c54c50f7e4e16022835e05a55abd7c389a8052d1 assets/dwdimensions/models/item/skaro_dirt.json
-306cf5aea31f780fd26bddc2bdd45b4687976867 assets/dwdimensions/models/item/skaro_grass.json
 d66d4efc87732c5dc5e8db90fb8b3f702b45c180 assets/dwdimensions/models/item/skaro_gravel.json
 af99118d9e73d755a11a2e18e89da49a0410594a assets/dwdimensions/models/item/skaro_highlands_cobblestone.json
 18285c3c49494b2943bc5407aa4623ee23367291 assets/dwdimensions/models/item/skaro_highlands_stone.json
