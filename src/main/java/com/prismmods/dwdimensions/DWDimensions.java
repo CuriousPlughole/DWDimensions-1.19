@@ -77,6 +77,7 @@ public class DWDimensions {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(DWDBlocks.SKARO_PETRIFIED_FLOWER_2.getId(), DWDBlocks.POTTED_SKARO_PETRIFIED_FLOWER_2);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(DWDBlocks.SKARO_PETRIFIED_FUNGUS.getId(), DWDBlocks.POTTED_SKARO_PETRIFIED_FUNGUS);
             Sheets.addWoodType(DWDWoodTypes.PETRIFIED);
+            Sheets.addWoodType(DWDWoodTypes.PETRIFIED_JUNGLE);
 
             DWDBiomes.registerBiomeKeys();
 

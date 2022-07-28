@@ -24,6 +24,7 @@ public class DWDItems {
     public static final RegistryObject<Item> HANDMINE = ITEMS.register("handmine", () -> new Item(new Item.Properties().tab(DWDCreativeTabs.DWDSkaro)));
     public static final RegistryObject<Item> VARGA_BERRIES = ITEMS.register("varga_berries", () -> new ItemNameBlockItem(DWDBlocks.VARGA_BUSH.get(), (new Item.Properties().food(DWDEdibles.VARGA_BERRIES))));
     public static final RegistryObject<Item> PETRIFIED_PLANK_SIGN = ITEMS.register("petrified_plank_sign", ()-> new SignItem(new Item.Properties().tab(DWDCreativeTabs.DWDSkaro).stacksTo(16), DWDBlocks.PETRIFIED_PLANK_SIGN.get(), DWDBlocks.PETRIFIED_PLANK_WALL_SIGN.get()));
+    public static final RegistryObject<Item> PETRIFIED_JUNGLE_PLANK_SIGN = ITEMS.register("petrified_jungle_plank_sign", ()-> new SignItem(new Item.Properties().tab(DWDCreativeTabs.DWDSkaro).stacksTo(16), DWDBlocks.PETRIFIED_JUNGLE_PLANK_SIGN.get(), DWDBlocks.PETRIFIED_JUNGLE_PLANK_WALL_SIGN.get()));
     public static final RegistryObject<Item> SONIC_SCREWDRIVER = ITEMS.register("sonic_screwdriver", () -> new SonicScrewdriverItem(new Item.Properties().tab(DWDCreativeTabs.DWDMaterials)));
 
     //Temporary functionality. For dev purposes

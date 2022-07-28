@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_pressed",
+  "textures": {
+    "texture": "dwdimensions:block/petrified_jungle_planks"
+  }
+}

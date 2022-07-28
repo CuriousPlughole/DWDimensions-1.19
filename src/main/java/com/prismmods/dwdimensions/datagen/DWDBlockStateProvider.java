@@ -28,9 +28,9 @@ public class DWDBlockStateProvider extends BlockStateProvider {
         logBlock((RotatedPillarBlock) DWDBlocks.STRIPPED_PETRIFIED_LOG.get());
         logBlock((RotatedPillarBlock) DWDBlocks.PETRIFIED_LOG.get());
         logBlock((RotatedPillarBlock) DWDBlocks.PETRIFIED_JUNGLE_LOG.get());
+        logBlock((RotatedPillarBlock) DWDBlocks.STRIPPED_PETRIFIED_JUNGLE_LOG.get());
         axisBlock((RotatedPillarBlock) DWDBlocks.PETRIFIED_WOOD.get(), blockTexture(DWDBlocks.PETRIFIED_LOG.get()), blockTexture(DWDBlocks.PETRIFIED_LOG.get()));
         axisBlock((RotatedPillarBlock) DWDBlocks.PETRIFIED_JUNGLE_WOOD.get(), blockTexture(DWDBlocks.PETRIFIED_JUNGLE_LOG.get()), blockTexture(DWDBlocks.PETRIFIED_JUNGLE_LOG.get()));
-        axisBlock((RotatedPillarBlock) DWDBlocks.STRIPPED_PETRIFIED_JUNGLE_LOG.get(), blockTexture(DWDBlocks.STRIPPED_PETRIFIED_JUNGLE_LOG.get()), blockTexture(DWDBlocks.STRIPPED_PETRIFIED_JUNGLE_LOG.get()));
         axisBlock((RotatedPillarBlock) DWDBlocks.STRIPPED_PETRIFIED_WOOD.get(), new ResourceLocation(DWDimensions.MOD_ID, "block/stripped_petrified_log"), new ResourceLocation(DWDimensions.MOD_ID, "block/stripped_petrified_log"));
         axisBlock((RotatedPillarBlock) DWDBlocks.STRIPPED_PETRIFIED_JUNGLE_WOOD.get(), new ResourceLocation(DWDimensions.MOD_ID, "block/stripped_petrified_jungle_log"), new ResourceLocation(DWDimensions.MOD_ID, "block/stripped_petrified_jungle_log"));
 
@@ -71,5 +71,17 @@ public class DWDBlockStateProvider extends BlockStateProvider {
         buttonBlock((ButtonBlock) DWDBlocks.PETRIFIED_PLANK_BUTTON.get(), blockTexture(DWDBlocks.PETRIFIED_PLANKS.get()));
         pressurePlateBlock((PressurePlateBlock) DWDBlocks.PETRIFIED_PLANK_PRESSURE_PLATE.get(), blockTexture(DWDBlocks.PETRIFIED_PLANKS.get()));
         signBlock((StandingSignBlock)DWDBlocks.PETRIFIED_PLANK_SIGN.get(), (WallSignBlock) DWDBlocks.PETRIFIED_PLANK_WALL_SIGN.get(), blockTexture(DWDBlocks.PETRIFIED_PLANKS.get()));
+
+        fenceBlock((FenceBlock) DWDBlocks.PETRIFIED_JUNGLE_PLANK_FENCE.get(), blockTexture(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get()));
+        fenceGateBlock((FenceGateBlock) DWDBlocks.PETRIFIED_JUNGLE_PLANK_FENCE_GATE.get(), blockTexture(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get()));
+        stairsBlock((StairBlock) DWDBlocks.PETRIFIED_JUNGLE_PLANK_STAIRS.get(), blockTexture(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get()));
+        slabBlock((SlabBlock) DWDBlocks.PETRIFIED_JUNGLE_PLANK_SLAB.get(), blockTexture(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get()), blockTexture(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get()));
+        doorBlock((DoorBlock) DWDBlocks.PETRIFIED_JUNGLE_PLANK_DOOR.get(), new ResourceLocation(DWDimensions.MOD_ID, "block/petrified_jungle_plank_door_bottom"),  new ResourceLocation(DWDimensions.MOD_ID, "block/petrified_jungle_plank_door_top"));
+        trapdoorBlock((TrapDoorBlock) DWDBlocks.PETRIFIED_JUNGLE_PLANK_TRAPDOOR.get(), blockTexture(DWDBlocks.PETRIFIED_JUNGLE_PLANK_TRAPDOOR.get()),true);
+        buttonBlock((ButtonBlock) DWDBlocks.PETRIFIED_JUNGLE_PLANK_BUTTON.get(), blockTexture(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get()));
+        pressurePlateBlock((PressurePlateBlock) DWDBlocks.PETRIFIED_JUNGLE_PLANK_PRESSURE_PLATE.get(), blockTexture(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get()));
+        signBlock((StandingSignBlock)DWDBlocks.PETRIFIED_JUNGLE_PLANK_SIGN.get(), (WallSignBlock) DWDBlocks.PETRIFIED_JUNGLE_PLANK_WALL_SIGN.get(), blockTexture(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get()));
+
+
     }
 }

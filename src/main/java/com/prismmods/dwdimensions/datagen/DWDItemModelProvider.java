@@ -60,12 +60,21 @@ public class DWDItemModelProvider extends ItemModelProvider {
         blockItemModel(DWDBlocks.PETRIFIED_PLANK_SLAB);
         blockItemModel(DWDBlocks.PETRIFIED_PLANK_FENCE_GATE);
         blockItemModel(DWDBlocks.PETRIFIED_PLANK_PRESSURE_PLATE);
+        blockItemModel(DWDBlocks.PETRIFIED_JUNGLE_PLANK_STAIRS);
+        blockItemModel(DWDBlocks.PETRIFIED_JUNGLE_PLANK_SLAB);
+        blockItemModel(DWDBlocks.PETRIFIED_JUNGLE_PLANK_FENCE_GATE);
+        blockItemModel(DWDBlocks.PETRIFIED_JUNGLE_PLANK_PRESSURE_PLATE);
 
         specialInventoryModel(DWDBlocks.PETRIFIED_PLANK_BUTTON);
         flatItemfromBlock(DWDBlocks.PETRIFIED_PLANK_DOOR);
         trapdoorInventoryModel(DWDBlocks.PETRIFIED_PLANK_TRAPDOOR);
         specialInventoryModel(DWDBlocks.PETRIFIED_PLANK_FENCE);
         simpleItem(DWDItems.PETRIFIED_PLANK_SIGN);
+        specialInventoryModel(DWDBlocks.PETRIFIED_JUNGLE_PLANK_BUTTON);
+        flatItemfromBlock(DWDBlocks.PETRIFIED_JUNGLE_PLANK_DOOR);
+        trapdoorInventoryModel(DWDBlocks.PETRIFIED_JUNGLE_PLANK_TRAPDOOR);
+        specialInventoryModel(DWDBlocks.PETRIFIED_JUNGLE_PLANK_FENCE);
+        simpleItem(DWDItems.PETRIFIED_JUNGLE_PLANK_SIGN);
 
         plantItem(DWDBlocks.SKARO_PETRIFIED_FLOWER_1);
         plantItem(DWDBlocks.SKARO_PETRIFIED_FLOWER_2);

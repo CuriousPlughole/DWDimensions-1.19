@@ -20,7 +20,8 @@ public class DWDBlockEntities {
             () -> registerBlockEntity(TardisBlockEntity::new, DWDBlocks.TARDIS.get()));
 
     public static final RegistryObject<BlockEntityType<DWDSignBlockEntity>> SIGN_BLOCK_ENTITIES = BLOCK_ENTITIES.register("sign_block_entity",
-            () -> BlockEntityType.Builder.of(DWDSignBlockEntity::new, DWDBlocks.PETRIFIED_PLANK_WALL_SIGN.get(), DWDBlocks.PETRIFIED_PLANK_SIGN.get()).build(null));
+            () -> BlockEntityType.Builder.of(DWDSignBlockEntity::new, DWDBlocks.PETRIFIED_PLANK_WALL_SIGN.get(), DWDBlocks.PETRIFIED_PLANK_SIGN.get(),
+                    DWDBlocks.PETRIFIED_JUNGLE_PLANK_WALL_SIGN.get(), DWDBlocks.PETRIFIED_JUNGLE_PLANK_SIGN.get()).build(null));
 
 
     /*

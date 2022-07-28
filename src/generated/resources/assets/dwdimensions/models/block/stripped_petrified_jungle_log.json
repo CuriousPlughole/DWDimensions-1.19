@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column",
   "textures": {
-    "end": "dwdimensions:block/stripped_petrified_jungle_log",
+    "end": "dwdimensions:block/stripped_petrified_jungle_log_top",
     "side": "dwdimensions:block/stripped_petrified_jungle_log"
   }
 }

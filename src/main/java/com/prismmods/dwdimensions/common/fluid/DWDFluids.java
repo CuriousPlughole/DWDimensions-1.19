@@ -51,8 +51,8 @@ public class DWDFluids {
                 @Override
                 public void initializeClient(Consumer<IClientFluidTypeExtensions> consumer) {
                     consumer.accept(new IClientFluidTypeExtensions() {
-                        public static final ResourceLocation STILL = new ResourceLocation("block/water_still"),
-                                FLOW = new ResourceLocation("block/water_flow");
+                        public static final ResourceLocation STILL = new ResourceLocation(DWDimensions.MOD_ID, "block/toxic_waste_static"),
+                                FLOW = new ResourceLocation(DWDimensions.MOD_ID, "block/toxic_waste_flow");
                                 //OVERLAY = new ResourceLocation("block/obsidian"),
                                 //VIEW_OVERLAY = new ResourceLocation("textures/block/obsidian.png");
 

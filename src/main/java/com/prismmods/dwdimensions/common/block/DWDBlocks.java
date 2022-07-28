@@ -38,7 +38,7 @@ public class DWDBlocks {
     public static final RegistryObject<Block> DEEPSLATE_ZEITON_ORE = registerBlock("deepslate_zeiton_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(ZEITON_ORE.get()).color(MaterialColor.DEEPSLATE).strength(4.5F, 3.0F).sound(SoundType.DEEPSLATE), UniformInt.of(0, 2)), DWDCreativeTabs.DWDMaterials);
 
-    /*
+    /**
     SKARO
      */
 
@@ -67,7 +67,7 @@ public class DWDBlocks {
             () -> new DWDFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> STRIPPED_PETRIFIED_JUNGLE_WOOD = registerBlock("stripped_petrified_jungle_wood",
             () -> new DWDFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), DWDCreativeTabs.DWDSkaro);
-    //Wood shaped blocks [Stair, slab, fence, fence gate, trapdoor, door, button, pressure plate, sign] {boat - item/entity}
+    //Wood shaped blocks [Stair, slab, fence, fence gate, trapdoor, door, button, pressure plate, sign] //TODO: {boat - item/entity}
     public static final RegistryObject<Block> PETRIFIED_PLANK_STAIRS = registerBlock("petrified_plank_stairs",
             () -> new DWDFlammableStairBlock(()-> PETRIFIED_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> PETRIFIED_PLANK_SLAB = registerBlock("petrified_plank_slab",
@@ -88,7 +88,27 @@ public class DWDBlocks {
             () -> new DWDWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), DWDWoodTypes.PETRIFIED));
     public static final RegistryObject<Block> PETRIFIED_PLANK_SIGN = registerBlockWithoutItem("petrified_plank_sign",
             () -> new DWDStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), DWDWoodTypes.PETRIFIED));
-
+    //Petrified Jungle Wood shaped blocks [Stair, slab, fence, fence gate, trapdoor, door, button, pressure plate, sign] //TODO: {boat - item/entity}
+    public static final RegistryObject<Block> PETRIFIED_JUNGLE_PLANK_STAIRS = registerBlock("petrified_jungle_plank_stairs",
+            () -> new DWDFlammableStairBlock(()-> PETRIFIED_JUNGLE_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> PETRIFIED_JUNGLE_PLANK_SLAB = registerBlock("petrified_jungle_plank_slab",
+            () -> new DWDFlammableSlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> PETRIFIED_JUNGLE_PLANK_FENCE = registerBlock("petrified_jungle_plank_fence",
+            () -> new DWDFlammableFenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> PETRIFIED_JUNGLE_PLANK_FENCE_GATE = registerBlock("petrified_jungle_plank_fence_gate",
+            () -> new DWDFlammableFenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> PETRIFIED_JUNGLE_PLANK_TRAPDOOR = registerBlock("petrified_jungle_plank_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR).noOcclusion()), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> PETRIFIED_JUNGLE_PLANK_DOOR = registerBlock("petrified_jungle_plank_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).noOcclusion()), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> PETRIFIED_JUNGLE_PLANK_BUTTON = registerBlock("petrified_jungle_plank_button",
+            () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON).noCollission()), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> PETRIFIED_JUNGLE_PLANK_PRESSURE_PLATE = registerBlock("petrified_jungle_plank_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING ,BlockBehaviour.Properties.copy(Blocks.OAK_PRESSURE_PLATE)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> PETRIFIED_JUNGLE_PLANK_WALL_SIGN = registerBlockWithoutItem("petrified_jungle_plank_wall_sign",
+            () -> new DWDWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), DWDWoodTypes.PETRIFIED_JUNGLE));
+    public static final RegistryObject<Block> PETRIFIED_JUNGLE_PLANK_SIGN = registerBlockWithoutItem("petrified_jungle_plank_sign",
+            () -> new DWDStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), DWDWoodTypes.PETRIFIED_JUNGLE));
     //Vegetation
     public static final RegistryObject<Block> PETRIFIED_LEAVES = registerBlock("petrified_leaves", () -> new DWDLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> PETRIFIED_JUNGLE_LEAVES = registerBlock("petrified_jungle_leaves", () -> new DWDLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), DWDCreativeTabs.DWDSkaro);
@@ -134,7 +154,7 @@ public class DWDBlocks {
     public static final RegistryObject<Block> SKARO_HIGHLANDS_COBBLESTONE = registerBlock("skaro_highlands_cobblestone",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)), DWDCreativeTabs.DWDSkaro);
 
-    /*
+    /**
     REGISTRY METHODS
      */
 

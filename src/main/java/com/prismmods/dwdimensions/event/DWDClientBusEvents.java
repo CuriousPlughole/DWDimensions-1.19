@@ -91,9 +91,14 @@ public class DWDClientBusEvents {
 
         ItemBlockRenderTypes.setRenderLayer(DWDBlocks.PETRIFIED_PLANK_DOOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(DWDBlocks.PETRIFIED_PLANK_TRAPDOOR.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(DWDBlocks.PETRIFIED_JUNGLE_PLANK_DOOR.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(DWDBlocks.PETRIFIED_JUNGLE_PLANK_TRAPDOOR.get(), RenderType.cutout());
 
         WoodType.register(DWDWoodTypes.PETRIFIED);
+        WoodType.register(DWDWoodTypes.PETRIFIED_JUNGLE);
         BlockEntityRenderers.register(DWDBlockEntities.SIGN_BLOCK_ENTITIES.get(), SignRenderer::new);
+
+
 
         Stream.of(DWDFluids.RADIOACTIVE_WATER_FLUID, DWDFluids.RADIOACTIVE_WATER_FLOWING).map(RegistryObject::get)
                 .forEach(fluid -> ItemBlockRenderTypes.setRenderLayer(fluid, RenderType.translucent()));

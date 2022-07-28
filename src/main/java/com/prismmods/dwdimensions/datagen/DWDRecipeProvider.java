@@ -48,6 +48,16 @@ public class DWDRecipeProvider extends RecipeProvider implements IConditionBuild
         RecipeProvider.trapdoorBuilder(DWDBlocks.PETRIFIED_PLANK_TRAPDOOR.get(), Ingredient.of(DWDBlocks.PETRIFIED_PLANKS.get().asItem()));
         RecipeProvider.signBuilder(DWDItems.PETRIFIED_PLANK_SIGN.get(), Ingredient.of(DWDBlocks.PETRIFIED_PLANKS.get().asItem()));
 
+        RecipeProvider.slabBuilder(DWDBlocks.PETRIFIED_JUNGLE_PLANK_SLAB.get(), Ingredient.of(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get().asItem()));
+        RecipeProvider.stairBuilder(DWDBlocks.PETRIFIED_JUNGLE_PLANK_STAIRS.get(), Ingredient.of(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get().asItem()));
+        RecipeProvider.fenceBuilder(DWDBlocks.PETRIFIED_JUNGLE_PLANK_FENCE.get(), Ingredient.of(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get().asItem()));
+        RecipeProvider.fenceGateBuilder(DWDBlocks.PETRIFIED_JUNGLE_PLANK_FENCE_GATE.get(), Ingredient.of(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get().asItem()));
+        RecipeProvider.buttonBuilder(DWDBlocks.PETRIFIED_JUNGLE_PLANK_BUTTON.get(), Ingredient.of(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get().asItem()));
+        RecipeProvider.pressurePlateBuilder(DWDBlocks.PETRIFIED_JUNGLE_PLANK_PRESSURE_PLATE.get(), Ingredient.of(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get().asItem()));
+        RecipeProvider.doorBuilder(DWDBlocks.PETRIFIED_JUNGLE_PLANK_DOOR.get(), Ingredient.of(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get().asItem()));
+        RecipeProvider.trapdoorBuilder(DWDBlocks.PETRIFIED_JUNGLE_PLANK_TRAPDOOR.get(), Ingredient.of(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get().asItem()));
+        RecipeProvider.signBuilder(DWDItems.PETRIFIED_JUNGLE_PLANK_SIGN.get(), Ingredient.of(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get().asItem()));
+
         //Parameters: item to smelt, result, experience gained, cooking time.
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(DWDBlocks.ZEITON_ORE.get().asItem()), DWDItems.ZEITON_7.get(), 0.1F, 200)
                 .unlockedBy("has_zeiton_ore", inventoryTrigger(ItemPredicate.Builder.item().of(DWDBlocks.ZEITON_ORE.get()).build()))
