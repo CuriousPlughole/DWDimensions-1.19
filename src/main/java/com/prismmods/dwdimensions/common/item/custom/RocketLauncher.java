@@ -9,8 +9,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
-public class IAmPissedOff extends Item {
-    public IAmPissedOff(Properties p_41383_) {
+public class RocketLauncher extends Item {
+    public RocketLauncher(Properties p_41383_) {
         super(p_41383_);
     }
 

@@ -37,26 +37,52 @@ public class DWDRecipeProvider extends RecipeProvider implements IConditionBuild
         RecipeProvider.woodFromLogs(pFinishedRecipeConsumer, DWDBlocks.STRIPPED_PETRIFIED_WOOD.get(), DWDBlocks.STRIPPED_PETRIFIED_LOG.get());
         RecipeProvider.woodFromLogs(pFinishedRecipeConsumer, DWDBlocks.PETRIFIED_JUNGLE_WOOD.get(), DWDBlocks.PETRIFIED_JUNGLE_LOG.get());
         RecipeProvider.woodFromLogs(pFinishedRecipeConsumer, DWDBlocks.STRIPPED_PETRIFIED_JUNGLE_WOOD.get(), DWDBlocks.STRIPPED_PETRIFIED_JUNGLE_LOG.get());
-
-        RecipeProvider.slabBuilder(DWDBlocks.PETRIFIED_PLANK_SLAB.get(), Ingredient.of(DWDBlocks.PETRIFIED_PLANKS.get().asItem()));
-        RecipeProvider.stairBuilder(DWDBlocks.PETRIFIED_PLANK_STAIRS.get(), Ingredient.of(DWDBlocks.PETRIFIED_PLANKS.get().asItem()));
-        RecipeProvider.fenceBuilder(DWDBlocks.PETRIFIED_PLANK_FENCE.get(), Ingredient.of(DWDBlocks.PETRIFIED_PLANKS.get().asItem()));
-        RecipeProvider.fenceGateBuilder(DWDBlocks.PETRIFIED_PLANK_FENCE_GATE.get(), Ingredient.of(DWDBlocks.PETRIFIED_PLANKS.get().asItem()));
-        RecipeProvider.buttonBuilder(DWDBlocks.PETRIFIED_PLANK_BUTTON.get(), Ingredient.of(DWDBlocks.PETRIFIED_PLANKS.get().asItem()));
-        RecipeProvider.pressurePlateBuilder(DWDBlocks.PETRIFIED_PLANK_PRESSURE_PLATE.get(), Ingredient.of(DWDBlocks.PETRIFIED_PLANKS.get().asItem()));
-        RecipeProvider.doorBuilder(DWDBlocks.PETRIFIED_PLANK_DOOR.get(), Ingredient.of(DWDBlocks.PETRIFIED_PLANKS.get().asItem()));
-        RecipeProvider.trapdoorBuilder(DWDBlocks.PETRIFIED_PLANK_TRAPDOOR.get(), Ingredient.of(DWDBlocks.PETRIFIED_PLANKS.get().asItem()));
-        RecipeProvider.signBuilder(DWDItems.PETRIFIED_PLANK_SIGN.get(), Ingredient.of(DWDBlocks.PETRIFIED_PLANKS.get().asItem()));
-
-        RecipeProvider.slabBuilder(DWDBlocks.PETRIFIED_JUNGLE_PLANK_SLAB.get(), Ingredient.of(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get().asItem()));
-        RecipeProvider.stairBuilder(DWDBlocks.PETRIFIED_JUNGLE_PLANK_STAIRS.get(), Ingredient.of(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get().asItem()));
-        RecipeProvider.fenceBuilder(DWDBlocks.PETRIFIED_JUNGLE_PLANK_FENCE.get(), Ingredient.of(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get().asItem()));
-        RecipeProvider.fenceGateBuilder(DWDBlocks.PETRIFIED_JUNGLE_PLANK_FENCE_GATE.get(), Ingredient.of(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get().asItem()));
-        RecipeProvider.buttonBuilder(DWDBlocks.PETRIFIED_JUNGLE_PLANK_BUTTON.get(), Ingredient.of(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get().asItem()));
-        RecipeProvider.pressurePlateBuilder(DWDBlocks.PETRIFIED_JUNGLE_PLANK_PRESSURE_PLATE.get(), Ingredient.of(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get().asItem()));
-        RecipeProvider.doorBuilder(DWDBlocks.PETRIFIED_JUNGLE_PLANK_DOOR.get(), Ingredient.of(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get().asItem()));
-        RecipeProvider.trapdoorBuilder(DWDBlocks.PETRIFIED_JUNGLE_PLANK_TRAPDOOR.get(), Ingredient.of(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get().asItem()));
-        RecipeProvider.signBuilder(DWDItems.PETRIFIED_JUNGLE_PLANK_SIGN.get(), Ingredient.of(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get().asItem()));
+        RecipeProvider.slab(pFinishedRecipeConsumer, DWDBlocks.PETRIFIED_PLANK_SLAB.get(), DWDBlocks.PETRIFIED_PLANKS.get().asItem());
+        RecipeProvider.stairBuilder(DWDBlocks.PETRIFIED_PLANK_STAIRS.get(), Ingredient.of(DWDBlocks.PETRIFIED_PLANKS.get().asItem()))
+                .unlockedBy("has_petrified_planks", has(DWDBlocks.PETRIFIED_PLANKS.get()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "petrified_plank_stairs"));
+        RecipeProvider.fenceBuilder(DWDBlocks.PETRIFIED_PLANK_FENCE.get(), Ingredient.of(DWDBlocks.PETRIFIED_PLANKS.get().asItem()))
+                .unlockedBy("has_petrified_planks", has(DWDBlocks.PETRIFIED_PLANKS.get()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "petrified_plank_fence"));
+        RecipeProvider.fenceGateBuilder(DWDBlocks.PETRIFIED_PLANK_FENCE_GATE.get(), Ingredient.of(DWDBlocks.PETRIFIED_PLANKS.get().asItem()))
+                .unlockedBy("has_petrified_planks", has(DWDBlocks.PETRIFIED_PLANKS.get()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "petrified_plank_fence_gate"));
+        RecipeProvider.buttonBuilder(DWDBlocks.PETRIFIED_PLANK_BUTTON.get(), Ingredient.of(DWDBlocks.PETRIFIED_PLANKS.get().asItem()))
+                .unlockedBy("has_petrified_planks", has(DWDBlocks.PETRIFIED_PLANKS.get()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "petrified_plank_button"));
+        RecipeProvider.pressurePlate(pFinishedRecipeConsumer, DWDBlocks.PETRIFIED_PLANK_PRESSURE_PLATE.get(), DWDBlocks.PETRIFIED_PLANKS.get().asItem());
+        RecipeProvider.doorBuilder(DWDBlocks.PETRIFIED_PLANK_DOOR.get(), Ingredient.of(DWDBlocks.PETRIFIED_PLANKS.get().asItem()))
+                .unlockedBy("has_petrified_planks", has(DWDBlocks.PETRIFIED_PLANKS.get()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "petrified_plank_door"));
+        RecipeProvider.trapdoorBuilder(DWDBlocks.PETRIFIED_PLANK_TRAPDOOR.get(), Ingredient.of(DWDBlocks.PETRIFIED_PLANKS.get().asItem()))
+                .unlockedBy("has_petrified_planks", has(DWDBlocks.PETRIFIED_PLANKS.get()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "petrified_plank_trapdoor"));
+        RecipeProvider.signBuilder(DWDItems.PETRIFIED_PLANK_SIGN.get(), Ingredient.of(DWDBlocks.PETRIFIED_PLANKS.get().asItem()))
+                .unlockedBy("has_petrified_planks", has(DWDBlocks.PETRIFIED_PLANKS.get()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "petrified_plank_sign"));
+        RecipeProvider.slab(pFinishedRecipeConsumer, DWDBlocks.PETRIFIED_JUNGLE_PLANK_SLAB.get(), DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get().asItem());
+        RecipeProvider.stairBuilder(DWDBlocks.PETRIFIED_JUNGLE_PLANK_STAIRS.get(), Ingredient.of(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get().asItem()))
+                .unlockedBy("has_petrified_jungle_planks", has(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "petrified_jungle_plank_stair"));
+        RecipeProvider.fenceBuilder(DWDBlocks.PETRIFIED_JUNGLE_PLANK_FENCE.get(), Ingredient.of(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get().asItem()))
+                .unlockedBy("has_petrified_jungle_planks", has(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "petrified_jungle_plank_fence"));
+        RecipeProvider.fenceGateBuilder(DWDBlocks.PETRIFIED_JUNGLE_PLANK_FENCE_GATE.get(), Ingredient.of(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get().asItem()))
+                .unlockedBy("has_petrified_jungle_planks", has(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "petrified_jungle_plank_fence_gate"));
+        RecipeProvider.buttonBuilder(DWDBlocks.PETRIFIED_JUNGLE_PLANK_BUTTON.get(), Ingredient.of(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get().asItem()))
+                .unlockedBy("has_petrified_jungle_planks", has(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "petrified_jungle_plank_button"));
+        RecipeProvider.pressurePlate(pFinishedRecipeConsumer, DWDBlocks.PETRIFIED_JUNGLE_PLANK_PRESSURE_PLATE.get(), DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get().asItem());
+        RecipeProvider.doorBuilder(DWDBlocks.PETRIFIED_JUNGLE_PLANK_DOOR.get(), Ingredient.of(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get().asItem()))
+                .unlockedBy("has_petrified_jungle_planks", has(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "petrified_jungle_plank_door"));
+        RecipeProvider.trapdoorBuilder(DWDBlocks.PETRIFIED_JUNGLE_PLANK_TRAPDOOR.get(), Ingredient.of(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get().asItem()))
+                .unlockedBy("has_petrified_jungle_planks", has(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "petrified_jungle_plank_trapdoor"));
+        RecipeProvider.signBuilder(DWDItems.PETRIFIED_JUNGLE_PLANK_SIGN.get(), Ingredient.of(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get().asItem()))
+                .unlockedBy("has_petrified_jungle_planks", has(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "petrified_jungle_plank_sign"));
 
         //Parameters: item to smelt, result, experience gained, cooking time.
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(DWDBlocks.ZEITON_ORE.get().asItem()), DWDItems.ZEITON_7.get(), 0.1F, 200)

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "dwdimensions:petrified_jungle_planks"
+    }
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "item": "dwdimensions:petrified_jungle_plank_pressure_plate"
+  }
+}

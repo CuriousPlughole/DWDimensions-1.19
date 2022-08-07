@@ -1,5 +1,5 @@
 {
-    "itemGroup.dwdmaterialstab": "DWD Materials",
+    "itemGroup.dwdwiptab": "WIP",
     "itemGroup.dwdskarotab": "Skaro",
 
     "item.dwdimensions.stattenheim_remote": "Stattenheim Remote",
@@ -7,6 +7,8 @@
     "item.dwdimensions.stattenheim_remote.chameleon" : "Set Stattenheim remote to Chameleon mode",
     "item.dwdimensions.zeiton_7": "Zeiton 7 Crystal",
     "item.dwdimensions.handmine": "Severed Handmine",
+    "item.dwdimensions.sonic_screwdriver": "Sonic Screwdriver",
+    "item.dwdimensions.anti_radiation_pill": "Anti-Radiation Pill",
 
     "block.dwdimensions.zeiton_ore": "Zeiton 7 Ore",
     "block.dwdimensions.deepslate_zeiton_ore": "Deepslate Zeiton 7 Ore",
@@ -47,7 +49,27 @@
     "block.dwdimensions.petrified_jungle_planks" : "Petrified Jungle Planks",
     "block.dwdimensions.stripped_petrified_jungle_log" : "Stripped Petrified Jungle Log",
     "block.dwdimensions.stripped_petrified_jungle_wood" : "Stripped Petrified Jungle Wood",
+    "block.dwdimensions.petrified_plank_sign": "Petrified Plank Sign",
+    "block.dwdimensions.petrified_plank_stairs": "Petrified Plank Stairs",
+    "block.dwdimensions.petrified_plank_slab": "Petrified Plank Slab",
+    "block.dwdimensions.petrified_plank_fence": "Petrified Plank Fence",
+    "block.dwdimensions.petrified_plank_fence_gate": "Petrified Plank Fence Gate",
+    "block.dwdimensions.petrified_plank_trapdoor": "Petrified Plank Trapdoor",
+    "block.dwdimensions.petrified_plank_door": "Petrified Plank Door",
+    "block.dwdimensions.petrified_plank_button": "Petrified Plank Button",
+    "block.dwdimensions.petrified_plank_pressure_plate": "Petrified Plank Pressure Plate",
+    "block.dwdimensions.petrified_jungle_plank_sign": "Petrified Jungle Plank Sign",
+    "block.dwdimensions.petrified_jungle_plank_stairs": "Petrified Jungle Plank Stairs",
+    "block.dwdimensions.petrified_jungle_plank_slab": "Petrified Jungle Plank Slab",
+    "block.dwdimensions.petrified_jungle_plank_fence": "Petrified Jungle Plank Fence",
+    "block.dwdimensions.petrified_jungle_plank_fence_gate": "Petrified Jungle Plank Fence Gate",
+    "block.dwdimensions.petrified_jungle_plank_trapdoor": "Petrified Jungle Plank Trapdoor",
+    "block.dwdimensions.petrified_jungle_plank_door": "Petrified Jungle Plank Door",
+    "block.dwdimensions.petrified_jungle_plank_button": "Petrified Jungle Plank Button",
+    "block.dwdimensions.petrified_jungle_plank_pressure_plate": "Petrified Jungle Plank Pressure Plate",
+
     "block.dwdimensions.tardis" : "TARDIS (Decorational for now)",
+
     "key.categories.dwdimensions": "DWDimensions",
     "key.dwdimensions.tardis_door": "Tardis Door",
     "effect.dwdimensions.radiation_sickness":"Radiation Sickness",

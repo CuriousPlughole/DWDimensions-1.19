@@ -31,12 +31,12 @@ public class DWDBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, DWDimensions.MOD_ID);
 
-    public static final RegistryObject<Block> TARDIS = registerBlock("tardis", () -> new TardisBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN)), DWDCreativeTabs.DWDMaterials);
+    public static final RegistryObject<Block> TARDIS = registerBlock("tardis", () -> new TardisBlock(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN)), DWDCreativeTabs.DWDWIPTab);
 
     public static final RegistryObject<Block> ZEITON_ORE = registerBlock("zeiton_ore",
-            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F), UniformInt.of(0, 2)), DWDCreativeTabs.DWDMaterials);
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(3.0F, 3.0F), UniformInt.of(0, 2)), DWDCreativeTabs.DWDWIPTab);
     public static final RegistryObject<Block> DEEPSLATE_ZEITON_ORE = registerBlock("deepslate_zeiton_ore",
-            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(ZEITON_ORE.get()).color(MaterialColor.DEEPSLATE).strength(4.5F, 3.0F).sound(SoundType.DEEPSLATE), UniformInt.of(0, 2)), DWDCreativeTabs.DWDMaterials);
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(ZEITON_ORE.get()).color(MaterialColor.DEEPSLATE).strength(4.5F, 3.0F).sound(SoundType.DEEPSLATE), UniformInt.of(0, 2)), DWDCreativeTabs.DWDWIPTab);
 
     /**
     SKARO

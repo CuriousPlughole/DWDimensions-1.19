@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "dwdimensions:petrified_jungle_planks"
+    }
+  ],
+  "result": {
+    "item": "dwdimensions:petrified_jungle_plank_button"
+  }
+}
