@@ -1,12 +1,18 @@
 package com.prismmods.dwdimensions.util;
 
 import com.prismmods.dwdimensions.DWDimensions;
+import net.minecraft.core.Registry;
+import net.minecraft.data.tags.EntityTypeTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class DWDTags {
 
@@ -37,4 +43,14 @@ public class DWDTags {
             return ItemTags.create(new ResourceLocation("forge", name));
         }
     }
+
+    public static class Entities {
+        public static final TagKey<EntityType<?>> RADIATION_IMMUNE = createTag("radiation_immune");
+        private static TagKey<EntityType<?>> createTag(String name) {
+            return TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation(DWDimensions.MOD_ID, name));
+        }
+
+    }
+
+
 }

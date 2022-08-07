@@ -42,4 +42,15 @@ public class ClientUtil {
         return TARDIS_MODEL_MAP.get(model);
     }
 
+
+    public class RadiationData {
+        private static int livingEntityRadiation;
+        public static void set(int radiation) {
+            RadiationData.livingEntityRadiation = radiation;
+        }
+        public static int getLivingEntityRadiation() {
+            return livingEntityRadiation;
+        }
+    }
+
 }

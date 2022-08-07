@@ -1,6 +1,7 @@
 package com.prismmods.dwdimensions.event;
 
 import com.prismmods.dwdimensions.DWDimensions;
+import com.prismmods.dwdimensions.client.hud.RadiationHudOverlay;
 import com.prismmods.dwdimensions.client.models.DWDModelLayers;
 import com.prismmods.dwdimensions.client.models.blockentity.tardis.TardisSmithCapaldiModel;
 import com.prismmods.dwdimensions.client.models.blockentity.tardis.TardisTennantEcclestonModel;
@@ -15,7 +16,10 @@ import com.prismmods.dwdimensions.common.blockentities.DWDBlockEntities;
 import com.prismmods.dwdimensions.common.blockentities.sign.DWDWoodTypes;
 import com.prismmods.dwdimensions.common.entity.DWDEntityTypes;
 import com.prismmods.dwdimensions.common.fluid.DWDFluids;
+import com.prismmods.dwdimensions.common.particle.DWDParticles;
+import com.prismmods.dwdimensions.common.particle.custom.RadioactiveParticle;
 import com.prismmods.dwdimensions.util.KeyboardHelper;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
@@ -24,7 +28,9 @@ import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -93,6 +99,16 @@ public class DWDClientBusEvents {
     @SubscribeEvent
     public static void registerKeyBinds(RegisterKeyMappingsEvent event) {
         event.register(KeyboardHelper.tardisDoor);
+    }
+
+    @SubscribeEvent
+    public static void registerGuiOverlays(RegisterGuiOverlaysEvent event) {
+        event.registerAboveAll("radiation", RadiationHudOverlay.HUD_RADIATION);
+    }
+
+    @SubscribeEvent
+    public static void registerParticleFactories(RegisterParticleProvidersEvent event) {
+        Minecraft.getInstance().particleEngine.register(DWDParticles.RADIOACTIVE_PARTICLES.get(), RadioactiveParticle.Provider::new);
     }
 
 }

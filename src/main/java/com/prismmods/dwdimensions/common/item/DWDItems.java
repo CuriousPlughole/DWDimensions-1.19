@@ -3,6 +3,7 @@ package com.prismmods.dwdimensions.common.item;
 import com.prismmods.dwdimensions.DWDimensions;
 import com.prismmods.dwdimensions.common.DWDCreativeTabs;
 import com.prismmods.dwdimensions.common.block.DWDBlocks;
+import com.prismmods.dwdimensions.common.item.custom.AntiRadiationPillItem;
 import com.prismmods.dwdimensions.common.item.custom.IAmPissedOff;
 import com.prismmods.dwdimensions.common.item.custom.SonicScrewdriverItem;
 import com.prismmods.dwdimensions.common.item.custom.StattenheimRemoteItem;
@@ -26,6 +27,7 @@ public class DWDItems {
     public static final RegistryObject<Item> PETRIFIED_PLANK_SIGN = ITEMS.register("petrified_plank_sign", ()-> new SignItem(new Item.Properties().tab(DWDCreativeTabs.DWDSkaro).stacksTo(16), DWDBlocks.PETRIFIED_PLANK_SIGN.get(), DWDBlocks.PETRIFIED_PLANK_WALL_SIGN.get()));
     public static final RegistryObject<Item> PETRIFIED_JUNGLE_PLANK_SIGN = ITEMS.register("petrified_jungle_plank_sign", ()-> new SignItem(new Item.Properties().tab(DWDCreativeTabs.DWDSkaro).stacksTo(16), DWDBlocks.PETRIFIED_JUNGLE_PLANK_SIGN.get(), DWDBlocks.PETRIFIED_JUNGLE_PLANK_WALL_SIGN.get()));
     public static final RegistryObject<Item> SONIC_SCREWDRIVER = ITEMS.register("sonic_screwdriver", () -> new SonicScrewdriverItem(new Item.Properties().tab(DWDCreativeTabs.DWDMaterials)));
+    public static final RegistryObject<Item> ANTI_RADIATION_PILL = ITEMS.register("anti_radiation_pill", () -> new AntiRadiationPillItem(new Item.Properties().tab(DWDCreativeTabs.DWDMaterials)));
 
     //Temporary functionality. For dev purposes
     public static final RegistryObject<Item> STATTENHEIM_REMOTE = ITEMS.register("stattenheim_remote", () -> new StattenheimRemoteItem(new Item.Properties().stacksTo(1).tab(DWDCreativeTabs.DWDMaterials)));

@@ -6,8 +6,10 @@ import com.prismmods.dwdimensions.common.blockentities.DWDBlockEntities;
 import com.prismmods.dwdimensions.common.blockentities.sign.DWDWoodTypes;
 import com.prismmods.dwdimensions.common.entity.DWDEntityTypes;
 import com.prismmods.dwdimensions.common.entity.custom.HandmineEntity;
+import com.prismmods.dwdimensions.common.entity.effect.DWDEffectRegistry;
 import com.prismmods.dwdimensions.common.fluid.DWDFluids;
 import com.prismmods.dwdimensions.common.item.DWDItems;
+import com.prismmods.dwdimensions.common.particle.DWDParticles;
 import com.prismmods.dwdimensions.common.sound.DWDSounds;
 import com.prismmods.dwdimensions.network.Network;
 import com.prismmods.dwdimensions.world.biomes.DWDBiomes;
@@ -44,11 +46,12 @@ public class DWDimensions {
         DWDBlocks.register(modEventBus);
         DWDEntityTypes.register(modEventBus);
         DWDBlockEntities.register(modEventBus);
+        DWDParticles.register(modEventBus);
         DWDFluids.register(modEventBus);
         DWDPlacedFeatures.register(modEventBus);
 
+        DWDEffectRegistry.register(modEventBus);
         DWDBiomes.BIOMES.register(modEventBus);
-
         DWDDimensionReg.register();
 
 

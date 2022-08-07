@@ -1,6 +1,7 @@
 package com.prismmods.dwdimensions.network;
 
 import com.prismmods.dwdimensions.DWDimensions;
+import com.prismmods.dwdimensions.network.messages.RadiationDataMessage;
 import com.prismmods.dwdimensions.network.messages.TardisDoorSnapMessage;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -24,7 +25,13 @@ public class Network {
         networkChannel.messageBuilder(TardisDoorSnapMessage.class, nextID(), NetworkDirection.PLAY_TO_SERVER)
                 .encoder(TardisDoorSnapMessage::encode)
                 .decoder(TardisDoorSnapMessage::decode)
-                .consumer(TardisDoorSnapMessage.Handler::handle).add();
+                .consumer(TardisDoorSnapMessage.Handler::handle)
+                .add();
+        networkChannel.messageBuilder(RadiationDataMessage.class, nextID(), NetworkDirection.PLAY_TO_CLIENT)
+                .encoder(RadiationDataMessage::encode)
+                .decoder(RadiationDataMessage::decode)
+                .consumerMainThread(RadiationDataMessage.Handler::handle)
+                .add();
     }
 
     //Send packet to server. Called client side

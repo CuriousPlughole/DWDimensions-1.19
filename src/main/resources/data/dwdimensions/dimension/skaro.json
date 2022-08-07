@@ -18,6 +18,18 @@
             "offset": 0
           }
         },
+		{
+          "biome": "dwdimensions:skaro_plains",
+          "parameters": {
+            "temperature": 0.34,
+            "humidity": 0.75,
+            "continentalness": 0.2,
+            "erosion": 0.05,
+            "weirdness": 0.5,
+            "depth": 0.1,
+            "offset": 0
+          }
+        },
         {
           "biome": "dwdimensions:skaro_minefield",
           "parameters": {

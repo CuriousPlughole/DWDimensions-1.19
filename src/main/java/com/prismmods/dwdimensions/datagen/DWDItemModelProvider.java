@@ -28,6 +28,7 @@ public class DWDItemModelProvider extends ItemModelProvider {
         simpleItem(DWDItems.VARGA_BERRIES);
         simpleItem(DWDItems.STATTENHEIM_REMOTE);
         simpleItem(DWDFluids.RADIOACTIVE_WATER_BUCKET);
+        simpleItem(DWDItems.ANTI_RADIATION_PILL);
 
         blockItemModel(DWDBlocks.DEEPSLATE_ZEITON_ORE);
         blockItemModel(DWDBlocks.ZEITON_ORE);

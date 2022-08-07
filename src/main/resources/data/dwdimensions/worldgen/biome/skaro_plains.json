@@ -1,0 +1,34 @@
+{
+  "temperature": 0.4,
+  "downfall": 0.5,
+  "precipitation": "rain",
+  "effects": {
+    "sky_color": 14795476,
+    "fog_color": 14804452,
+    "water_color": 4159204,
+    "water_fog_color": 329011,
+    "grass_color": 1253639,
+    "foliage_color": 2962981,
+    "ambient_sound": "WIND"
+  },
+  "spawners": {},
+  "spawn_costs": {},
+  "carvers": {
+    "air": [
+      "minecraft:cave",
+      "minecraft:canyon"
+    ]
+  },
+  "features": [
+	  [],
+	  [],
+	  [],
+	  [],
+	  [],
+	  [],
+	  [],
+	  [],
+	  ["dwdimensions:petrified_placed"],
+	  []
+  ]
+}

@@ -21,6 +21,8 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class DWDBlockLootTables extends BlockLoot {
 
+    private static final float[] NORMAL_LEAVES_SAPLING_CHANCES = new float[]{0.05F, 0.0625F, 0.083333336F, 0.1F};
+
     @Override
     protected void addTables() {
 
@@ -76,8 +78,8 @@ public class DWDBlockLootTables extends BlockLoot {
         this.dropPottedContents(DWDBlocks.POTTED_SKARO_PETRIFIED_FLOWER_2.get());
         this.dropPottedContents(DWDBlocks.POTTED_SKARO_PETRIFIED_FUNGUS.get());
         this.add(DWDBlocks.SKARO_GRASS.get(), (block) -> createSingleItemTableWithSilkTouch(block, DWDBlocks.SKARO_DIRT.get()));
-        this.add(DWDBlocks.PETRIFIED_LEAVES.get(), (block) -> createLeavesDrops(DWDBlocks.PETRIFIED_LEAVES.get(), DWDBlocks.PETRIFIED_SAPLING.get())); //blocks may be other way around. Need to check this
-        this.add(DWDBlocks.PETRIFIED_JUNGLE_LEAVES.get(), (block) -> createLeavesDrops(DWDBlocks.PETRIFIED_JUNGLE_LEAVES.get(), DWDBlocks.PETRIFIED_JUNGLE_SAPLING.get())); //blocks may be other way around. Need to check this
+        this.add(DWDBlocks.PETRIFIED_LEAVES.get(), (block) -> createLeavesDrops(block, DWDBlocks.PETRIFIED_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.add(DWDBlocks.PETRIFIED_JUNGLE_LEAVES.get(), (block) -> createLeavesDrops(block, DWDBlocks.PETRIFIED_JUNGLE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         this.add(DWDBlocks.SKARO_SHRUB.get(), (block) -> createShearsOnlyDrop(block));
         this.add(DWDBlocks.SKARO_SHRUB_SMALL.get(), (block) -> createShearsOnlyDrop(block));
         this.add(DWDBlocks.SKARO_PETRIFIED_SHRUB.get(), (block) -> createShearsOnlyDrop(block));

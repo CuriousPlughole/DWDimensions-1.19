@@ -49,5 +49,8 @@
     "block.dwdimensions.stripped_petrified_jungle_wood" : "Stripped Petrified Jungle Wood",
     "block.dwdimensions.tardis" : "TARDIS (Decorational for now)",
     "key.categories.dwdimensions": "DWDimensions",
-    "key.dwdimensions.tardis_door": "Tardis Door"
+    "key.dwdimensions.tardis_door": "Tardis Door",
+    "effect.dwdimensions.radiation_sickness":"Radiation Sickness",
+    "effect.dwdimensions.radioactive":"Radioactive",
+    "death.attack.dwdimensions.radiation.sickness":"%s died from radiation sickness"
 }
