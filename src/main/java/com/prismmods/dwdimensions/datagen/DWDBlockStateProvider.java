@@ -23,6 +23,7 @@ public class DWDBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         simpleBlock(DWDBlocks.ZEITON_ORE.get());
         simpleBlock(DWDBlocks.DEEPSLATE_ZEITON_ORE.get());
+        simpleBlock(DWDBlocks.MERCURY_VAPOUR.get(), models().cross(ForgeRegistries.BLOCKS.getKey(DWDBlocks.MERCURY_VAPOUR.get()).getPath(), blockTexture(DWDBlocks.MERCURY_VAPOUR.get())));
 
         //SKARO
         logBlock((RotatedPillarBlock) DWDBlocks.STRIPPED_PETRIFIED_LOG.get());
@@ -34,6 +35,7 @@ public class DWDBlockStateProvider extends BlockStateProvider {
         axisBlock((RotatedPillarBlock) DWDBlocks.STRIPPED_PETRIFIED_WOOD.get(), new ResourceLocation(DWDimensions.MOD_ID, "block/stripped_petrified_log"), new ResourceLocation(DWDimensions.MOD_ID, "block/stripped_petrified_log"));
         axisBlock((RotatedPillarBlock) DWDBlocks.STRIPPED_PETRIFIED_JUNGLE_WOOD.get(), new ResourceLocation(DWDimensions.MOD_ID, "block/stripped_petrified_jungle_log"), new ResourceLocation(DWDimensions.MOD_ID, "block/stripped_petrified_jungle_log"));
 
+        simpleBlock(DWDBlocks.SKARO_SANDSTONE.get());
         simpleBlock(DWDBlocks.PETRIFIED_PLANKS.get());
         simpleBlock(DWDBlocks.PETRIFIED_LEAVES.get());
         simpleBlock(DWDBlocks.PETRIFIED_JUNGLE_LEAVES.get());
@@ -52,7 +54,7 @@ public class DWDBlockStateProvider extends BlockStateProvider {
         simpleBlock(DWDBlocks.SKARO_SHRUB_SMALL.get(), models().cross(ForgeRegistries.BLOCKS.getKey(DWDBlocks.SKARO_SHRUB_SMALL.get()).getPath(), blockTexture(DWDBlocks.SKARO_SHRUB_SMALL.get())));
         simpleBlock(DWDBlocks.SKARO_DEAD_SHRUB.get(), models().cross(ForgeRegistries.BLOCKS.getKey(DWDBlocks.SKARO_DEAD_SHRUB.get()).getPath(), blockTexture(DWDBlocks.SKARO_DEAD_SHRUB.get())));
         simpleBlock(DWDBlocks.SKARO_DEAD_SHRUB_SMALL.get(), models().cross(ForgeRegistries.BLOCKS.getKey(DWDBlocks.SKARO_DEAD_SHRUB_SMALL.get()).getPath(), blockTexture(DWDBlocks.SKARO_DEAD_SHRUB_SMALL.get())));
-        simpleBlock(DWDBlocks.SKARO_TALL_GRASS.get(), models().cross(ForgeRegistries.BLOCKS.getKey(DWDBlocks.SKARO_TALL_GRASS.get()).getPath(), blockTexture(DWDBlocks.SKARO_TALL_GRASS.get())));
+        //simpleBlock(DWDBlocks.SKARO_TALL_GRASS.get(), models().cross(ForgeRegistries.BLOCKS.getKey(DWDBlocks.SKARO_TALL_GRASS.get()).getPath(), blockTexture(DWDBlocks.SKARO_TALL_GRASS.get())));
         simpleBlock(DWDBlocks.SKARO_PETRIFIED_FLOWER_1.get(), models().cross(ForgeRegistries.BLOCKS.getKey(DWDBlocks.SKARO_PETRIFIED_FLOWER_1.get()).getPath(), blockTexture(DWDBlocks.SKARO_PETRIFIED_FLOWER_1.get())));
         simpleBlock(DWDBlocks.SKARO_PETRIFIED_FLOWER_2.get(), models().cross(ForgeRegistries.BLOCKS.getKey(DWDBlocks.SKARO_PETRIFIED_FLOWER_2.get()).getPath(), blockTexture(DWDBlocks.SKARO_PETRIFIED_FLOWER_2.get())));
         simpleBlock(DWDBlocks.SKARO_PETRIFIED_FUNGUS.get(), models().cross(ForgeRegistries.BLOCKS.getKey(DWDBlocks.SKARO_PETRIFIED_FUNGUS.get()).getPath(), blockTexture(DWDBlocks.SKARO_PETRIFIED_FUNGUS.get())));

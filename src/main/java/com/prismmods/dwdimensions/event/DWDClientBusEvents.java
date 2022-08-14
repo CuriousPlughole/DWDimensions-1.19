@@ -6,15 +6,18 @@ import com.prismmods.dwdimensions.client.models.DWDModelLayers;
 import com.prismmods.dwdimensions.client.models.blockentity.tardis.TardisSmithCapaldiModel;
 import com.prismmods.dwdimensions.client.models.blockentity.tardis.TardisTennantEcclestonModel;
 import com.prismmods.dwdimensions.client.models.blockentity.tardis.TardisWhittakerModel;
+import com.prismmods.dwdimensions.client.models.entity.GiantSkaroEelModel;
 import com.prismmods.dwdimensions.client.models.entity.HandmineLeftModel;
 import com.prismmods.dwdimensions.client.models.entity.HandmineRightModel;
 import com.prismmods.dwdimensions.client.renders.blockentities.TardisRenderer;
 import com.prismmods.dwdimensions.client.renders.entity.FallingTardisRenderer;
+import com.prismmods.dwdimensions.client.renders.entity.GiantSkaroEelRender;
 import com.prismmods.dwdimensions.client.renders.entity.HandmineRender;
 import com.prismmods.dwdimensions.common.block.DWDBlocks;
 import com.prismmods.dwdimensions.common.blockentities.DWDBlockEntities;
 import com.prismmods.dwdimensions.common.blockentities.sign.DWDWoodTypes;
 import com.prismmods.dwdimensions.common.entity.DWDEntityTypes;
+import com.prismmods.dwdimensions.common.entity.custom.GiantSkaroEelEntity;
 import com.prismmods.dwdimensions.common.fluid.DWDFluids;
 import com.prismmods.dwdimensions.common.particle.DWDParticles;
 import com.prismmods.dwdimensions.common.particle.custom.RadioactiveParticle;
@@ -54,6 +57,7 @@ public class DWDClientBusEvents {
         event.registerLayerDefinition(DWDModelLayers.TARDIS_WHITTAKER, TardisWhittakerModel::createBodyLayer);
         event.registerLayerDefinition(DWDModelLayers.TARDIS_SMITH_CAPALDI, TardisSmithCapaldiModel::createBodyLayer);
         event.registerLayerDefinition(DWDModelLayers.TARDIS_TENNANT_ECCLESTON, TardisTennantEcclestonModel::createBodyLayer);
+        event.registerLayerDefinition(DWDModelLayers.GIANT_SKARO_EEL, GiantSkaroEelModel::createBodyLayer);
     }
 
     //FIXME: Need to remove the .setRenderLayer. Instead add "render_type": "cutout" etc. to the json block model. -> Datagen
@@ -62,6 +66,7 @@ public class DWDClientBusEvents {
 
         EntityRenderers.register(DWDEntityTypes.HANDMINE.get(), HandmineRender::new);
         EntityRenderers.register(DWDEntityTypes.FALLING_TARDIS.get(), FallingTardisRenderer::new);
+        //EntityRenderers.register(DWDEntityTypes.GIANT_SKARO_EEL.get(), GiantSkaroEelRender::new);
 
         ItemBlockRenderTypes.setRenderLayer(DWDBlocks.PETRIFIED_LEAVES.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(DWDBlocks.PETRIFIED_JUNGLE_LEAVES.get(), RenderType.cutout());
@@ -87,6 +92,7 @@ public class DWDClientBusEvents {
         ItemBlockRenderTypes.setRenderLayer(DWDBlocks.PETRIFIED_PLANK_TRAPDOOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(DWDBlocks.PETRIFIED_JUNGLE_PLANK_DOOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(DWDBlocks.PETRIFIED_JUNGLE_PLANK_TRAPDOOR.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(DWDBlocks.MERCURY_VAPOUR.get(), RenderType.translucent());
 
         WoodType.register(DWDWoodTypes.PETRIFIED);
         WoodType.register(DWDWoodTypes.PETRIFIED_JUNGLE);

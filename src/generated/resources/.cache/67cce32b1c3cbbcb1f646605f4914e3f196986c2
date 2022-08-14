@@ -1,6 +1,8 @@
-// 1.19	2022-08-07T15:48:19.795745	LootTables
+// 1.19	2022-08-14T12:19:29.7164159	LootTables
 c075bce1a8f7ac5b43ba2b81c50ab82da6549a81 data/dwdimensions/loot_tables/blocks/deepslate_zeiton_ore.json
 e909c9eb60c79f00046bf1b657ff7650560a0e5a data/dwdimensions/loot_tables/blocks/handmine_trap.json
+1102402a5e01c2b4060ae6c2feb910937949fb16 data/dwdimensions/loot_tables/blocks/mercury_geyser.json
+1d4929d7d6176f60e5ea991a577527ed251ef375 data/dwdimensions/loot_tables/blocks/mercury_vapour.json
 5ac99389e56813195e07b5f5db3e3a33ad43e5fe data/dwdimensions/loot_tables/blocks/petrified_flower_1.json
 74858f1924c7aa5716bad2a021b8821d85948360 data/dwdimensions/loot_tables/blocks/petrified_flower_2.json
 925a32741a73cd2d0129c3bb2a33065963cc07e8 data/dwdimensions/loot_tables/blocks/petrified_fungus.json
@@ -51,6 +53,7 @@ a1829a48f2c6072b25ff8dd76d2e482c6bdefb6a data/dwdimensions/loot_tables/blocks/sk
 47aaf4b270dfe5ceab91c4b1b15d54603114cfcb data/dwdimensions/loot_tables/blocks/skaro_petrified_shrub.json
 e73655ba14c17e06c09ac33a51d7e63ef91e7240 data/dwdimensions/loot_tables/blocks/skaro_quicksand.json
 f451da92506545ed4428f412d9fdc6b8b198877d data/dwdimensions/loot_tables/blocks/skaro_sand.json
+7e7db0f28b28b299d9012284978246dceba48b51 data/dwdimensions/loot_tables/blocks/skaro_sandstone.json
 655bba2e554cd3906165a8d8abd3be521532cd54 data/dwdimensions/loot_tables/blocks/skaro_shrub.json
 9d0adebaebe6f60392b0692280e2c2196c3aa31b data/dwdimensions/loot_tables/blocks/skaro_shrub_small.json
 13ef38b88a51dcd103b78380365c5d336fabc515 data/dwdimensions/loot_tables/blocks/skaro_stone.json

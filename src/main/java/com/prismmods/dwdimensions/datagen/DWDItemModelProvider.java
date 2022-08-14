@@ -66,6 +66,9 @@ public class DWDItemModelProvider extends ItemModelProvider {
         blockItemModel(DWDBlocks.PETRIFIED_JUNGLE_PLANK_SLAB);
         blockItemModel(DWDBlocks.PETRIFIED_JUNGLE_PLANK_FENCE_GATE);
         blockItemModel(DWDBlocks.PETRIFIED_JUNGLE_PLANK_PRESSURE_PLATE);
+        blockItemModel(DWDBlocks.SKARO_SANDSTONE);
+
+        flatItemfromBlock(DWDBlocks.MERCURY_GEYSER);
 
         specialInventoryModel(DWDBlocks.PETRIFIED_PLANK_BUTTON);
         flatItemfromBlock(DWDBlocks.PETRIFIED_PLANK_DOOR);
@@ -84,7 +87,7 @@ public class DWDItemModelProvider extends ItemModelProvider {
         plantItem(DWDBlocks.PETRIFIED_SAPLING);
         plantItem(DWDBlocks.SKARO_DEAD_SHRUB);
         plantItem(DWDBlocks.SKARO_DEAD_SHRUB_SMALL);
-        plantItem(DWDBlocks.SKARO_TALL_GRASS);
+        flatItemfromBlock(DWDBlocks.SKARO_TALL_GRASS);
         plantItem(DWDBlocks.SKARO_PETRIFIED_SHRUB);
         plantItem(DWDBlocks.SKARO_SHRUB);
         plantItem(DWDBlocks.SKARO_SHRUB_SMALL);

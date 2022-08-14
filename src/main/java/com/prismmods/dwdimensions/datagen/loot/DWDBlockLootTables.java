@@ -30,6 +30,7 @@ public class DWDBlockLootTables extends BlockLoot {
         this.add(DWDBlocks.ZEITON_ORE.get(), (block) -> createOreDrop(DWDBlocks.ZEITON_ORE.get(), DWDItems.ZEITON_7.get()));
         this.add(DWDBlocks.DEEPSLATE_ZEITON_ORE.get(), (block) -> createOreDrop(DWDBlocks.DEEPSLATE_ZEITON_ORE.get(), DWDItems.ZEITON_7.get()));
         this.add(DWDBlocks.TARDIS.get(), noDrop());
+        this.add(DWDBlocks.MERCURY_VAPOUR.get(), noDrop());
 
         //SKARO
         this.dropSelf(DWDBlocks.PETRIFIED_LOG.get());
@@ -70,6 +71,7 @@ public class DWDBlockLootTables extends BlockLoot {
         this.dropSelf(DWDBlocks.PETRIFIED_JUNGLE_PLANK_PRESSURE_PLATE.get());
         this.dropSelf(DWDBlocks.PETRIFIED_JUNGLE_PLANK_DOOR.get());
         this.dropSelf(DWDBlocks.PETRIFIED_JUNGLE_PLANK_TRAPDOOR.get());
+        this.dropSelf(DWDBlocks.SKARO_SANDSTONE.get());
 
         this.dropSelf(DWDBlocks.SKARO_PETRIFIED_FLOWER_1.get());
         this.dropSelf(DWDBlocks.SKARO_PETRIFIED_FLOWER_2.get());
@@ -93,6 +95,7 @@ public class DWDBlockLootTables extends BlockLoot {
         this.add(DWDBlocks.PETRIFIED_PLANK_WALL_SIGN.get(), (block) -> createSingleItemTable(DWDItems.PETRIFIED_PLANK_SIGN.get()));
         this.add(DWDBlocks.PETRIFIED_JUNGLE_PLANK_SIGN.get(), (block) -> createSingleItemTable(DWDItems.PETRIFIED_JUNGLE_PLANK_SIGN.get()));
         this.add(DWDBlocks.PETRIFIED_JUNGLE_PLANK_WALL_SIGN.get(), (block) -> createSingleItemTable(DWDItems.PETRIFIED_JUNGLE_PLANK_SIGN.get()));
+        this.add(DWDBlocks.MERCURY_GEYSER.get(), (block) -> createSingleItemTableWithSilkTouch(block, DWDBlocks.SKARO_STONE.get()));
 
     }
 

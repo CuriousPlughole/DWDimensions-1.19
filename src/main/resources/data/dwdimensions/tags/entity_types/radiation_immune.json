@@ -2,6 +2,7 @@
   "values": [
     "#minecraft:skeletons",
 	"minecraft:zombie",
-	"dwdimensions:handmine"
+	"dwdimensions:handmine",
+    "dwdimensions:giant_skaro_eel"
   ]
 }

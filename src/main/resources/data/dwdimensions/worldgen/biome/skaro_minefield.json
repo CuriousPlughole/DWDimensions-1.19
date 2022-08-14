@@ -5,10 +5,10 @@
   "effects": {
     "sky_color": 10526626,
     "fog_color": 12235968,
-    "water_color": 4159204,
-    "water_fog_color": 329011,
-    "grass_color": 6500914,
-    "foliage_color": 2172951,
+    "water_color": 4867631,
+    "water_fog_color": 2236181,
+    "grass_color": 3616284,
+    "foliage_color": 6904884,
     "ambient_sound": "WIND",
     "music": {
       "sound": "CUSTOMMUSIC",

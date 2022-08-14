@@ -2,9 +2,7 @@ package com.prismmods.dwdimensions.common.block;
 
 import com.prismmods.dwdimensions.DWDimensions;
 import com.prismmods.dwdimensions.common.DWDCreativeTabs;
-import com.prismmods.dwdimensions.common.block.custom.HandmineTrapBlock;
-import com.prismmods.dwdimensions.common.block.custom.TardisBlock;
-import com.prismmods.dwdimensions.common.block.custom.VargaPlant;
+import com.prismmods.dwdimensions.common.block.custom.*;
 import com.prismmods.dwdimensions.common.block.custom.generic.*;
 import com.prismmods.dwdimensions.common.block.custom.generic.flammable.*;
 import com.prismmods.dwdimensions.common.blockentities.sign.DWDWoodTypes;
@@ -43,7 +41,6 @@ public class DWDBlocks {
      */
 
     //TODO: Add some custom effects for petrified plants. Some blindness or something? Not all negative; maybe "adrenaline" -> gives haste/strength etc
-    //TODO: Make custom class for quicksand
     //TODO: Special block types (Fences, stairs, slabs, etc)
 
     //Wood
@@ -130,6 +127,8 @@ public class DWDBlocks {
     public static final RegistryObject<Block> VARGA_BUSH = registerBlock("varga_bush", () -> new VargaPlant(MobEffects.DAMAGE_BOOST, 6, BlockBehaviour.Properties.copy(Blocks.SWEET_BERRY_BUSH).noOcclusion()), DWDCreativeTabs.DWDSkaro);
     //Special Blocks
     public static final RegistryObject<Block> HANDMINE_TRAP = registerBlock("handmine_trap", () -> new HandmineTrapBlock(BlockBehaviour.Properties.copy(Blocks.DIRT)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> MERCURY_GEYSER = registerBlock("mercury_geyser", ()-> new MercuryGeyserBlock(Block.Properties.of(Material.STONE).strength(2.0f, 6.5f).randomTicks()), DWDCreativeTabs.DWDWIPTab);
+    public static final RegistryObject<Block> MERCURY_VAPOUR = registerBlockWithoutItem("mercury_vapour", ()-> new MercuryVapourBlock(Block.Properties.of(Material.BUBBLE_COLUMN).noCollission()));
     //Basic ground blocks
     public static final RegistryObject<Block> SKARO_DIRT = registerBlock("skaro_dirt",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT)), DWDCreativeTabs.DWDSkaro);
@@ -137,6 +136,8 @@ public class DWDBlocks {
             () -> new DWDGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK), () -> SKARO_DIRT.get()), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> SKARO_SAND = registerBlock("skaro_sand",
             () -> new SandBlock(11098145, BlockBehaviour.Properties.copy(Blocks.SAND)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> SKARO_SANDSTONE = registerBlock("skaro_sandstone",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.SANDSTONE)), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> SKARO_COBBLESTONE = registerBlock("skaro_cobblestone",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE)), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> SKARO_STONE = registerBlock("skaro_stone",
@@ -148,7 +149,7 @@ public class DWDBlocks {
     public static final RegistryObject<Block> SKARO_PACKED_MUD = registerBlock("skaro_packed_mud",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.PACKED_MUD)), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> SKARO_QUICKSAND = registerBlock("skaro_quicksand",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.SAND)), DWDCreativeTabs.DWDSkaro);
+            () -> new QuicksandBlock(BlockBehaviour.Properties.copy(Blocks.SAND).noCollission()), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> SKARO_HIGHLANDS_STONE = registerBlock("skaro_highlands_stone",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> SKARO_HIGHLANDS_COBBLESTONE = registerBlock("skaro_highlands_cobblestone",

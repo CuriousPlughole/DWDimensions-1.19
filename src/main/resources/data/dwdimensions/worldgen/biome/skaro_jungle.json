@@ -1,14 +1,14 @@
 {
-  "temperature": 0.4,
-  "downfall": 0.5,
+  "temperature": 0.6,
+  "downfall": 0.9,
   "precipitation": "rain",
   "effects": {
     "sky_color": 14795476,
     "fog_color": 14804452,
     "water_color": 5558131,
     "water_fog_color": 3486466,
-    "grass_color": 2962981,
-    "foliage_color": 5728583,
+    "grass_color": 1920526,
+    "foliage_color": 2976322,
     "ambient_sound": "WIND"
   },
   "spawners": {},
@@ -29,7 +29,7 @@
     [],
     [],
     [
-      "dwdimensions:petrified_placed",
+      "dwdimensions:petrified_jungle_placed",
       "dwdimensions:skaro_patch_grass_placed",
       "dwdimensions:petrified_flowers_all_placed"
     ],

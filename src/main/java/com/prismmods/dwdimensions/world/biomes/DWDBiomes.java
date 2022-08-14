@@ -12,12 +12,16 @@ public class DWDBiomes {
 
     public static ResourceKey<Biome> SKARO_DESERT_KEY;
     public static ResourceKey<Biome> SKARO_MINEFIELD_KEY;
+    public static ResourceKey<Biome> SKARO_PLAINS_KEY;
+    public static ResourceKey<Biome> SKARO_JUNGLE_KEY;
 
     public static final DeferredRegister<Biome> BIOMES = DeferredRegister.create(ForgeRegistries.BIOMES, DWDimensions.MOD_ID);
 
     public static void registerBiomeKeys() {
         SKARO_DESERT_KEY = ResourceKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(DWDimensions.MOD_ID, "skaro_desert"));
         SKARO_MINEFIELD_KEY = ResourceKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(DWDimensions.MOD_ID, "skaro_minefield"));
+        SKARO_PLAINS_KEY = ResourceKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(DWDimensions.MOD_ID, "skaro_plains"));
+        SKARO_JUNGLE_KEY = ResourceKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(DWDimensions.MOD_ID, "skaro_jungle"));
     }
 
 }

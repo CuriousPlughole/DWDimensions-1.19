@@ -5,6 +5,7 @@ import com.prismmods.dwdimensions.common.block.DWDBlocks;
 import com.prismmods.dwdimensions.common.blockentities.DWDBlockEntities;
 import com.prismmods.dwdimensions.common.blockentities.sign.DWDWoodTypes;
 import com.prismmods.dwdimensions.common.entity.DWDEntityTypes;
+import com.prismmods.dwdimensions.common.entity.custom.GiantSkaroEelEntity;
 import com.prismmods.dwdimensions.common.entity.custom.HandmineEntity;
 import com.prismmods.dwdimensions.common.entity.effect.DWDEffectRegistry;
 import com.prismmods.dwdimensions.common.fluid.DWDFluids;
@@ -17,6 +18,7 @@ import com.prismmods.dwdimensions.world.dimension.DWDDimensionReg;
 import com.prismmods.dwdimensions.world.feature.DWDPlacedFeatures;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.Sheets;
+import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GrassColor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
@@ -29,7 +31,6 @@ import net.minecraftforge.fluids.FluidInteractionRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 
@@ -54,11 +55,9 @@ public class DWDimensions {
         DWDBiomes.BIOMES.register(modEventBus);
         DWDDimensionReg.register();
 
-
-
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::onAttributeAssign);
-        modEventBus.addListener(this::testColor);
+        modEventBus.addListener(this::setupBlockColours);
         MinecraftForge.EVENT_BUS.register(this);
 
     }
@@ -93,13 +92,16 @@ public class DWDimensions {
 
     public void onAttributeAssign(EntityAttributeCreationEvent event) {
         event.put(DWDEntityTypes.HANDMINE.get(), HandmineEntity.createAttributes());
+        //event.put(DWDEntityTypes.GIANT_SKARO_EEL.get(), GiantSkaroEelEntity.createAttributes());
     }
 
-    public void testColor(RegisterColorHandlersEvent.Block event) {
-        System.out.println("I am going to kill you.");
+    public void setupBlockColours(RegisterColorHandlersEvent.Block event) {
         event.register((state, worldIn, pos, tintIndex) -> worldIn != null && pos != null
                 ? BiomeColors.getAverageGrassColor(worldIn, pos)
                 : GrassColor.get(0.5D, 1.0D), DWDBlocks.SKARO_GRASS.get());
+        event.register((state, world, pos, tint) -> world != null && pos != null
+                ? BiomeColors.getAverageFoliageColor(world, pos)
+                : FoliageColor.get(0.5D, 1.0D), DWDBlocks.SKARO_TALL_GRASS.get());
     }
 
 }

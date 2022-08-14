@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "dwdimensions:item/skaro_tall_grass"
+    "layer0": "dwdimensions:item/mercury_geyser"
   }
 }

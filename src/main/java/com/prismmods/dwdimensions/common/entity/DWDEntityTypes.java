@@ -2,6 +2,7 @@ package com.prismmods.dwdimensions.common.entity;
 
 import com.prismmods.dwdimensions.DWDimensions;
 import com.prismmods.dwdimensions.common.entity.custom.FallingTardisEntity;
+import com.prismmods.dwdimensions.common.entity.custom.GiantSkaroEelEntity;
 import com.prismmods.dwdimensions.common.entity.custom.HandmineEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -19,8 +20,13 @@ public class DWDEntityTypes {
             () -> EntityType.Builder.of(HandmineEntity::new, MobCategory.MONSTER).sized(0.3f, 0.3f).build(new ResourceLocation(DWDimensions.MOD_ID, "handmine").toString()));
 
     public static final RegistryObject<EntityType<FallingTardisEntity>> FALLING_TARDIS = ENTITY_TYPES.register("falling_tardis",
-            () -> EntityType.Builder.of(FallingTardisEntity::new, MobCategory.MISC).sized(0.3f, 0.3f).build(new ResourceLocation(DWDimensions.MOD_ID, "falling_tardis").toString()));
+            () -> EntityType.Builder.of(FallingTardisEntity::new, MobCategory.MISC).sized(1.0f, 1.0f).build(new ResourceLocation(DWDimensions.MOD_ID, "falling_tardis").toString()));
 
+    /*
+    //FIXME: Temporarily disabled for alpha build
+    public static final RegistryObject<EntityType<GiantSkaroEelEntity>> GIANT_SKARO_EEL = ENTITY_TYPES.register("giant_skaro_eel",
+            () -> EntityType.Builder.of(GiantSkaroEelEntity::new, MobCategory.CREATURE).sized(1.0f, 6.0f).build(new ResourceLocation(DWDimensions.MOD_ID, "giant_skaro_eel").toString()));
+    */
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

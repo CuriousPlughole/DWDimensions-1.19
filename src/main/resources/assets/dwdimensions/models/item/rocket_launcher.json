@@ -1,8 +1,8 @@
 {
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "dwdimensions:item/fuck_off",
-		"particle": "dwdimensions:item/fuck_off"
+		"0": "dwdimensions:item/rocket_launcher",
+		"particle": "dwdimensions:item/rocket_launcher"
 	},
 	"elements": [
 		{

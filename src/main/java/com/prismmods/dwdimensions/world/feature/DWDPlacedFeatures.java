@@ -31,7 +31,11 @@ public class DWDPlacedFeatures {
 
     public static final RegistryObject<PlacedFeature> SKARO_GRASS_PATCH_PLACED = PLACED_FEATURES.register("skaro_patch_grass_placed",
             () -> new PlacedFeature((Holder<ConfiguredFeature<?,?>>)(Holder<? extends ConfiguredFeature<?,?>>) DWDConfiguredFeatures.NORMAL_PATCH_SKARO_GRASS,
-                    List.of(RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
+                    List.of(CountPlacement.of(20), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome())));
+
+    public static final RegistryObject<PlacedFeature> PETRIFIED_FLOWERS_ALL_PLACED = PLACED_FEATURES.register("petrified_flowers_all_placed",
+            () -> new PlacedFeature((Holder<ConfiguredFeature<?,?>>)(Holder<? extends ConfiguredFeature<?,?>>) DWDConfiguredFeatures.PETRIFIED_FLOWERS_ALL,
+                    List.of(RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
 
     public static final RegistryObject<PlacedFeature> SKARO_GRASS_BONEMEAL = PLACED_FEATURES.register("skaro_grass_bonemeal",
             () -> new PlacedFeature((Holder<ConfiguredFeature<?,?>>)(Holder<? extends ConfiguredFeature<?,?>>) DWDConfiguredFeatures.SINGLE_PIECE_OF_SKARO_GRASS,
