@@ -84,6 +84,19 @@ public class DWDBlockStateProvider extends BlockStateProvider {
         pressurePlateBlock((PressurePlateBlock) DWDBlocks.PETRIFIED_JUNGLE_PLANK_PRESSURE_PLATE.get(), blockTexture(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get()));
         signBlock((StandingSignBlock)DWDBlocks.PETRIFIED_JUNGLE_PLANK_SIGN.get(), (WallSignBlock) DWDBlocks.PETRIFIED_JUNGLE_PLANK_WALL_SIGN.get(), blockTexture(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get()));
 
+        slabBlock((SlabBlock) DWDBlocks.SKARO_COBBLESTONE_SLAB.get(), blockTexture(DWDBlocks.SKARO_COBBLESTONE.get()), blockTexture(DWDBlocks.SKARO_COBBLESTONE.get()));
+        slabBlock((SlabBlock) DWDBlocks.SKARO_HIGHLANDS_COBBLESTONE_SLAB.get(), blockTexture(DWDBlocks.SKARO_HIGHLANDS_COBBLESTONE.get()), blockTexture(DWDBlocks.SKARO_HIGHLANDS_COBBLESTONE.get()));
+        slabBlock((SlabBlock) DWDBlocks.SKARO_HIGHLANDS_STONE_SLAB.get(), blockTexture(DWDBlocks.SKARO_HIGHLANDS_STONE.get()), blockTexture(DWDBlocks.SKARO_HIGHLANDS_STONE.get()));
+        slabBlock((SlabBlock) DWDBlocks.SKARO_STONE_SLAB.get(), blockTexture(DWDBlocks.SKARO_STONE.get()), blockTexture(DWDBlocks.SKARO_STONE.get()));
+        stairsBlock((StairBlock) DWDBlocks.SKARO_COBBLESTONE_STAIRS.get(), blockTexture(DWDBlocks.SKARO_COBBLESTONE.get()));
+        stairsBlock((StairBlock) DWDBlocks.SKARO_HIGHLANDS_COBBLESTONE_STAIRS.get(), blockTexture(DWDBlocks.SKARO_HIGHLANDS_COBBLESTONE.get()));
+        stairsBlock((StairBlock) DWDBlocks.SKARO_STONE_STAIRS.get(), blockTexture(DWDBlocks.SKARO_STONE.get()));
+        stairsBlock((StairBlock) DWDBlocks.SKARO_HIGHLANDS_STONE_STAIRS.get(), blockTexture(DWDBlocks.SKARO_HIGHLANDS_STONE.get()));
+        wallBlock((WallBlock) DWDBlocks.SKARO_COBBLESTONE_WALL.get(), blockTexture(DWDBlocks.SKARO_COBBLESTONE.get()));
+        wallBlock((WallBlock) DWDBlocks.SKARO_HIGHLANDS_COBBLESTONE_WALL.get(), blockTexture(DWDBlocks.SKARO_HIGHLANDS_COBBLESTONE.get()));
+        wallBlock((WallBlock) DWDBlocks.SKARO_STONE_WALL.get(), blockTexture(DWDBlocks.SKARO_STONE.get()));
+        wallBlock((WallBlock) DWDBlocks.SKARO_HIGHLANDS_STONE_WALL.get(), blockTexture(DWDBlocks.SKARO_HIGHLANDS_STONE.get()));
+
 
     }
 }

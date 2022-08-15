@@ -84,6 +84,27 @@ public class DWDRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_petrified_jungle_planks", has(DWDBlocks.PETRIFIED_JUNGLE_PLANKS.get()))
                 .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "petrified_jungle_plank_sign"));
 
+        RecipeProvider.slab(pFinishedRecipeConsumer, DWDBlocks.SKARO_COBBLESTONE_SLAB.get(), DWDBlocks.SKARO_COBBLESTONE.get().asItem());
+        RecipeProvider.slab(pFinishedRecipeConsumer, DWDBlocks.SKARO_HIGHLANDS_COBBLESTONE_SLAB.get(), DWDBlocks.SKARO_HIGHLANDS_COBBLESTONE.get().asItem());
+        RecipeProvider.slab(pFinishedRecipeConsumer, DWDBlocks.SKARO_STONE_SLAB.get(), DWDBlocks.SKARO_STONE.get().asItem());
+        RecipeProvider.slab(pFinishedRecipeConsumer, DWDBlocks.SKARO_HIGHLANDS_STONE_SLAB.get(), DWDBlocks.SKARO_HIGHLANDS_STONE.get().asItem());
+        RecipeProvider.wall(pFinishedRecipeConsumer, DWDBlocks.SKARO_COBBLESTONE_WALL.get(), DWDBlocks.SKARO_COBBLESTONE.get().asItem());
+        RecipeProvider.wall(pFinishedRecipeConsumer, DWDBlocks.SKARO_STONE_WALL.get(), DWDBlocks.SKARO_STONE.get().asItem());
+        RecipeProvider.wall(pFinishedRecipeConsumer, DWDBlocks.SKARO_HIGHLANDS_COBBLESTONE_WALL.get(), DWDBlocks.SKARO_HIGHLANDS_COBBLESTONE.get().asItem());
+        RecipeProvider.wall(pFinishedRecipeConsumer, DWDBlocks.SKARO_HIGHLANDS_STONE_WALL.get(), DWDBlocks.SKARO_HIGHLANDS_STONE.get().asItem());
+        RecipeProvider.stairBuilder(DWDBlocks.SKARO_COBBLESTONE_STAIRS.get(), Ingredient.of(DWDBlocks.SKARO_COBBLESTONE.get().asItem()))
+                .unlockedBy("has_skaro_cobblestone", has(DWDBlocks.SKARO_COBBLESTONE.get()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "skaro_cobblestone_stair"));
+        RecipeProvider.stairBuilder(DWDBlocks.SKARO_STONE_STAIRS.get(), Ingredient.of(DWDBlocks.SKARO_STONE.get().asItem()))
+                .unlockedBy("has_skaro_stone", has(DWDBlocks.SKARO_STONE.get()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "skaro_stone_stair"));
+        RecipeProvider.stairBuilder(DWDBlocks.SKARO_HIGHLANDS_STONE_STAIRS.get(), Ingredient.of(DWDBlocks.SKARO_HIGHLANDS_STONE.get().asItem()))
+                .unlockedBy("has_skaro_highlands_stone", has(DWDBlocks.SKARO_HIGHLANDS_STONE.get()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "skaro_highlands_stone_stair"));
+        RecipeProvider.stairBuilder(DWDBlocks.SKARO_HIGHLANDS_COBBLESTONE_STAIRS.get(), Ingredient.of(DWDBlocks.SKARO_HIGHLANDS_COBBLESTONE.get().asItem()))
+                .unlockedBy("has_skaro_highlands_cobblestone", has(DWDBlocks.SKARO_HIGHLANDS_COBBLESTONE.get()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "skaro_highlands_cobblestone_stair"));
+
         //Parameters: item to smelt, result, experience gained, cooking time.
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(DWDBlocks.ZEITON_ORE.get().asItem()), DWDItems.ZEITON_7.get(), 0.1F, 200)
                 .unlockedBy("has_zeiton_ore", inventoryTrigger(ItemPredicate.Builder.item().of(DWDBlocks.ZEITON_ORE.get()).build()))

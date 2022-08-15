@@ -73,6 +73,19 @@ public class DWDBlockLootTables extends BlockLoot {
         this.dropSelf(DWDBlocks.PETRIFIED_JUNGLE_PLANK_TRAPDOOR.get());
         this.dropSelf(DWDBlocks.SKARO_SANDSTONE.get());
 
+        this.dropSelf(DWDBlocks.SKARO_COBBLESTONE_SLAB.get());
+        this.dropSelf(DWDBlocks.SKARO_COBBLESTONE_STAIRS.get());
+        this.dropSelf(DWDBlocks.SKARO_COBBLESTONE_WALL.get());
+        this.dropSelf(DWDBlocks.SKARO_HIGHLANDS_COBBLESTONE_SLAB.get());
+        this.dropSelf(DWDBlocks.SKARO_HIGHLANDS_COBBLESTONE_STAIRS.get());
+        this.dropSelf(DWDBlocks.SKARO_HIGHLANDS_COBBLESTONE_WALL.get());
+        this.dropSelf(DWDBlocks.SKARO_HIGHLANDS_STONE_SLAB.get());
+        this.dropSelf(DWDBlocks.SKARO_HIGHLANDS_STONE_STAIRS.get());
+        this.dropSelf(DWDBlocks.SKARO_HIGHLANDS_STONE_WALL.get());
+        this.dropSelf(DWDBlocks.SKARO_STONE_SLAB.get());
+        this.dropSelf(DWDBlocks.SKARO_STONE_STAIRS.get());
+        this.dropSelf(DWDBlocks.SKARO_STONE_WALL.get());
+
         this.dropSelf(DWDBlocks.SKARO_PETRIFIED_FLOWER_1.get());
         this.dropSelf(DWDBlocks.SKARO_PETRIFIED_FLOWER_2.get());
         this.dropSelf(DWDBlocks.SKARO_PETRIFIED_FUNGUS.get());

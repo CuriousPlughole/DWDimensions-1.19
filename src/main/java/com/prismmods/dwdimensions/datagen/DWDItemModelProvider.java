@@ -68,6 +68,19 @@ public class DWDItemModelProvider extends ItemModelProvider {
         blockItemModel(DWDBlocks.PETRIFIED_JUNGLE_PLANK_PRESSURE_PLATE);
         blockItemModel(DWDBlocks.SKARO_SANDSTONE);
 
+        blockItemModel(DWDBlocks.SKARO_STONE_SLAB);
+        blockItemModel(DWDBlocks.SKARO_STONE_STAIRS);
+        blockItemModel(DWDBlocks.SKARO_COBBLESTONE_STAIRS);
+        blockItemModel(DWDBlocks.SKARO_COBBLESTONE_SLAB);
+        blockItemModel(DWDBlocks.SKARO_HIGHLANDS_STONE_SLAB);
+        blockItemModel(DWDBlocks.SKARO_HIGHLANDS_STONE_STAIRS);
+        blockItemModel(DWDBlocks.SKARO_HIGHLANDS_COBBLESTONE_SLAB);
+        blockItemModel(DWDBlocks.SKARO_HIGHLANDS_COBBLESTONE_STAIRS);
+        specialInventoryModel(DWDBlocks.SKARO_COBBLESTONE_WALL);
+        specialInventoryModel(DWDBlocks.SKARO_STONE_WALL);
+        specialInventoryModel(DWDBlocks.SKARO_HIGHLANDS_COBBLESTONE_WALL);
+        specialInventoryModel(DWDBlocks.SKARO_HIGHLANDS_STONE_WALL);
+
         flatItemfromBlock(DWDBlocks.MERCURY_GEYSER);
 
         specialInventoryModel(DWDBlocks.PETRIFIED_PLANK_BUTTON);

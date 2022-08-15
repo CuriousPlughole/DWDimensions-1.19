@@ -154,6 +154,33 @@ public class DWDBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> SKARO_HIGHLANDS_COBBLESTONE = registerBlock("skaro_highlands_cobblestone",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)), DWDCreativeTabs.DWDSkaro);
+    //TODO: Stone button, pressure plate
+    public static final RegistryObject<Block> SKARO_COBBLESTONE_SLAB = registerBlock("skaro_cobblestone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_SLAB)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> SKARO_HIGHLANDS_COBBLESTONE_SLAB = registerBlock("skaro_highlands_cobblestone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_SLAB)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> SKARO_STONE_SLAB = registerBlock("skaro_stone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_SLAB)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> SKARO_HIGHLANDS_STONE_SLAB = registerBlock("skaro_highlands_stone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_SLAB)), DWDCreativeTabs.DWDSkaro);
+
+    public static final RegistryObject<Block> SKARO_COBBLESTONE_STAIRS = registerBlock("skaro_cobblestone_stairs",
+            () -> new StairBlock(()-> SKARO_COBBLESTONE.get().defaultBlockState() ,BlockBehaviour.Properties.copy(Blocks.STONE_STAIRS)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> SKARO_HIGHLANDS_COBBLESTONE_STAIRS = registerBlock("skaro_highlands_cobblestone_stairs",
+            () -> new StairBlock(()-> SKARO_HIGHLANDS_COBBLESTONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE_STAIRS)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> SKARO_STONE_STAIRS = registerBlock("skaro_stone_stairs",
+            () -> new StairBlock(()-> SKARO_STONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE_STAIRS)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> SKARO_HIGHLANDS_STONE_STAIRS = registerBlock("skaro_highlands_stone_stairs",
+            () -> new StairBlock(()-> SKARO_HIGHLANDS_STONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE_STAIRS)), DWDCreativeTabs.DWDSkaro);
+
+    public static final RegistryObject<Block> SKARO_COBBLESTONE_WALL = registerBlock("skaro_cobblestone_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_WALL)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> SKARO_HIGHLANDS_COBBLESTONE_WALL = registerBlock("skaro_highlands_cobblestone_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_WALL)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> SKARO_STONE_WALL = registerBlock("skaro_stone_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_WALL)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> SKARO_HIGHLANDS_STONE_WALL = registerBlock("skaro_highlands_stone_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_WALL)), DWDCreativeTabs.DWDSkaro);
 
     /**
     REGISTRY METHODS
