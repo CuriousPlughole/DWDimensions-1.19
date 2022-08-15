@@ -29,7 +29,7 @@ public class MercuryGeyserBlock extends Block {
 
         if(!entity.fireImmune() && entity instanceof LivingEntity && !EnchantmentHelper.hasFrostWalker((LivingEntity) entity)) {
             entity.hurt(DamageSource.HOT_FLOOR, 1.0f);
-            entity.setDeltaMovement(entity.getDeltaMovement().add(0.0D, 0.1D, 0.0D));
+            entity.setDeltaMovement(entity.getDeltaMovement().add(0.0D, 1.0D, 0.0D));
 
             //TODO: custom particles here too
             double d0 = pos.getX();

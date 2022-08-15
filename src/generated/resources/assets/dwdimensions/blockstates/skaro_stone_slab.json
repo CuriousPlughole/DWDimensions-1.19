@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "dwdimensions:block/skaro_stone_slab"
+    },
+    "type=double": {
+      "model": "dwdimensions:block/skaro_stone"
+    },
+    "type=top": {
+      "model": "dwdimensions:block/skaro_stone_slab_top"
+    }
+  }
+}

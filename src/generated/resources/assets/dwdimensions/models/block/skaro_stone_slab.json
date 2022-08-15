@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "dwdimensions:block/skaro_stone",
+    "side": "dwdimensions:block/skaro_stone",
+    "top": "dwdimensions:block/skaro_stone"
+  }
+}

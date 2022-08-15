@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_skaro_highlands_stone": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dwdimensions:skaro_highlands_stone"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dwdimensions:skaro_highlands_stone_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_skaro_highlands_stone",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dwdimensions:skaro_highlands_stone_slab"
+    ]
+  }
+}
