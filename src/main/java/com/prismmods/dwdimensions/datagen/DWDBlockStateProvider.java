@@ -35,7 +35,7 @@ public class DWDBlockStateProvider extends BlockStateProvider {
         axisBlock((RotatedPillarBlock) DWDBlocks.STRIPPED_PETRIFIED_WOOD.get(), new ResourceLocation(DWDimensions.MOD_ID, "block/stripped_petrified_log"), new ResourceLocation(DWDimensions.MOD_ID, "block/stripped_petrified_log"));
         axisBlock((RotatedPillarBlock) DWDBlocks.STRIPPED_PETRIFIED_JUNGLE_WOOD.get(), new ResourceLocation(DWDimensions.MOD_ID, "block/stripped_petrified_jungle_log"), new ResourceLocation(DWDimensions.MOD_ID, "block/stripped_petrified_jungle_log"));
 
-        simpleBlock(DWDBlocks.SKARO_SANDSTONE.get());
+        //simpleBlock(DWDBlocks.SKARO_SANDSTONE.get());
         simpleBlock(DWDBlocks.PETRIFIED_PLANKS.get());
         simpleBlock(DWDBlocks.PETRIFIED_LEAVES.get());
         simpleBlock(DWDBlocks.PETRIFIED_JUNGLE_LEAVES.get());

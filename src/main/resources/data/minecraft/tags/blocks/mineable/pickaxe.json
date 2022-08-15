@@ -9,6 +9,8 @@
 	"dwdimensions:skaro_highlands_cobblestone",
 	"#dwdimensions:stone_walls",
 	"#dwdimensions:stone_slabs",
-	"#dwdimensions:stone_stairs"
+	"#dwdimensions:stone_stairs",
+	"dwdimensions:skaro_sandstone",
+	"dwdimensions:skaro_packed_mud"
   ]
 }

@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "dwdimensions:handmine_trap"
+    "dwdimensions:handmine_trap",
+	"dwdimensions:skaro_quicksand",
+	"#dwdimensions:skaro_grit",
+	"#dwdimensions:skaro_soil"
   ]
 }

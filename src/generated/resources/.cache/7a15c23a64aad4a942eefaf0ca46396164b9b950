@@ -1,4 +1,4 @@
-// 1.19.2	2022-08-15T15:12:35.8223447	Block States: dwdimensions
+// 1.19.2	2022-08-15T18:13:31.7777138	Block States: dwdimensions
 47e61e6b5fa86520f2896f68bb22b5938ec5332d assets/dwdimensions/blockstates/deepslate_zeiton_ore.json
 aaa4a96a4e42a688bfe3c93b40fd10f023ec1962 assets/dwdimensions/blockstates/handmine_trap.json
 d62f178ebdc87f2ced7cb4c4261ba27b58dae106 assets/dwdimensions/blockstates/mercury_vapour.json
@@ -57,7 +57,6 @@ cc40d9a16130464f4b63db6dbd03ee08ccd1b1d2 assets/dwdimensions/blockstates/skaro_h
 464587cdd7e036b7b4c70df9b970bcac23121a29 assets/dwdimensions/blockstates/skaro_petrified_shrub.json
 df14dcec0a827b71b3ecd7e4f3c7879eba112fe2 assets/dwdimensions/blockstates/skaro_quicksand.json
 861e4b661ab486ffe6e78ba3c56300492ec8432a assets/dwdimensions/blockstates/skaro_sand.json
-2ad6f843732536a099b9dbd4590abec8eca7673e assets/dwdimensions/blockstates/skaro_sandstone.json
 21593ebfa67a9dca47de6e60c3f8269b79691448 assets/dwdimensions/blockstates/skaro_shrub.json
 581fbb513e5f84dffbd2d992509f10ef8e2aa1ff assets/dwdimensions/blockstates/skaro_shrub_small.json
 5b70b07c85d4ab8f03eba9db690a98bacf618720 assets/dwdimensions/blockstates/skaro_stone.json
@@ -180,7 +179,6 @@ bdeb210a9054872be345e52432f2e9fc72d2b376 assets/dwdimensions/models/block/skaro_
 55e6e9ad494711e8809a9997733d14c1aa460ced assets/dwdimensions/models/block/skaro_petrified_shrub.json
 7a754446373dadde4d944f50eda10920a8f55a76 assets/dwdimensions/models/block/skaro_quicksand.json
 12f5cfd2e91949cd50a45439c9a479e42a11d609 assets/dwdimensions/models/block/skaro_sand.json
-366fc6085ce4297d40f51e7e93e2a149d6103b7f assets/dwdimensions/models/block/skaro_sandstone.json
 7e12a12bf3b76907eff57187772b710f3e5a08df assets/dwdimensions/models/block/skaro_shrub.json
 e7a142d27246067e06d72c327404e23faa1bc9f8 assets/dwdimensions/models/block/skaro_shrub_small.json
 82677d66dc51f79aaae98fb7262fe851bf99d0a9 assets/dwdimensions/models/block/skaro_stone.json

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "dwdimensions:block/skaro_sandstone_bottom",
+    "side": "dwdimensions:block/skaro_sandstone",
+    "top": "dwdimensions:block/skaro_sandstone_top"
+  }
+}
