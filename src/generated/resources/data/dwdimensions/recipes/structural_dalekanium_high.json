@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "R": {
+      "item": "dwdimensions:dalekanium_ingot"
+    },
+    "S": {
+      "item": "dwdimensions:skaro_stone"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SRS",
+    "SSS"
+  ],
+  "result": {
+    "count": 8,
+    "item": "dwdimensions:structural_dalekanium_high"
+  }
+}

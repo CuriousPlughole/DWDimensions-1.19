@@ -31,6 +31,24 @@ public class DWDItemModelProvider extends ItemModelProvider {
         simpleItem(DWDItems.ANTI_RADIATION_PILL);
         simpleItem(DWDItems.SKARO_DISK);
         simpleItem(DWDItems.DEVICES_ICON);
+        simpleItem(DWDItems.RAW_DALEKANIUM);
+        simpleItem(DWDItems.DALEKANIUM_INGOT);
+
+        blockItemModel(DWDBlocks.DALEKANIUM_BLOCK);
+        blockItemModel(DWDBlocks.DALEKANIUM_ORE);
+        blockItemModel(DWDBlocks.DEEPSLATE_DALEKANIUM_ORE);
+        blockItemModel(DWDBlocks.LOW_GRADE_STRUCTURAL_DALEKANIUM);
+        blockItemModel(DWDBlocks.HIGH_GRADE_STRUCTURAL_DALEKANIUM);
+        blockItemModel(DWDBlocks.MILITARY_GRADE_STRUCTURAL_DALEKANIUM);
+        blockItemModel(DWDBlocks.LOW_GRADE_STRUCTURAL_DALEKANIUM_SLAB);
+        blockItemModel(DWDBlocks.HIGH_GRADE_STRUCTURAL_DALEKANIUM_SLAB);
+        blockItemModel(DWDBlocks.MILITARY_GRADE_STRUCTURAL_DALEKANIUM_SLAB);
+        blockItemModel(DWDBlocks.LOW_GRADE_STRUCTURAL_DALEKANIUM_STAIRS);
+        blockItemModel(DWDBlocks.HIGH_GRADE_STRUCTURAL_DALEKANIUM_STAIRS);
+        blockItemModel(DWDBlocks.MILITARY_GRADE_STRUCTURAL_DALEKANIUM_STAIRS);
+        specialInventoryModel(DWDBlocks.MILITARY_GRADE_STRUCTURAL_DALEKANIUM_WALL);
+        specialInventoryModel(DWDBlocks.HIGH_GRADE_STRUCTURAL_DALEKANIUM_WALL);
+        specialInventoryModel(DWDBlocks.LOW_GRADE_STRUCTURAL_DALEKANIUM_WALL);
 
         blockItemModel(DWDBlocks.DEEPSLATE_ZEITON_ORE);
         blockItemModel(DWDBlocks.ZEITON_ORE);
@@ -105,6 +123,7 @@ public class DWDItemModelProvider extends ItemModelProvider {
         plantItem(DWDBlocks.SKARO_SHRUB);
         plantItem(DWDBlocks.SKARO_SHRUB_SMALL);
         plantItem(DWDBlocks.PETRIFIED_JUNGLE_SAPLING);
+        plantItem(DWDBlocks.SKARO_VINES);
 
 
         /* Method for automatically registering blockItems. Probably gonna cause more issues than its worth though.

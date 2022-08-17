@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "dwdimensions:block/structural_dalekanium_high_slab"
+    },
+    "type=double": {
+      "model": "dwdimensions:block/structural_dalekanium_high"
+    },
+    "type=top": {
+      "model": "dwdimensions:block/structural_dalekanium_high_slab_top"
+    }
+  }
+}

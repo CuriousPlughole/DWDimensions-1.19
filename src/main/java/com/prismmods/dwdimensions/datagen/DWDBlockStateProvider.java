@@ -35,7 +35,22 @@ public class DWDBlockStateProvider extends BlockStateProvider {
         axisBlock((RotatedPillarBlock) DWDBlocks.STRIPPED_PETRIFIED_WOOD.get(), new ResourceLocation(DWDimensions.MOD_ID, "block/stripped_petrified_log"), new ResourceLocation(DWDimensions.MOD_ID, "block/stripped_petrified_log"));
         axisBlock((RotatedPillarBlock) DWDBlocks.STRIPPED_PETRIFIED_JUNGLE_WOOD.get(), new ResourceLocation(DWDimensions.MOD_ID, "block/stripped_petrified_jungle_log"), new ResourceLocation(DWDimensions.MOD_ID, "block/stripped_petrified_jungle_log"));
 
-        //simpleBlock(DWDBlocks.SKARO_SANDSTONE.get());
+        simpleBlock(DWDBlocks.DALEKANIUM_BLOCK.get());
+        simpleBlock(DWDBlocks.HIGH_GRADE_STRUCTURAL_DALEKANIUM.get());
+        simpleBlock(DWDBlocks.LOW_GRADE_STRUCTURAL_DALEKANIUM.get());
+        simpleBlock(DWDBlocks.MILITARY_GRADE_STRUCTURAL_DALEKANIUM.get());
+        simpleBlock(DWDBlocks.DEEPSLATE_DALEKANIUM_ORE.get());
+        simpleBlock(DWDBlocks.DALEKANIUM_ORE.get());
+        slabBlock((SlabBlock) DWDBlocks.HIGH_GRADE_STRUCTURAL_DALEKANIUM_SLAB.get(), blockTexture(DWDBlocks.HIGH_GRADE_STRUCTURAL_DALEKANIUM.get()), blockTexture(DWDBlocks.HIGH_GRADE_STRUCTURAL_DALEKANIUM.get()));
+        slabBlock((SlabBlock) DWDBlocks.LOW_GRADE_STRUCTURAL_DALEKANIUM_SLAB.get(), blockTexture(DWDBlocks.LOW_GRADE_STRUCTURAL_DALEKANIUM.get()), blockTexture(DWDBlocks.LOW_GRADE_STRUCTURAL_DALEKANIUM.get()));
+        slabBlock((SlabBlock) DWDBlocks.MILITARY_GRADE_STRUCTURAL_DALEKANIUM_SLAB.get(), blockTexture(DWDBlocks.MILITARY_GRADE_STRUCTURAL_DALEKANIUM.get()), blockTexture(DWDBlocks.MILITARY_GRADE_STRUCTURAL_DALEKANIUM.get()));
+        stairsBlock((StairBlock) DWDBlocks.HIGH_GRADE_STRUCTURAL_DALEKANIUM_STAIRS.get(), blockTexture(DWDBlocks.HIGH_GRADE_STRUCTURAL_DALEKANIUM.get()));
+        stairsBlock((StairBlock) DWDBlocks.LOW_GRADE_STRUCTURAL_DALEKANIUM_STAIRS.get(), blockTexture(DWDBlocks.LOW_GRADE_STRUCTURAL_DALEKANIUM.get()));
+        stairsBlock((StairBlock) DWDBlocks.MILITARY_GRADE_STRUCTURAL_DALEKANIUM_STAIRS.get(), blockTexture(DWDBlocks.MILITARY_GRADE_STRUCTURAL_DALEKANIUM.get()));
+        wallBlock((WallBlock) DWDBlocks.HIGH_GRADE_STRUCTURAL_DALEKANIUM_WALL.get(), blockTexture(DWDBlocks.HIGH_GRADE_STRUCTURAL_DALEKANIUM.get()));
+        wallBlock((WallBlock) DWDBlocks.LOW_GRADE_STRUCTURAL_DALEKANIUM_WALL.get(), blockTexture(DWDBlocks.LOW_GRADE_STRUCTURAL_DALEKANIUM.get()));
+        wallBlock((WallBlock) DWDBlocks.MILITARY_GRADE_STRUCTURAL_DALEKANIUM_WALL.get(), blockTexture(DWDBlocks.MILITARY_GRADE_STRUCTURAL_DALEKANIUM.get()));
+
         simpleBlock(DWDBlocks.PETRIFIED_PLANKS.get());
         simpleBlock(DWDBlocks.PETRIFIED_LEAVES.get());
         simpleBlock(DWDBlocks.PETRIFIED_JUNGLE_LEAVES.get());
@@ -96,6 +111,7 @@ public class DWDBlockStateProvider extends BlockStateProvider {
         wallBlock((WallBlock) DWDBlocks.SKARO_HIGHLANDS_COBBLESTONE_WALL.get(), blockTexture(DWDBlocks.SKARO_HIGHLANDS_COBBLESTONE.get()));
         wallBlock((WallBlock) DWDBlocks.SKARO_STONE_WALL.get(), blockTexture(DWDBlocks.SKARO_STONE.get()));
         wallBlock((WallBlock) DWDBlocks.SKARO_HIGHLANDS_STONE_WALL.get(), blockTexture(DWDBlocks.SKARO_HIGHLANDS_STONE.get()));
+
 
 
     }

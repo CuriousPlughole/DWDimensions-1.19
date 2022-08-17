@@ -72,6 +72,20 @@ public class DWDBlockLootTables extends BlockLoot {
         this.dropSelf(DWDBlocks.PETRIFIED_JUNGLE_PLANK_DOOR.get());
         this.dropSelf(DWDBlocks.PETRIFIED_JUNGLE_PLANK_TRAPDOOR.get());
         this.dropSelf(DWDBlocks.SKARO_SANDSTONE.get());
+        this.dropSelf(DWDBlocks.DALEKANIUM_BLOCK.get());
+        this.dropSelf(DWDBlocks.LOW_GRADE_STRUCTURAL_DALEKANIUM.get());
+        this.dropSelf(DWDBlocks.HIGH_GRADE_STRUCTURAL_DALEKANIUM.get());
+        this.dropSelf(DWDBlocks.MILITARY_GRADE_STRUCTURAL_DALEKANIUM.get());
+
+        this.dropSelf(DWDBlocks.LOW_GRADE_STRUCTURAL_DALEKANIUM_SLAB.get());
+        this.dropSelf(DWDBlocks.HIGH_GRADE_STRUCTURAL_DALEKANIUM_SLAB.get());
+        this.dropSelf(DWDBlocks.MILITARY_GRADE_STRUCTURAL_DALEKANIUM_SLAB.get());
+        this.dropSelf(DWDBlocks.LOW_GRADE_STRUCTURAL_DALEKANIUM_STAIRS.get());
+        this.dropSelf(DWDBlocks.HIGH_GRADE_STRUCTURAL_DALEKANIUM_STAIRS.get());
+        this.dropSelf(DWDBlocks.MILITARY_GRADE_STRUCTURAL_DALEKANIUM_STAIRS.get());
+        this.dropSelf(DWDBlocks.LOW_GRADE_STRUCTURAL_DALEKANIUM_WALL.get());
+        this.dropSelf(DWDBlocks.HIGH_GRADE_STRUCTURAL_DALEKANIUM_WALL.get());
+        this.dropSelf(DWDBlocks.MILITARY_GRADE_STRUCTURAL_DALEKANIUM_WALL.get());
 
         this.dropSelf(DWDBlocks.SKARO_COBBLESTONE_SLAB.get());
         this.dropSelf(DWDBlocks.SKARO_COBBLESTONE_STAIRS.get());
@@ -109,6 +123,9 @@ public class DWDBlockLootTables extends BlockLoot {
         this.add(DWDBlocks.PETRIFIED_JUNGLE_PLANK_SIGN.get(), (block) -> createSingleItemTable(DWDItems.PETRIFIED_JUNGLE_PLANK_SIGN.get()));
         this.add(DWDBlocks.PETRIFIED_JUNGLE_PLANK_WALL_SIGN.get(), (block) -> createSingleItemTable(DWDItems.PETRIFIED_JUNGLE_PLANK_SIGN.get()));
         this.add(DWDBlocks.MERCURY_GEYSER.get(), (block) -> createSingleItemTableWithSilkTouch(block, DWDBlocks.SKARO_STONE.get()));
+        this.add(DWDBlocks.SKARO_VINES.get(), (block) -> createShearsOnlyDrop(block));
+        this.add(DWDBlocks.DALEKANIUM_ORE.get(), (block) -> createOreDrop(DWDBlocks.DALEKANIUM_ORE.get(), DWDItems.RAW_DALEKANIUM.get()));
+        this.add(DWDBlocks.DEEPSLATE_DALEKANIUM_ORE.get(), (block) -> createOreDrop(DWDBlocks.DEEPSLATE_DALEKANIUM_ORE.get(), DWDItems.RAW_DALEKANIUM.get()));
 
     }
 

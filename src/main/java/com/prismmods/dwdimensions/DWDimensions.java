@@ -15,9 +15,15 @@ import com.prismmods.dwdimensions.common.sound.DWDSounds;
 import com.prismmods.dwdimensions.network.Network;
 import com.prismmods.dwdimensions.world.biomes.DWDBiomes;
 import com.prismmods.dwdimensions.world.dimension.DWDDimensionReg;
+import com.prismmods.dwdimensions.world.feature.DWDConfiguredFeatures;
 import com.prismmods.dwdimensions.world.feature.DWDPlacedFeatures;
+import com.prismmods.dwdimensions.world.feature.tree.decorator.DWDTreeDecorators;
+import com.prismmods.dwdimensions.world.structures.DWDStructures;
+import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.Sheets;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GrassColor;
 import net.minecraft.world.level.block.Blocks;
@@ -49,15 +55,18 @@ public class DWDimensions {
         DWDBlockEntities.register(modEventBus);
         DWDParticles.register(modEventBus);
         DWDFluids.register(modEventBus);
-        DWDPlacedFeatures.register(modEventBus);
-
+        DWDTreeDecorators.register(modEventBus);
         DWDEffectRegistry.register(modEventBus);
-        DWDBiomes.BIOMES.register(modEventBus);
+        DWDBiomes.register(modEventBus);
         DWDDimensionReg.register();
+        DWDConfiguredFeatures.register(modEventBus);
+        DWDPlacedFeatures.register(modEventBus);
+        DWDStructures.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::onAttributeAssign);
         modEventBus.addListener(this::setupBlockColours);
+        modEventBus.addListener(this::setupItemColours);
         MinecraftForge.EVENT_BUS.register(this);
 
     }
@@ -101,7 +110,12 @@ public class DWDimensions {
                 : GrassColor.get(0.5D, 1.0D), DWDBlocks.SKARO_GRASS.get());
         event.register((state, world, pos, tint) -> world != null && pos != null
                 ? BiomeColors.getAverageFoliageColor(world, pos)
-                : FoliageColor.get(0.5D, 1.0D), DWDBlocks.SKARO_TALL_GRASS.get());
+                : FoliageColor.get(0.5D, 1.0D), DWDBlocks.SKARO_TALL_GRASS.get(), DWDBlocks.SKARO_VINES.get());
+    }
+
+    public void setupItemColours(RegisterColorHandlersEvent.Item event) {
+        event.register((stack, color) -> event.getBlockColors().getColor(((BlockItem)stack.getItem()).getBlock().defaultBlockState(), null, null, color),
+                DWDBlocks.SKARO_VINES.get().asItem());
     }
 
 }

@@ -125,6 +125,7 @@ public class DWDBlocks {
     public static final RegistryObject<Block> POTTED_SKARO_PETRIFIED_FLOWER_2 = registerBlockWithoutItem("potted_petrified_flower_2", () -> new FlowerPotBlock( SKARO_PETRIFIED_FLOWER_2.get(), BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
     public static final RegistryObject<Block> POTTED_SKARO_PETRIFIED_FUNGUS = registerBlockWithoutItem("potted_petrified_fungus", () -> new FlowerPotBlock( SKARO_PETRIFIED_FUNGUS.get(),BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
     public static final RegistryObject<Block> VARGA_BUSH = registerBlock("varga_bush", () -> new VargaPlant(MobEffects.DAMAGE_BOOST, 6, BlockBehaviour.Properties.copy(Blocks.SWEET_BERRY_BUSH).noOcclusion()), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> SKARO_VINES = registerBlock("skaro_vines", () -> new VineBlock(BlockBehaviour.Properties.copy(Blocks.VINE)), DWDCreativeTabs.DWDSkaro);
     //Special Blocks
     public static final RegistryObject<Block> HANDMINE_TRAP = registerBlock("handmine_trap", () -> new HandmineTrapBlock(BlockBehaviour.Properties.copy(Blocks.DIRT)), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> MERCURY_GEYSER = registerBlock("mercury_geyser", ()-> new MercuryGeyserBlock(Block.Properties.of(Material.STONE).strength(2.0f, 6.5f).randomTicks()), DWDCreativeTabs.DWDWIPTab);
@@ -181,6 +182,41 @@ public class DWDBlocks {
             () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_WALL)), DWDCreativeTabs.DWDSkaro);
     public static final RegistryObject<Block> SKARO_HIGHLANDS_STONE_WALL = registerBlock("skaro_highlands_stone_wall",
             () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_WALL)), DWDCreativeTabs.DWDSkaro);
+
+    //DALEKANIUM
+    public static final RegistryObject<Block> LOW_GRADE_STRUCTURAL_DALEKANIUM = registerBlock("structural_dalekanium_low",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> HIGH_GRADE_STRUCTURAL_DALEKANIUM = registerBlock("structural_dalekanium_high",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> MILITARY_GRADE_STRUCTURAL_DALEKANIUM = registerBlock("structural_dalekanium_military",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> DALEKANIUM_BLOCK = registerBlock("dalekanium_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> DALEKANIUM_ORE = registerBlock("dalekanium_ore",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.GOLD_ORE)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> DEEPSLATE_DALEKANIUM_ORE = registerBlock("deepslate_dalekanium_ore",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_GOLD_ORE)), DWDCreativeTabs.DWDSkaro);
+
+    public static final RegistryObject<Block> LOW_GRADE_STRUCTURAL_DALEKANIUM_SLAB = registerBlock("structural_dalekanium_low_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_SLAB)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> HIGH_GRADE_STRUCTURAL_DALEKANIUM_SLAB = registerBlock("structural_dalekanium_high_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_SLAB)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> MILITARY_GRADE_STRUCTURAL_DALEKANIUM_SLAB = registerBlock("structural_dalekanium_military_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> LOW_GRADE_STRUCTURAL_DALEKANIUM_STAIRS = registerBlock("structural_dalekanium_low_stairs",
+            () -> new StairBlock(()-> LOW_GRADE_STRUCTURAL_DALEKANIUM.get().defaultBlockState() ,BlockBehaviour.Properties.copy(Blocks.STONE_STAIRS)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> HIGH_GRADE_STRUCTURAL_DALEKANIUM_STAIRS = registerBlock("structural_dalekanium_high_stairs",
+            () -> new StairBlock(()-> HIGH_GRADE_STRUCTURAL_DALEKANIUM.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE_STAIRS)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> MILITARY_GRADE_STRUCTURAL_DALEKANIUM_STAIRS = registerBlock("structural_dalekanium_military_stairs",
+            () -> new StairBlock(()-> MILITARY_GRADE_STRUCTURAL_DALEKANIUM.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> LOW_GRADE_STRUCTURAL_DALEKANIUM_WALL = registerBlock("structural_dalekanium_low_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_WALL)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> HIGH_GRADE_STRUCTURAL_DALEKANIUM_WALL = registerBlock("structural_dalekanium_high_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COBBLESTONE_WALL)), DWDCreativeTabs.DWDSkaro);
+    public static final RegistryObject<Block> MILITARY_GRADE_STRUCTURAL_DALEKANIUM_WALL = registerBlock("structural_dalekanium_military_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK)), DWDCreativeTabs.DWDSkaro);
+
+
 
     /**
     REGISTRY METHODS

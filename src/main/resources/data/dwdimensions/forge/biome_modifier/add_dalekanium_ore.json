@@ -1,0 +1,11 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "dwdimensions:skaro_plains",
+    "dwdimensions:skaro_desert",
+    "dwdimensions:skaro_minefield",
+    "dwdimensions:skaro_jungle"
+  ],
+  "features": "dwdimensions:dalekanium_ore_placed",
+  "step": "underground_ores"
+}

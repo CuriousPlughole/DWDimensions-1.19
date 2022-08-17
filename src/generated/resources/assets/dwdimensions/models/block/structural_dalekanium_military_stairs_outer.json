@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "dwdimensions:block/structural_dalekanium_military",
+    "side": "dwdimensions:block/structural_dalekanium_military",
+    "top": "dwdimensions:block/structural_dalekanium_military"
+  }
+}

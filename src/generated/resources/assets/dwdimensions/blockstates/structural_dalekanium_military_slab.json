@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "dwdimensions:block/structural_dalekanium_military_slab"
+    },
+    "type=double": {
+      "model": "dwdimensions:block/structural_dalekanium_military"
+    },
+    "type=top": {
+      "model": "dwdimensions:block/structural_dalekanium_military_slab_top"
+    }
+  }
+}

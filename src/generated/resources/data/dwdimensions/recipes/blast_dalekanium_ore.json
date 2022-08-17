@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 0.2,
+  "ingredient": {
+    "item": "dwdimensions:dalekanium_ore"
+  },
+  "result": "dwdimensions:dalekanium_ingot"
+}

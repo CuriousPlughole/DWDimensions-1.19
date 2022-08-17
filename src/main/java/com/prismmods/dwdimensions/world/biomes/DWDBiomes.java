@@ -5,6 +5,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -22,6 +23,10 @@ public class DWDBiomes {
         SKARO_MINEFIELD_KEY = ResourceKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(DWDimensions.MOD_ID, "skaro_minefield"));
         SKARO_PLAINS_KEY = ResourceKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(DWDimensions.MOD_ID, "skaro_plains"));
         SKARO_JUNGLE_KEY = ResourceKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(DWDimensions.MOD_ID, "skaro_jungle"));
+    }
+
+    public static void register(IEventBus eventBus) {
+        BIOMES.register(eventBus);
     }
 
 }

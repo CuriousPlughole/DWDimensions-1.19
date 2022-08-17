@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "dwdimensions:dalekanium_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "dwdimensions:dalekanium_ingot"
+  }
+}
