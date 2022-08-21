@@ -77,7 +77,7 @@ public class DWDimensions {
 
         //Lava onto radioactive water
         FluidInteractionRegistry.addInteraction(DWDFluids.RADIOACTIVE_WATER_TYPE.get(),
-                new FluidInteractionRegistry.InteractionInformation(ForgeMod.LAVA_TYPE.get(), Blocks.STONE.defaultBlockState()));
+                new FluidInteractionRegistry.InteractionInformation(ForgeMod.LAVA_TYPE.get(), DWDBlocks.SKARO_STONE.get().defaultBlockState()));
         //Radioactive water onto lava
         FluidInteractionRegistry.addInteraction(ForgeMod.LAVA_TYPE.get(),
                 new FluidInteractionRegistry.InteractionInformation(DWDFluids.RADIOACTIVE_WATER_TYPE.get(), Blocks.OBSIDIAN.defaultBlockState()));
