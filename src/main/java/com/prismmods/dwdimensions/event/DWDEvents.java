@@ -3,6 +3,7 @@ package com.prismmods.dwdimensions.event;
 import com.prismmods.dwdimensions.DWDimensions;
 import com.prismmods.dwdimensions.common.capability.radiation.RadiationCapability;
 import com.prismmods.dwdimensions.common.capability.radiation.RadiationCapabilityProvider;
+import com.prismmods.dwdimensions.common.entity.custom.HandmineEntity;
 import com.prismmods.dwdimensions.common.entity.effect.DWDEffect;
 import com.prismmods.dwdimensions.common.entity.effect.DWDEffectRegistry;
 import com.prismmods.dwdimensions.common.particle.DWDParticles;
@@ -16,6 +17,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.Zombie;
@@ -112,13 +114,14 @@ public class DWDEvents {
     }
 
     @SubscribeEvent
-    public static void onPlayerJoinWorld(EntityJoinLevelEvent event) {
+    public static void onEntityJoinWorld(EntityJoinLevelEvent event) {
         if(!event.getLevel().isClientSide()) {
             if(event.getEntity() instanceof ServerPlayer player) {
                 player.getCapability(RadiationCapabilityProvider.LIVING_ENTITY_RADIATION).ifPresent(radiation -> {
                     Network.sendToClient(new RadiationDataMessage(radiation.getRadiation()), player);
                 });
             }
+
         }
     }
 

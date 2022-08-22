@@ -32,7 +32,7 @@ public class HandmineRender extends MobRenderer<HandmineEntity, EntityModel<Hand
 
     @Override
     public ResourceLocation getTextureLocation(HandmineEntity entity) {
-        ResourceLocation TEXTURE = new ResourceLocation(DWDimensions.MOD_ID, "textures/entity/handmine.png");
+        ResourceLocation TEXTURE = new ResourceLocation(DWDimensions.MOD_ID, "textures/entity/new_handmine.png");
         return TEXTURE;
     }
 }

@@ -9,6 +9,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -79,6 +80,7 @@ public class HandmineTrapBlock extends Block {
 
                     if (level.getBlockState(new BlockPos(spawnX, y + 1, spawnZ)) == Blocks.AIR.defaultBlockState()) {
                         handmine.setPos(modifiedSpawnX, y+1, modifiedSpawnZ);
+                        handmine.setPose(Pose.EMERGING);
                         if(!level.isClientSide) {
                             level.addFreshEntity(handmine);
                         }

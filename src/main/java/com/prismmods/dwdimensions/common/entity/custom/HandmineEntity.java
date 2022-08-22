@@ -5,17 +5,18 @@ import com.prismmods.dwdimensions.common.entity.DWDEntityTypes;
 import com.prismmods.dwdimensions.common.item.DWDItems;
 import net.minecraft.core.Holder;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientboundAddEntityPacket;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -28,7 +29,10 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ServerLevelAccessor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Random;
 import java.util.function.Predicate;
@@ -36,12 +40,58 @@ import java.util.function.Predicate;
 public class HandmineEntity extends Monster implements Enemy {
 
     private static final Predicate<LivingEntity> NOT_HANDMINE = (livingEntity) -> !(livingEntity instanceof HandmineEntity) && livingEntity.attackable();
+    public AnimationState emergeAnimationState = new AnimationState();
 
     private static final EntityDataAccessor<String> SIDE = SynchedEntityData.defineId(HandmineEntity.class,
             EntityDataSerializers.STRING);
 
     public HandmineEntity(EntityType<? extends Monster> entityType, Level level) {
         super(entityType, level);
+    }
+
+    public Packet<?> getAddEntityPacket() {
+        return new ClientboundAddEntityPacket((LivingEntity)this, this.hasPose(Pose.EMERGING) ? 1 : 0);
+    }
+
+    public void recreateFromPacket(ClientboundAddEntityPacket packet) {
+        super.recreateFromPacket(packet);
+        if (packet.getData() == 1) {
+            this.setPose(Pose.EMERGING);
+        }
+    }
+
+    public boolean checkSpawnObstruction(LevelReader reader) {
+        return super.checkSpawnObstruction(reader) && reader.noCollision(this, this.getType().getDimensions().makeBoundingBox(this.position()));
+    }
+
+    public boolean isEmerging() {return this.hasPose(Pose.EMERGING);}
+
+
+    @Override
+    public void onSyncedDataUpdated(@NotNull EntityDataAccessor<?> accessor) {
+        if(DATA_POSE.equals(accessor)) {
+            if(this.getPose() == Pose.EMERGING) {
+                this.emergeAnimationState.start(this.tickCount);
+            }
+        }
+        super.onSyncedDataUpdated(accessor);
+    }
+
+    @Override
+    public boolean isPushable() {
+        return false;
+    }
+
+    @Nullable
+    @Override
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor serverLevelAccessor, DifficultyInstance difficultyInstance, MobSpawnType spawnType, @Nullable SpawnGroupData groupData, @Nullable CompoundTag tag) {
+
+        /*if(spawnType == MobSpawnType.TRIGGERED) {
+
+        }*/
+        this.setPose(Pose.EMERGING);
+
+        return super.finalizeSpawn(serverLevelAccessor, difficultyInstance, spawnType, groupData, tag);
     }
 
     @Override
