@@ -29,7 +29,7 @@ public class HandmineLeftModel extends HierarchicalModel<HandmineEntity> {
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
 
-        PartDefinition hand = partdefinition.addOrReplaceChild("hand", CubeListBuilder.create(), PartPose.offset(0.0F, 24.0F, 0.0F));
+        PartDefinition hand = partdefinition.addOrReplaceChild("hand", CubeListBuilder.create(), PartPose.offsetAndRotation(0.0F, 24.0F, 0.0F, 0.0F, 3.1416F, 0.0F));
 
         PartDefinition main = hand.addOrReplaceChild("main", CubeListBuilder.create().texOffs(0, 0).addBox(-2.0F, -5.0F, -1.0F, 4.0F, 5.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -2.0F, 0.0F, 0.4363F, 0.0F, 0.0F));
 
@@ -79,7 +79,7 @@ public class HandmineLeftModel extends HierarchicalModel<HandmineEntity> {
     public void setupAnim(HandmineEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 
         this.root().getAllParts().forEach(ModelPart::resetPose);
-        this.animate(entity.emergeAnimationState, HandmineAnimations.LEFT_EMERGE, ageInTicks,2.16f);
+        this.animate(entity.emergeAnimationState, HandmineAnimations.LeftEmerge(entity.getEmergingModifier()), ageInTicks,2.16f);
 
     }
 

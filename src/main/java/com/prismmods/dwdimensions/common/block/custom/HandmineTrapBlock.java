@@ -3,6 +3,7 @@ package com.prismmods.dwdimensions.common.block.custom;
 import com.prismmods.dwdimensions.common.block.DWDBlocks;
 import com.prismmods.dwdimensions.common.entity.DWDEntityTypes;
 import com.prismmods.dwdimensions.common.entity.custom.HandmineEntity;
+import com.prismmods.dwdimensions.common.sound.DWDSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
@@ -84,15 +85,13 @@ public class HandmineTrapBlock extends Block {
                         if(!level.isClientSide) {
                             level.addFreshEntity(handmine);
                         }
-                        level.addParticle(ParticleTypes.SQUID_INK, spawnX, y+1, spawnZ, 0,0,0);
+                        level.addParticle(ParticleTypes.SQUID_INK, spawnX, y+0.5, spawnZ, 0,0,0);
                     }
                 }
 
             }
-            //Need custom emerging sound
-            level.playSound((Player)entity, pos, SoundEvents.SPIDER_STEP, SoundSource.BLOCKS, 0.7f, 1.0f);
+            level.playSound((Player)entity, pos, DWDSounds.HANDMINE_EMERGES.get(), SoundSource.BLOCKS, 1.5f, 1.0f);
 
-            //trap activated so just change to dirt
             level.setBlock(pos, DWDBlocks.SKARO_MUD.get().defaultBlockState(), 3);
         }
         super.stepOn(level, pos, state, entity);

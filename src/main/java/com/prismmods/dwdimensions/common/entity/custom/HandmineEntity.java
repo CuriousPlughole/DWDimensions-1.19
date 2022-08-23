@@ -44,6 +44,8 @@ public class HandmineEntity extends Monster implements Enemy {
 
     private static final EntityDataAccessor<String> SIDE = SynchedEntityData.defineId(HandmineEntity.class,
             EntityDataSerializers.STRING);
+    private static final EntityDataAccessor<Float> EMERGING_MODIFIER = SynchedEntityData.defineId(HandmineEntity.class,
+            EntityDataSerializers.FLOAT);
 
     public HandmineEntity(EntityType<? extends Monster> entityType, Level level) {
         super(entityType, level);
@@ -98,8 +100,8 @@ public class HandmineEntity extends Monster implements Enemy {
     protected void registerGoals() {
         super.registerGoals();
 
-        this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 8.0F));
-        this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 0.1D, false));
+        this.goalSelector.addGoal(1, new LookAtPlayerGoal(this, Player.class, 8.0F));
+        this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 0.1D, false));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 0, false, false, NOT_HANDMINE));
 
     }
@@ -163,22 +165,28 @@ public class HandmineEntity extends Monster implements Enemy {
 
     /*
     DATA FOR LEFT OR RIGHT MODEL TO BE USED
+    AND TO DEFINE VARIATION FOR EMERGING FROM THE GROUND
      */
 
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
         getEntityData().define(SIDE, this.getRandomSide());
+        getEntityData().define(EMERGING_MODIFIER, this.getRandomEmergingModifier());
     }
     @Override
     public void addAdditionalSaveData(CompoundTag compoundTag) {
         compoundTag.putString("side", this.getSide());
+        compoundTag.putFloat("emerging_modifier", this.getRandomEmergingModifier());
         super.addAdditionalSaveData(compoundTag);
     }
     @Override
     public void readAdditionalSaveData(CompoundTag compoundTag) {
         if(compoundTag.contains("side")) {
             this.setSide(compoundTag.getString("side"));
+        }
+        if(compoundTag.contains("emerging_modifier")) {
+            this.setEmergingModifier(compoundTag.getFloat("emerging_modifier"));
         }
         super.readAdditionalSaveData(compoundTag);
     }
@@ -193,6 +201,16 @@ public class HandmineEntity extends Monster implements Enemy {
         Boolean isRight = rand.nextBoolean();
         if(isRight) return "right";
         else return "left";
+    }
+    public void setEmergingModifier(Float floatIn) {
+        this.entityData.set(EMERGING_MODIFIER, floatIn);
+    }
+    public Float getEmergingModifier() {
+        return this.entityData.get(EMERGING_MODIFIER);
+    }
+    public Float getRandomEmergingModifier() {
+        Random rand = new Random();
+        return (rand.nextFloat() * (1.8f)) - 0.9f;
     }
 
 

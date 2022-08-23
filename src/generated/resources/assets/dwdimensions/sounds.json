@@ -1,0 +1,68 @@
+{
+  "block.tardis.door_close": {
+    "sounds": [
+      "dwdimensions:block/tardis/door_close"
+    ],
+    "subtitle": "sound.tardis.door.close"
+  },
+  "block.tardis.door_close_squeaky": {
+    "sounds": [
+      "dwdimensions:block/tardis/door_close_squeaky"
+    ],
+    "subtitle": "sound.tardis.door.close"
+  },
+  "block.tardis.door_open_1": {
+    "sounds": [
+      "dwdimensions:block/tardis/door_open_1"
+    ],
+    "subtitle": "sound.tardis.door.open"
+  },
+  "block.tardis.door_open_2": {
+    "sounds": [
+      "dwdimensions:block/tardis/door_open_2"
+    ],
+    "subtitle": "sound.tardis.door.open"
+  },
+  "block.tardis.door_open_squeaky": {
+    "sounds": [
+      "dwdimensions:block/tardis/door_open_squeaky"
+    ],
+    "subtitle": "sound.tardis.door.open"
+  },
+  "entity.handmine.emerge": {
+    "sounds": [
+      "dwdimensions:entity/handmine/emerge"
+    ],
+    "subtitle": "sound.entity.handmine.emerge"
+  },
+  "entity.player.snap": {
+    "sounds": [
+      "dwdimensions:entity/player/snap"
+    ],
+    "subtitle": "sound.entity.player.snap"
+  },
+  "sonic.smith.extend": {
+    "sounds": [
+      "dwdimensions:sonic/smith/extend"
+    ],
+    "subtitle": "sound.sonic.extends"
+  },
+  "sonic.smith.retract": {
+    "sounds": [
+      "dwdimensions:sonic/smith/retract"
+    ],
+    "subtitle": "sound.sonic.retracts"
+  },
+  "sonic.smith.use_short": {
+    "sounds": [
+      "dwdimensions:sonic/smith/use_short"
+    ],
+    "subtitle": "sound.sonic.used"
+  },
+  "sonic.tennant.extend": {
+    "sounds": [
+      "dwdimensions:sonic/tennant/extend"
+    ],
+    "subtitle": "sound.sonic.extends"
+  }
+}

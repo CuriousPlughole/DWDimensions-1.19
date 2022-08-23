@@ -20,5 +20,6 @@ public class DataGenerators {
         generator.addProvider(true, new DWDLootTableProvider(generator));
         generator.addProvider(true, new DWDBlockStateProvider(generator, existingFileHelper));
         generator.addProvider(true, new DWDItemModelProvider(generator, existingFileHelper));
+        generator.addProvider(true, new DWDSoundFileProvider(generator, DWDimensions.MOD_ID, existingFileHelper));
     }
 }

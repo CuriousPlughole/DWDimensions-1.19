@@ -1,7 +1,4 @@
 {
-    "itemGroup.dwdwiptab": "WIP",
-    "itemGroup.dwdskarotab": "Skaro",
-
     "item.dwdimensions.stattenheim_remote": "Stattenheim Remote",
     "item.dwdimensions.stattenheim_remote.lights": "Set Stattenheim remote to lights mode",
     "item.dwdimensions.stattenheim_remote.chameleon" : "Set Stattenheim remote to Chameleon mode",
@@ -15,7 +12,6 @@
     "block.dwdimensions.structural_dalekanium_low": "Low Grade Structural Dalekanium",
     "block.dwdimensions.structural_dalekanium_high": "High Grade Structural Dalekanium",
     "block.dwdimensions.structural_dalekanium_military": "Military Grade Structural Dalekanium",
-
     "block.dwdimensions.structural_dalekanium_low_slab": "Low Grade Structural Dalekanium Slab",
     "block.dwdimensions.structural_dalekanium_high_slab": "High Grade Structural Dalekanium Slab",
     "block.dwdimensions.structural_dalekanium_military_slab": "Military Grade Structural Dalekanium Slab",
@@ -25,7 +21,6 @@
     "block.dwdimensions.structural_dalekanium_low_wall": "Low Grade Structural Dalekanium Wall",
     "block.dwdimensions.structural_dalekanium_high_wall": "High Grade Structural Dalekanium Wall",
     "block.dwdimensions.structural_dalekanium_military_wall": "Military Grade Structural Dalekanium Wall",
-
     "block.dwdimensions.dalekanium_block": "Dalekanium Block",
     "block.dwdimensions.dalekanium_ore": "Dalekanium Ore",
     "block.dwdimensions.deepslate_dalekanium_ore": "Deepslate Dalekanium Ore",
@@ -103,10 +98,21 @@
     "block.dwdimensions.skaro_sandstone": "Skaro Sandstone",
 
     "block.dwdimensions.tardis" : "TARDIS (Decorational for now)",
+	
+	"sound.entity.player.snap": "Player snaps fingers",
+	"sound.entity.handmine.emerge": "Handmine emerges",
+	"sound.sonic.extends": "Sonic Screwdriver extends",
+	"sound.sonic.retracts": "Sonic Screwdriver retracts",
+	"sound.sonic.used": "Sonic Screwdriver buzzes",
+	"sound.tardis.door.close": "TARDIS Door closes",
+	"sound.tardis.door.open": "TARDIS Door opens",
 
+	"itemGroup.dwdwiptab": "WIP",
+    "itemGroup.dwdskarotab": "Skaro",
     "key.categories.dwdimensions": "DWDimensions",
     "key.dwdimensions.tardis_door": "Tardis Door",
     "effect.dwdimensions.radiation_sickness":"Radiation Sickness",
     "effect.dwdimensions.radioactive":"Radioactive",
     "death.attack.dwdimensions.radiation.sickness":"%s died from radiation sickness"
+	
 }
