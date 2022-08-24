@@ -81,7 +81,6 @@ public class HandmineRightModel extends HierarchicalModel<HandmineEntity> {
     @Override
     public void setupAnim(HandmineEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         this.root().getAllParts().forEach(ModelPart::resetPose);
-        //System.out.println(entity + " : "+entity.getRandomEmergingModifier());
         this.animate(entity.emergeAnimationState, HandmineAnimations.RightEmerge(entity.getEmergingModifier()), ageInTicks,2.16f);
     }
 

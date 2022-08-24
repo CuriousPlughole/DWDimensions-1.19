@@ -5,6 +5,7 @@ import com.prismmods.dwdimensions.common.block.DWDBlocks;
 import com.prismmods.dwdimensions.common.blockentities.DWDBlockEntities;
 import com.prismmods.dwdimensions.common.blockentities.sign.DWDWoodTypes;
 import com.prismmods.dwdimensions.common.entity.DWDEntityTypes;
+import com.prismmods.dwdimensions.common.entity.custom.DalekEntity;
 import com.prismmods.dwdimensions.common.entity.custom.GiantSkaroEelEntity;
 import com.prismmods.dwdimensions.common.entity.custom.HandmineEntity;
 import com.prismmods.dwdimensions.common.entity.effect.DWDEffectRegistry;
@@ -101,7 +102,8 @@ public class DWDimensions {
 
     public void onAttributeAssign(EntityAttributeCreationEvent event) {
         event.put(DWDEntityTypes.HANDMINE.get(), HandmineEntity.createAttributes());
-        //event.put(DWDEntityTypes.GIANT_SKARO_EEL.get(), GiantSkaroEelEntity.createAttributes());
+        event.put(DWDEntityTypes.GIANT_SKARO_EEL.get(), GiantSkaroEelEntity.createAttributes());
+        event.put(DWDEntityTypes.DALEK.get(), DalekEntity.createAttributes());
     }
 
     public void setupBlockColours(RegisterColorHandlersEvent.Block event) {

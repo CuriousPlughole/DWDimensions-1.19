@@ -3,10 +3,12 @@ package com.prismmods.dwdimensions.event;
 import com.prismmods.dwdimensions.DWDimensions;
 import com.prismmods.dwdimensions.common.capability.radiation.RadiationCapability;
 import com.prismmods.dwdimensions.common.capability.radiation.RadiationCapabilityProvider;
+import com.prismmods.dwdimensions.common.entity.custom.DalekEntity;
 import com.prismmods.dwdimensions.common.entity.custom.HandmineEntity;
 import com.prismmods.dwdimensions.common.entity.effect.DWDEffect;
 import com.prismmods.dwdimensions.common.entity.effect.DWDEffectRegistry;
 import com.prismmods.dwdimensions.common.particle.DWDParticles;
+import com.prismmods.dwdimensions.common.sound.DWDSounds;
 import com.prismmods.dwdimensions.network.Network;
 import com.prismmods.dwdimensions.network.messages.RadiationDataMessage;
 import com.prismmods.dwdimensions.util.ClientUtil;
@@ -27,6 +29,7 @@ import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.LogicalSide;
@@ -34,6 +37,24 @@ import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = DWDimensions.MOD_ID)
 public class DWDEvents {
+
+    @SubscribeEvent
+    public static void onDeath(LivingHurtEvent event) {
+        if(event.getEntity() instanceof DalekEntity) {
+            DalekEntity dalek = (DalekEntity) event.getEntity();
+            if(dalek.getHealth() - event.getAmount() <=0 && dalek.getSpecialState() != 0.5f) {
+
+                dalek.playSound(DWDSounds.DALEK_EMERGENCY.get());
+
+
+                event.setCanceled(true);
+                event.setAmount(0);
+                dalek.setHealth(0.5f);
+                dalek.setSpecialState(0.5f);
+                dalek.removeFreeWill();
+            }
+        }
+    }
 
     @SubscribeEvent
     public static void onAttachCapabilities(AttachCapabilitiesEvent<Entity> event) {
@@ -64,8 +85,6 @@ public class DWDEvents {
 
     @SubscribeEvent
     public static void onLivingEntityTick(LivingEvent.LivingTickEvent event) {
-
-
         if(!event.getEntity().level.isClientSide) {
             if(event.getEntity() instanceof Player && (((Player) event.getEntity()).isCreative() || event.getEntity().isSpectator())) {
                     //If not in survival, do nothing

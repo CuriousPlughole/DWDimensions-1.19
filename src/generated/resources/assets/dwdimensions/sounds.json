@@ -29,6 +29,105 @@
     ],
     "subtitle": "sound.tardis.door.open"
   },
+  "entity.dalek.attacked": {
+    "sounds": [
+      "dwdimensions:entity/dalek/casing_hit"
+    ],
+    "subtitle": "sound.entity.dalek.attacked"
+  },
+  "entity.dalek.drive": {
+    "sounds": [
+      "dwdimensions:entity/dalek/drive_long"
+    ],
+    "subtitle": "sound.entity.dalek.drive"
+  },
+  "entity.dalek.emergency": {
+    "sounds": [
+      "dwdimensions:entity/dalek/emergency"
+    ],
+    "subtitle": "sound.entity.dalek.attacked"
+  },
+  "entity.dalek.exterminate": {
+    "sounds": [
+      "dwdimensions:entity/dalek/exterminate"
+    ],
+    "subtitle": "sound.entity.dalek.exterminate"
+  },
+  "entity.dalek.eyestalk": {
+    "sounds": [
+      {
+        "name": "dwdimensions:entity/dalek/eyestalk",
+        "weight": 4
+      },
+      "dwdimensions:entity/dalek/eyestalk_long"
+    ],
+    "subtitle": "sound.entity.dalek.mechanical"
+  },
+  "entity.dalek.eyestalk_slow": {
+    "sounds": [
+      "dwdimensions:entity/dalek/eyestalk_slow"
+    ],
+    "subtitle": "sound.entity.dalek.mechanical"
+  },
+  "entity.dalek.gun": {
+    "sounds": [
+      "dwdimensions:entity/dalek/gun_aim"
+    ],
+    "subtitle": "sound.entity.dalek.mechanical"
+  },
+  "entity.dalek.hover_end": {
+    "sounds": [
+      "dwdimensions:entity/dalek/hover_stop"
+    ],
+    "subtitle": "sound.entity.dalek.hover"
+  },
+  "entity.dalek.hover_loop": {
+    "sounds": [
+      "dwdimensions:entity/dalek/hover_loop"
+    ],
+    "subtitle": "sound.entity.dalek.hover"
+  },
+  "entity.dalek.hover_start": {
+    "sounds": [
+      "dwdimensions:entity/dalek/hover_start"
+    ],
+    "subtitle": "sound.entity.dalek.hover"
+  },
+  "entity.dalek.mechanical": {
+    "sounds": [
+      "dwdimensions:entity/dalek/mechanical_a",
+      "dwdimensions:entity/dalek/mechanical_b",
+      "dwdimensions:entity/dalek/mechanical_c",
+      "dwdimensions:entity/dalek/mechanical_d",
+      "dwdimensions:entity/dalek/mechanical_e",
+      "dwdimensions:entity/dalek/mechanical_f"
+    ],
+    "subtitle": "sound.entity.dalek.mechanical"
+  },
+  "entity.dalek.mechanical_long": {
+    "sounds": [
+      "dwdimensions:entity/dalek/mechanical_long"
+    ],
+    "subtitle": "sound.entity.dalek.mechanical"
+  },
+  "entity.dalek.scream": {
+    "sounds": [
+      "dwdimensions:entity/dalek/scream"
+    ],
+    "subtitle": "sound.entity.dalek.scream"
+  },
+  "entity.dalek.shoot": {
+    "sounds": [
+      "dwdimensions:entity/dalek/shoot"
+    ],
+    "subtitle": "sound.entity.dalek.shoot"
+  },
+  "entity.dalek.tea": {
+    "sounds": [
+      "dwdimensions:entity/dalek/tea"
+    ],
+    "subtitle": "sound.entity.dalek.tea"
+  },
   "entity.handmine.emerge": {
     "sounds": [
       "dwdimensions:entity/handmine/emerge"

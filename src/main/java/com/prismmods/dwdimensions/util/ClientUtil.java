@@ -3,14 +3,20 @@ package com.prismmods.dwdimensions.util;
 import com.prismmods.dwdimensions.client.models.DWDModelLayers;
 import com.prismmods.dwdimensions.client.models.entity.HandmineLeftModel;
 import com.prismmods.dwdimensions.client.models.entity.HandmineRightModel;
+import com.prismmods.dwdimensions.client.models.entity.dalek.BigDalekModel;
+import com.prismmods.dwdimensions.client.models.entity.dalek.MediumDalekModel;
+import com.prismmods.dwdimensions.client.models.entity.dalek.SmallDalekModel;
 import com.prismmods.dwdimensions.common.blockentities.tardis.Chameleon;
+import com.prismmods.dwdimensions.common.entity.custom.DalekEntity;
 import com.prismmods.dwdimensions.common.entity.custom.HandmineEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.model.geom.ModelPart;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ClientUtil {
@@ -40,6 +46,42 @@ public class ClientUtil {
 
         }
         return TARDIS_MODEL_MAP.get(model);
+    }
+
+    public class DalekModelGetter {
+        private static EntityModelSet theBaker = Minecraft.getInstance().getEntityModels();
+        private static final EntityModel<DalekEntity> BIGMODEL = new BigDalekModel(theBaker.bakeLayer(DWDModelLayers.BIG_DALEK));
+        private static final EntityModel<DalekEntity> MEDIUMMODEL = new MediumDalekModel(theBaker.bakeLayer(DWDModelLayers.MEDIUM_DALEK));
+        private static final EntityModel<DalekEntity> SMALLMODEL = new SmallDalekModel(theBaker.bakeLayer(DWDModelLayers.SMALL_DALEK));
+
+        public static List<String> big_model_types = new ArrayList<String>();
+        public static List<String> small_model_types = new ArrayList<String>();
+        //public static String[] medium_model_types = new String[] {"assault","axis_strike_a","axis_strike_b","buzz_saw","time_war","emperor_guard","emperor_guard_2"};
+        //public static String[] small_model_types = new String[] {"chase_1965", "emperor_1967"};
+
+        //TODO Someone needs to finish adding all the daleks for big and small models
+
+        public static void setupLists() {
+
+            big_model_types.add("strategist");
+            big_model_types.add("drone");
+
+            small_model_types.add("chase_1965");
+            small_model_types.add("emperor_1967");
+
+        }
+
+        public static EntityModel<DalekEntity> getModelForType(String dalekType) {
+
+            if(big_model_types.contains(dalekType)) {
+                return BIGMODEL;
+            } else if(small_model_types.contains(dalekType)) {
+                return SMALLMODEL;
+            } else {
+                return MEDIUMMODEL;
+            }
+        }
+
     }
 
 

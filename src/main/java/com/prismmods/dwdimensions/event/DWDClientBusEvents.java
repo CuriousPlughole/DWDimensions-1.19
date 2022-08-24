@@ -9,7 +9,11 @@ import com.prismmods.dwdimensions.client.models.blockentity.tardis.TardisWhittak
 import com.prismmods.dwdimensions.client.models.entity.GiantSkaroEelModel;
 import com.prismmods.dwdimensions.client.models.entity.HandmineLeftModel;
 import com.prismmods.dwdimensions.client.models.entity.HandmineRightModel;
+import com.prismmods.dwdimensions.client.models.entity.dalek.BigDalekModel;
+import com.prismmods.dwdimensions.client.models.entity.dalek.MediumDalekModel;
+import com.prismmods.dwdimensions.client.models.entity.dalek.SmallDalekModel;
 import com.prismmods.dwdimensions.client.renders.blockentities.TardisRenderer;
+import com.prismmods.dwdimensions.client.renders.entity.DalekRenderer;
 import com.prismmods.dwdimensions.client.renders.entity.FallingTardisRenderer;
 import com.prismmods.dwdimensions.client.renders.entity.GiantSkaroEelRender;
 import com.prismmods.dwdimensions.client.renders.entity.HandmineRender;
@@ -58,6 +62,9 @@ public class DWDClientBusEvents {
         event.registerLayerDefinition(DWDModelLayers.TARDIS_SMITH_CAPALDI, TardisSmithCapaldiModel::createBodyLayer);
         event.registerLayerDefinition(DWDModelLayers.TARDIS_TENNANT_ECCLESTON, TardisTennantEcclestonModel::createBodyLayer);
         event.registerLayerDefinition(DWDModelLayers.GIANT_SKARO_EEL, GiantSkaroEelModel::createBodyLayer);
+        event.registerLayerDefinition(DWDModelLayers.BIG_DALEK, BigDalekModel::createBodyLayer);
+        event.registerLayerDefinition(DWDModelLayers.MEDIUM_DALEK, MediumDalekModel::createBodyLayer);
+        event.registerLayerDefinition(DWDModelLayers.SMALL_DALEK, SmallDalekModel::createBodyLayer);
     }
 
     //FIXME: Need to remove the .setRenderLayer. Instead add "render_type": "cutout" etc. to the json block model. -> Datagen
@@ -66,7 +73,8 @@ public class DWDClientBusEvents {
 
         EntityRenderers.register(DWDEntityTypes.HANDMINE.get(), HandmineRender::new);
         EntityRenderers.register(DWDEntityTypes.FALLING_TARDIS.get(), FallingTardisRenderer::new);
-        //EntityRenderers.register(DWDEntityTypes.GIANT_SKARO_EEL.get(), GiantSkaroEelRender::new);
+        EntityRenderers.register(DWDEntityTypes.GIANT_SKARO_EEL.get(), GiantSkaroEelRender::new);
+        EntityRenderers.register(DWDEntityTypes.DALEK.get(), DalekRenderer::new);
 
         ItemBlockRenderTypes.setRenderLayer(DWDBlocks.PETRIFIED_LEAVES.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(DWDBlocks.PETRIFIED_JUNGLE_LEAVES.get(), RenderType.cutout());
