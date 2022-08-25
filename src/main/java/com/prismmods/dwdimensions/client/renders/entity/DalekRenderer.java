@@ -21,10 +21,14 @@ public class DalekRenderer extends MobRenderer<DalekEntity, EntityModel<DalekEnt
 
     @Override
     public void render(DalekEntity entity, float entityYaw, float partialTicks, PoseStack stack, MultiBufferSource buffer, int packedLight) {
-
-        model = ClientUtil.DalekModelGetter.getModelForType(entity.getDalekType());
+        model = ClientUtil.DalekModelGetter.getDalekModel(ClientUtil.DalekModelGetter.getModelFromString(entity.getDalekType()));
         super.render(entity, entityYaw, partialTicks, stack, buffer, packedLight);
 
+    }
+
+    @Override
+    protected void scale(DalekEntity dalek, PoseStack poseStack, float p_115316_) {
+        poseStack.scale(0.82f, 0.82f, 0.82f);
     }
 
     @Override

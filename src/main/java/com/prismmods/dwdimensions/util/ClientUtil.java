@@ -11,6 +11,8 @@ import com.prismmods.dwdimensions.common.entity.custom.DalekEntity;
 import com.prismmods.dwdimensions.common.entity.custom.HandmineEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.EntityModel;
+import net.minecraft.client.model.HierarchicalModel;
+import net.minecraft.client.model.Model;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.model.geom.ModelPart;
 
@@ -49,36 +51,42 @@ public class ClientUtil {
     }
 
     public class DalekModelGetter {
-        private static EntityModelSet theBaker = Minecraft.getInstance().getEntityModels();
-        private static final EntityModel<DalekEntity> BIGMODEL = new BigDalekModel(theBaker.bakeLayer(DWDModelLayers.BIG_DALEK));
-        private static final EntityModel<DalekEntity> MEDIUMMODEL = new MediumDalekModel(theBaker.bakeLayer(DWDModelLayers.MEDIUM_DALEK));
-        private static final EntityModel<DalekEntity> SMALLMODEL = new SmallDalekModel(theBaker.bakeLayer(DWDModelLayers.SMALL_DALEK));
 
-        public static List<String> big_model_types = new ArrayList<String>();
-        public static List<String> small_model_types = new ArrayList<String>();
-        //public static String[] medium_model_types = new String[] {"assault","axis_strike_a","axis_strike_b","buzz_saw","time_war","emperor_guard","emperor_guard_2"};
-        //public static String[] small_model_types = new String[] {"chase_1965", "emperor_1967"};
+        //For any type that doesn't use the medium model
+        public enum DalekModelType {
+            SMALL, MEDIUM, BIG
+        }
+
+        public static final Map<DalekModelType, EntityModel<DalekEntity>> DALEK_MODEL_MAP = new HashMap<>();
+        public static EntityModel<DalekEntity> getDalekModel(DalekModelType type) {
+            if(DALEK_MODEL_MAP.isEmpty()) {
+                EntityModelSet theBaker = Minecraft.getInstance().getEntityModels();
+                DALEK_MODEL_MAP.put(DalekModelType.SMALL, new SmallDalekModel(theBaker.bakeLayer(DWDModelLayers.SMALL_DALEK)));
+                DALEK_MODEL_MAP.put(DalekModelType.MEDIUM, new MediumDalekModel(theBaker.bakeLayer(DWDModelLayers.MEDIUM_DALEK)));
+                DALEK_MODEL_MAP.put(DalekModelType.BIG, new BigDalekModel(theBaker.bakeLayer(DWDModelLayers.BIG_DALEK)));
+            }
+            return DALEK_MODEL_MAP.get(type);
+        }
+
+        public static List<String> big_model_types = new ArrayList<>();
+        public static List<String> small_model_types = new ArrayList<>();
 
         //TODO Someone needs to finish adding all the daleks for big and small models
 
         public static void setupLists() {
-
             big_model_types.add("strategist");
             big_model_types.add("drone");
-
             small_model_types.add("chase_1965");
             small_model_types.add("emperor_1967");
-
         }
 
-        public static EntityModel<DalekEntity> getModelForType(String dalekType) {
-
+        public static DalekModelType getModelFromString(String dalekType) {
             if(big_model_types.contains(dalekType)) {
-                return BIGMODEL;
+                return DalekModelType.BIG;
             } else if(small_model_types.contains(dalekType)) {
-                return SMALLMODEL;
+                return DalekModelType.SMALL;
             } else {
-                return MEDIUMMODEL;
+                return DalekModelType.MEDIUM;
             }
         }
 

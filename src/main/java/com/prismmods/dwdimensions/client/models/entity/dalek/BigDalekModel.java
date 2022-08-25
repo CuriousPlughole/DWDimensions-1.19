@@ -209,6 +209,7 @@ public class BigDalekModel extends HierarchicalModel<DalekEntity> {
         return LayerDefinition.create(meshdefinition, 200, 200);
     }
 
+
     @Override
     public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
         collar.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);

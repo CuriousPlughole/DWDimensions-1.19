@@ -14,6 +14,7 @@ import com.prismmods.dwdimensions.common.item.DWDItems;
 import com.prismmods.dwdimensions.common.particle.DWDParticles;
 import com.prismmods.dwdimensions.common.sound.DWDSounds;
 import com.prismmods.dwdimensions.network.Network;
+import com.prismmods.dwdimensions.util.ClientUtil;
 import com.prismmods.dwdimensions.world.biomes.DWDBiomes;
 import com.prismmods.dwdimensions.world.dimension.DWDDimensionReg;
 import com.prismmods.dwdimensions.world.feature.DWDConfiguredFeatures;
@@ -76,6 +77,7 @@ public class DWDimensions {
 
         Network.registerMessages();
 
+
         //Lava onto radioactive water
         FluidInteractionRegistry.addInteraction(DWDFluids.RADIOACTIVE_WATER_TYPE.get(),
                 new FluidInteractionRegistry.InteractionInformation(ForgeMod.LAVA_TYPE.get(), DWDBlocks.SKARO_STONE.get().defaultBlockState()));
@@ -94,7 +96,7 @@ public class DWDimensions {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(DWDBlocks.SKARO_PETRIFIED_FUNGUS.getId(), DWDBlocks.POTTED_SKARO_PETRIFIED_FUNGUS);
             Sheets.addWoodType(DWDWoodTypes.PETRIFIED);
             Sheets.addWoodType(DWDWoodTypes.PETRIFIED_JUNGLE);
-
+            ClientUtil.DalekModelGetter.setupLists();
             DWDBiomes.registerBiomeKeys();
 
         });

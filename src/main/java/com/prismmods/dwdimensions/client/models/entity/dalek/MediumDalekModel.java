@@ -339,6 +339,7 @@ public class MediumDalekModel extends HierarchicalModel<DalekEntity> {
         this.animate(entity.encumberedAnimationState, DalekAnimations.MEDIUM_ENCUMBERED, ageInTicks,3.68f);
     }
 
+
     @Override
     public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
         dalek.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
