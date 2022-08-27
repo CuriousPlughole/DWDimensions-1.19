@@ -1,4 +1,4 @@
-// 1.19.2	2022-08-17T12:39:37.2489559	Item Models: dwdimensions
+// 1.19.2	2022-08-27T19:08:15.2732759	Item Models: dwdimensions
 106537de80a4063620a91e7e5a484c6aec7987ac assets/dwdimensions/models/item/anti_radiation_pill.json
 3dcd7d516c824e5c913cfdfb598530b365f6e1bd assets/dwdimensions/models/item/dalekanium_block.json
 17df5e5f35156b43eacef4056d2dc05efabd4df9 assets/dwdimensions/models/item/dalekanium_ingot.json
@@ -41,6 +41,7 @@ e756ee74c3599cded117acb954d91f5b971132fa assets/dwdimensions/models/item/petrifi
 98f12eeb3de2c059891755c01b9f3f8bd51253e8 assets/dwdimensions/models/item/petrified_sapling.json
 fad2aab4ecdc644bb53a80434e639f45dbefe0df assets/dwdimensions/models/item/petrified_wood.json
 25e3c903b7d1630bcb3a425d0e13d53c00b40a47 assets/dwdimensions/models/item/radioactive_water_bucket.json
+e68efe1dcb73a7cc36d92a872d80aace2889598b assets/dwdimensions/models/item/radiotherapy_cabinet.json
 d3b89103941b36edbc1b5f2bd4fcd2e6cf3fd73d assets/dwdimensions/models/item/raw_dalekanium.json
 c567572e7001d15d62cb708a36a233ab9be0a642 assets/dwdimensions/models/item/skaro_bush.json
 2d9b2ac6c7a22be5f88f44c8c73120def0aa91fb assets/dwdimensions/models/item/skaro_cobblestone.json

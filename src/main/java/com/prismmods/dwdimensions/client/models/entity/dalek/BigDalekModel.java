@@ -2,14 +2,12 @@ package com.prismmods.dwdimensions.client.models.entity.dalek;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.prismmods.dwdimensions.common.entity.custom.DalekEntity;
-import net.minecraft.client.model.EntityModel;
+import com.prismmods.dwdimensions.client.animations.DalekAnimations;
+import com.prismmods.dwdimensions.common.entity.custom.dalek.DalekEntity;
 import net.minecraft.client.model.HierarchicalModel;
-import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.minecraft.resources.ResourceLocation;
 
 public class BigDalekModel extends HierarchicalModel<DalekEntity> {
 
@@ -19,6 +17,7 @@ public class BigDalekModel extends HierarchicalModel<DalekEntity> {
     private final ModelPart head;
     private final ModelPart Body;
     private final ModelPart root;
+    private final ModelPart eyestalk;
 
     public BigDalekModel(ModelPart root) {
         this.collar = root.getChild("collar");
@@ -26,6 +25,7 @@ public class BigDalekModel extends HierarchicalModel<DalekEntity> {
         this.gun = root.getChild("gun");
         this.head = root.getChild("head");
         this.Body = root.getChild("Body");
+        this.eyestalk = head.getChild("eyestalk");
         this.root = root;
     }
 
@@ -219,13 +219,22 @@ public class BigDalekModel extends HierarchicalModel<DalekEntity> {
         Body.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
     }
 
+    private void animateHeadLookTarget(float netYaw, float pitch) {
+        this.eyestalk.xRot = pitch * ((float)Math.PI / 180F);
+        this.head.yRot = netYaw * ((float)Math.PI / 180F);
+    }
+
     @Override
     public ModelPart root() {
         return root;
     }
 
     @Override
-    public void setupAnim(DalekEntity p_102618_, float p_102619_, float p_102620_, float p_102621_, float p_102622_, float p_102623_) {
+    public void setupAnim(DalekEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+        this.root().getAllParts().forEach(ModelPart::resetPose);
+        this.animate(entity.encumberedAnimationState, DalekAnimations.MEDIUM_ENCUMBERED, ageInTicks, 2.0f);
+        this.animateHeadLookTarget(netHeadYaw, headPitch);
+
 
     }
 }

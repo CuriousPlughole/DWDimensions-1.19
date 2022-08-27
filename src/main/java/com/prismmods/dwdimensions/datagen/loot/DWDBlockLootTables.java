@@ -33,6 +33,7 @@ public class DWDBlockLootTables extends BlockLoot {
         this.add(DWDBlocks.MERCURY_VAPOUR.get(), noDrop());
 
         //SKARO
+        this.dropSelf(DWDBlocks.RADIOTHERAPY_CABINET.get());
         this.dropSelf(DWDBlocks.PETRIFIED_LOG.get());
         this.dropSelf(DWDBlocks.STRIPPED_PETRIFIED_LOG.get());
         this.dropSelf(DWDBlocks.STRIPPED_PETRIFIED_WOOD.get());

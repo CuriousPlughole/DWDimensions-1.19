@@ -1,4 +1,4 @@
-package com.prismmods.dwdimensions.common.entity.custom;
+package com.prismmods.dwdimensions.common.entity.custom.dalek;
 
 import com.prismmods.dwdimensions.common.sound.DWDSounds;
 import net.minecraft.core.BlockPos;
@@ -65,17 +65,14 @@ public class DalekEntity extends Monster implements RangedAttackMob {
         super.onSyncedDataUpdated(accessor);
     }
 
-    @Override
-    public void setTarget(@Nullable LivingEntity entity) {
-        super.setTarget(entity);
-        //this.playSound(DWDSounds.DALEK_EXTERMINATE_VOCAL.get(), 0.5f, 1.0f);
-    }
-
     //TODO: Make custom laser. Using arrow for now
 
     @Override
     public void performRangedAttack(LivingEntity target, float distanceFactor) {
-        this.targetedEntity = target;
+        if(this.targetedEntity != target) {
+            this.targetedEntity = target;
+            this.playSound(DWDSounds.DALEK_EXTERMINATE_VOCAL.get(), 0.5f, 1.0f);
+        }
 
         AbstractArrow arrow = ProjectileUtil.getMobArrow(this, Items.ARROW.getDefaultInstance(), 1);
         double d0 = target.getX() - this.getX();

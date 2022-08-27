@@ -1,4 +1,4 @@
-// 1.19.2	2022-08-17T12:39:37.2549612	LootTables
+// 1.19.2	2022-08-27T19:08:15.2662693	LootTables
 126d49d16e707ea47fcf81376bda8656c800cd31 data/dwdimensions/loot_tables/blocks/dalekanium_block.json
 68fe72a3ed7778bcb9b85a395a4d2fd3899abb8b data/dwdimensions/loot_tables/blocks/dalekanium_ore.json
 1dacea81cdac41b817c0999504be6e3b38d4a22d data/dwdimensions/loot_tables/blocks/deepslate_dalekanium_ore.json
@@ -42,6 +42,7 @@ e91ec16b39f76a7d0731bcbeff9918ecda053d82 data/dwdimensions/loot_tables/blocks/pe
 84df03fdfd2a50f6dc8fcfbcf7b2e7bf51804e96 data/dwdimensions/loot_tables/blocks/potted_petrified_flower_1.json
 f70d217a99b39e6f241eedd047aaa685321ffcdd data/dwdimensions/loot_tables/blocks/potted_petrified_flower_2.json
 6e5ee4a7ed279f80d96350fcc7aa439031fe9e98 data/dwdimensions/loot_tables/blocks/potted_petrified_fungus.json
+c46d7bf834eec8129154fdab6f2fefdfa19906c6 data/dwdimensions/loot_tables/blocks/radiotherapy_cabinet.json
 e30b6532b52fdfd07598539da7370361df6dd055 data/dwdimensions/loot_tables/blocks/skaro_bush.json
 e7b8d62c5160253b56dcaf439a0a3c9472e26ba8 data/dwdimensions/loot_tables/blocks/skaro_cobblestone.json
 6a922c9208c54c487af0572550e59b8af4874f6d data/dwdimensions/loot_tables/blocks/skaro_cobblestone_slab.json

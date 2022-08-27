@@ -1,7 +1,7 @@
 package com.prismmods.dwdimensions.common.entity;
 
 import com.prismmods.dwdimensions.DWDimensions;
-import com.prismmods.dwdimensions.common.entity.custom.DalekEntity;
+import com.prismmods.dwdimensions.common.entity.custom.dalek.DalekEntity;
 import com.prismmods.dwdimensions.common.entity.custom.FallingTardisEntity;
 import com.prismmods.dwdimensions.common.entity.custom.GiantSkaroEelEntity;
 import com.prismmods.dwdimensions.common.entity.custom.HandmineEntity;

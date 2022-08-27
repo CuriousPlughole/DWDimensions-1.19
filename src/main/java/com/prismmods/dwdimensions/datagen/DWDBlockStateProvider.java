@@ -24,6 +24,7 @@ public class DWDBlockStateProvider extends BlockStateProvider {
         simpleBlock(DWDBlocks.ZEITON_ORE.get());
         simpleBlock(DWDBlocks.DEEPSLATE_ZEITON_ORE.get());
         simpleBlock(DWDBlocks.MERCURY_VAPOUR.get(), models().cross(ForgeRegistries.BLOCKS.getKey(DWDBlocks.MERCURY_VAPOUR.get()).getPath(), blockTexture(DWDBlocks.MERCURY_VAPOUR.get())));
+        simpleBlock(DWDBlocks.RADIOTHERAPY_CABINET.get());
 
         //SKARO
         logBlock((RotatedPillarBlock) DWDBlocks.STRIPPED_PETRIFIED_LOG.get());

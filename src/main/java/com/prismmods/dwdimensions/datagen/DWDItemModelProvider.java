@@ -34,6 +34,7 @@ public class DWDItemModelProvider extends ItemModelProvider {
         simpleItem(DWDItems.RAW_DALEKANIUM);
         simpleItem(DWDItems.DALEKANIUM_INGOT);
 
+        blockItemModel(DWDBlocks.RADIOTHERAPY_CABINET);
         blockItemModel(DWDBlocks.DALEKANIUM_BLOCK);
         blockItemModel(DWDBlocks.DALEKANIUM_ORE);
         blockItemModel(DWDBlocks.DEEPSLATE_DALEKANIUM_ORE);

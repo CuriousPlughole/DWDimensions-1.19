@@ -2,15 +2,12 @@ package com.prismmods.dwdimensions.client.models.entity.dalek;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.prismmods.dwdimensions.common.entity.custom.DalekEntity;
-import net.minecraft.client.model.EntityModel;
+import com.prismmods.dwdimensions.client.animations.DalekAnimations;
+import com.prismmods.dwdimensions.common.entity.custom.dalek.DalekEntity;
 import net.minecraft.client.model.HierarchicalModel;
-import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.minecraft.resources.ResourceLocation;
-
 
 
 public class SmallDalekModel extends HierarchicalModel<DalekEntity> {
@@ -21,6 +18,7 @@ public class SmallDalekModel extends HierarchicalModel<DalekEntity> {
     private final ModelPart body;
     private final ModelPart collar;
     private final ModelPart root;
+    private final ModelPart eyestalk;
 
     public SmallDalekModel(ModelPart root) {
         this.plunger = root.getChild("plunger");
@@ -28,6 +26,7 @@ public class SmallDalekModel extends HierarchicalModel<DalekEntity> {
         this.head = root.getChild("head");
         this.body = root.getChild("body");
         this.collar = root.getChild("collar");
+        this.eyestalk = head.getChild("eyestalk");
         this.root = root;
     }
 
@@ -72,7 +71,7 @@ public class SmallDalekModel extends HierarchicalModel<DalekEntity> {
 
         PartDefinition cube_r9 = head.addOrReplaceChild("cube_r9", CubeListBuilder.create().texOffs(145, 17).addBox(4.0F, -1.0F, 0.0F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.567F, -3.0768F, -0.75F, 0.0F, 0.0F, 0.3927F));
 
-        PartDefinition EyeStalk = head.addOrReplaceChild("EyeStalk", CubeListBuilder.create().texOffs(139, 26).addBox(-1.0F, -1.0F, -3.4833F, 2.0F, 2.0F, 0.0F, new CubeDeformation(0.0F))
+        PartDefinition eyestalk = head.addOrReplaceChild("eyestalk", CubeListBuilder.create().texOffs(139, 26).addBox(-1.0F, -1.0F, -3.4833F, 2.0F, 2.0F, 0.0F, new CubeDeformation(0.0F))
                 .texOffs(139, 26).addBox(-1.0F, -1.0F, -3.8833F, 2.0F, 2.0F, 0.0F, new CubeDeformation(0.0F))
                 .texOffs(139, 26).addBox(-1.0F, -1.0F, -4.2833F, 2.0F, 2.0F, 0.0F, new CubeDeformation(0.0F))
                 .texOffs(118, 37).addBox(-0.5F, -0.5F, -7.3333F, 1.0F, 1.0F, 7.0F, new CubeDeformation(0.0F))
@@ -269,7 +268,15 @@ public class SmallDalekModel extends HierarchicalModel<DalekEntity> {
     }
 
     @Override
-    public void setupAnim(DalekEntity p_102618_, float p_102619_, float p_102620_, float p_102621_, float p_102622_, float p_102623_) {
-
+    public void setupAnim(DalekEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+        this.root().getAllParts().forEach(ModelPart::resetPose);
+        this.animate(entity.encumberedAnimationState, DalekAnimations.MEDIUM_ENCUMBERED, ageInTicks, 2.0f);
+        this.animateHeadLookTarget(netHeadYaw, headPitch);
     }
+
+    private void animateHeadLookTarget(float netYaw, float pitch) {
+        this.eyestalk.xRot = pitch * ((float)Math.PI / 180F);
+        this.head.yRot = netYaw * ((float)Math.PI / 180F);
+    }
+
 }

@@ -107,6 +107,9 @@
 	"sound.tardis.door.close": "TARDIS Door closes",
 	"sound.tardis.door.open": "TARDIS Door opens",
 
+    "entity.dwdimensions.dalek": "Dalek",
+    "entity.dwdimensions.handmine": "Handmine",
+    "entity.minecraft.villager.dwdimensions.radiotherapist": "Radiotherapist",
 	"itemGroup.dwdwiptab": "WIP",
     "itemGroup.dwdskarotab": "Skaro",
     "key.categories.dwdimensions": "DWDimensions",

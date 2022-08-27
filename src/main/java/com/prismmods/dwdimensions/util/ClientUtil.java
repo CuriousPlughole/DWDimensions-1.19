@@ -7,12 +7,10 @@ import com.prismmods.dwdimensions.client.models.entity.dalek.BigDalekModel;
 import com.prismmods.dwdimensions.client.models.entity.dalek.MediumDalekModel;
 import com.prismmods.dwdimensions.client.models.entity.dalek.SmallDalekModel;
 import com.prismmods.dwdimensions.common.blockentities.tardis.Chameleon;
-import com.prismmods.dwdimensions.common.entity.custom.DalekEntity;
+import com.prismmods.dwdimensions.common.entity.custom.dalek.DalekEntity;
 import com.prismmods.dwdimensions.common.entity.custom.HandmineEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.model.HierarchicalModel;
-import net.minecraft.client.model.Model;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.model.geom.ModelPart;
 

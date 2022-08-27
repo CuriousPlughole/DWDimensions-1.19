@@ -1,4 +1,4 @@
-// 1.19.2	2022-08-17T12:39:37.2519587	Block States: dwdimensions
+// 1.19.2	2022-08-27T19:08:15.2702734	Block States: dwdimensions
 032aa979bb98174948902e6448b8463d4dfa57a4 assets/dwdimensions/blockstates/dalekanium_block.json
 5e55da1309ddc72885d6fb79816ae81a8c890a21 assets/dwdimensions/blockstates/dalekanium_ore.json
 c17152ed3b1329ffd2c2f39519440e07f1adc9ad assets/dwdimensions/blockstates/deepslate_dalekanium_ore.json
@@ -38,6 +38,7 @@ b5ee1c1c1e56b1727a33f1150965da240e077d65 assets/dwdimensions/blockstates/petrifi
 33ffda52d9d7dba3de256fd5452cbb886ff35c9b assets/dwdimensions/blockstates/petrified_plank_wall_sign.json
 4e95b08728ce560f411af522b302c5e5678ed7f5 assets/dwdimensions/blockstates/petrified_sapling.json
 c350e5383d7a3c141aa79ba6eb5ce8c179fd7d2c assets/dwdimensions/blockstates/petrified_wood.json
+e6f212bca40d04b8d79251c102427bc267366584 assets/dwdimensions/blockstates/radiotherapy_cabinet.json
 98f69fda2d93657d488be7c97d6c28df614e0fef assets/dwdimensions/blockstates/skaro_bush.json
 41235954961aae37156af230cec4f7aa917116c6 assets/dwdimensions/blockstates/skaro_cobblestone.json
 97498de36c26872881752740badfff7e0f0e66a8 assets/dwdimensions/blockstates/skaro_cobblestone_slab.json
@@ -160,6 +161,7 @@ ac2c0e26268766e1c2730ec52d201640f44bda0a assets/dwdimensions/models/block/petrif
 10d4c54aa1b98dd1a736e40f295ad7a0a3605923 assets/dwdimensions/models/block/petrified_sapling.json
 6ec0e5944d7f968c2effa57a736548f65963af8e assets/dwdimensions/models/block/petrified_wood.json
 bbebb2fdb2fc4c6083a70471b295ebac662f35f3 assets/dwdimensions/models/block/petrified_wood_horizontal.json
+a66de1d2c8b4702aeb2a1cd6b42e2782fc763572 assets/dwdimensions/models/block/radiotherapy_cabinet.json
 991648134bac68b70493a0fd8cab2d4d397ac5ea assets/dwdimensions/models/block/skaro_bush.json
 396e1d29ba92588f00045be69803e85409cc322c assets/dwdimensions/models/block/skaro_cobblestone.json
 886bc9b61cf83bf6ee543472b4df08c13be13094 assets/dwdimensions/models/block/skaro_cobblestone_slab.json

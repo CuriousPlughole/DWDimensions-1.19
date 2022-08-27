@@ -40,6 +40,9 @@ public class DWDBlocks {
     SKARO
      */
 
+
+    public static final RegistryObject<Block> RADIOTHERAPY_CABINET = registerBlock("radiotherapy_cabinet", () -> new Block(BlockBehaviour.Properties.copy(Blocks.LOOM)), DWDCreativeTabs.DWDWIPTab);
+
     //TODO: Add some custom effects for petrified plants. Some blindness or something? Not all negative; maybe "adrenaline" -> gives haste/strength etc
     //TODO: Special block types (Fences, stairs, slabs, etc)
 

@@ -5,10 +5,11 @@ import com.prismmods.dwdimensions.common.block.DWDBlocks;
 import com.prismmods.dwdimensions.common.blockentities.DWDBlockEntities;
 import com.prismmods.dwdimensions.common.blockentities.sign.DWDWoodTypes;
 import com.prismmods.dwdimensions.common.entity.DWDEntityTypes;
-import com.prismmods.dwdimensions.common.entity.custom.DalekEntity;
+import com.prismmods.dwdimensions.common.entity.custom.dalek.DalekEntity;
 import com.prismmods.dwdimensions.common.entity.custom.GiantSkaroEelEntity;
 import com.prismmods.dwdimensions.common.entity.custom.HandmineEntity;
 import com.prismmods.dwdimensions.common.entity.effect.DWDEffectRegistry;
+import com.prismmods.dwdimensions.common.entity.villager.DWDVillagers;
 import com.prismmods.dwdimensions.common.fluid.DWDFluids;
 import com.prismmods.dwdimensions.common.item.DWDItems;
 import com.prismmods.dwdimensions.common.particle.DWDParticles;
@@ -21,11 +22,9 @@ import com.prismmods.dwdimensions.world.feature.DWDConfiguredFeatures;
 import com.prismmods.dwdimensions.world.feature.DWDPlacedFeatures;
 import com.prismmods.dwdimensions.world.feature.tree.decorator.DWDTreeDecorators;
 import com.prismmods.dwdimensions.world.structures.DWDStructures;
-import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GrassColor;
 import net.minecraft.world.level.block.Blocks;
@@ -53,6 +52,7 @@ public class DWDimensions {
         DWDSounds.register(modEventBus);
         DWDItems.register(modEventBus);
         DWDBlocks.register(modEventBus);
+        DWDVillagers.register(modEventBus);
         DWDEntityTypes.register(modEventBus);
         DWDBlockEntities.register(modEventBus);
         DWDParticles.register(modEventBus);
@@ -76,7 +76,7 @@ public class DWDimensions {
     private void commonSetup(final @NotNull FMLCommonSetupEvent event) {
 
         Network.registerMessages();
-
+        ClientUtil.DalekModelGetter.setupLists();
 
         //Lava onto radioactive water
         FluidInteractionRegistry.addInteraction(DWDFluids.RADIOACTIVE_WATER_TYPE.get(),
@@ -91,12 +91,12 @@ public class DWDimensions {
 
 
         event.enqueueWork(() -> {
+            DWDVillagers.registerPOIs();
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(DWDBlocks.SKARO_PETRIFIED_FLOWER_1.getId(), DWDBlocks.POTTED_SKARO_PETRIFIED_FLOWER_1);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(DWDBlocks.SKARO_PETRIFIED_FLOWER_2.getId(), DWDBlocks.POTTED_SKARO_PETRIFIED_FLOWER_2);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(DWDBlocks.SKARO_PETRIFIED_FUNGUS.getId(), DWDBlocks.POTTED_SKARO_PETRIFIED_FUNGUS);
             Sheets.addWoodType(DWDWoodTypes.PETRIFIED);
             Sheets.addWoodType(DWDWoodTypes.PETRIFIED_JUNGLE);
-            ClientUtil.DalekModelGetter.setupLists();
             DWDBiomes.registerBiomeKeys();
 
         });
