@@ -22,7 +22,12 @@ import com.prismmods.dwdimensions.common.blockentities.DWDBlockEntities;
 import com.prismmods.dwdimensions.common.blockentities.sign.DWDWoodTypes;
 import com.prismmods.dwdimensions.common.entity.DWDEntityTypes;
 import com.prismmods.dwdimensions.common.entity.custom.GiantSkaroEelEntity;
+import com.prismmods.dwdimensions.common.entity.custom.dalek.DalekSpawnType;
 import com.prismmods.dwdimensions.common.fluid.DWDFluids;
+import com.prismmods.dwdimensions.common.item.DWDItems;
+import com.prismmods.dwdimensions.common.item.custom.DalekSpawnerItem;
+import com.prismmods.dwdimensions.common.item.custom.sonic.SonicPredicateGetter;
+import com.prismmods.dwdimensions.common.item.custom.sonic.SonicScrewdriverItem;
 import com.prismmods.dwdimensions.common.particle.DWDParticles;
 import com.prismmods.dwdimensions.common.particle.custom.RadioactiveParticle;
 import com.prismmods.dwdimensions.util.KeyboardHelper;
@@ -32,6 +37,8 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -108,6 +115,32 @@ public class DWDClientBusEvents {
 
         Stream.of(DWDFluids.RADIOACTIVE_WATER_FLUID, DWDFluids.RADIOACTIVE_WATER_FLOWING).map(RegistryObject::get)
                 .forEach(fluid -> ItemBlockRenderTypes.setRenderLayer(fluid, RenderType.translucent()));
+
+
+        /**
+         * ITEM PREDICATES
+         */
+        ItemProperties.register(DWDItems.DALEK_SPAWN_EGG.get(), new ResourceLocation(DWDimensions.MOD_ID, "dalek_type"), (itemStack, clientLevel, livingEntity, unknownInt) -> {
+            if(itemStack == null || itemStack.isEmpty()) {
+                return 0;
+            }
+
+            DalekSpawnType type = DalekSpawnerItem.getDalekType(itemStack);
+            return type.ordinal();
+
+        });
+        ItemProperties.register(DWDItems.SONIC_SCREWDRIVER.get(), new ResourceLocation(DWDimensions.MOD_ID, "screwdriver_model"), (itemStack, clientLevel, livingEntity, unknownInt) -> {
+            if(itemStack == null || itemStack.isEmpty()) {
+                return 0;
+            }
+            return SonicPredicateGetter.getModelPredicate(SonicScrewdriverItem.getScrewdriverModel(itemStack));
+        });
+        ItemProperties.register(DWDItems.SONIC_SCREWDRIVER.get(), new ResourceLocation(DWDimensions.MOD_ID, "screwdriver_setting"), (itemStack, clientLevel, livingEntity, unknownInt) -> {
+            if(itemStack == null || itemStack.isEmpty()) {
+                return 0;
+            }
+            return SonicPredicateGetter.getSettingPredicate(SonicScrewdriverItem.getMode(itemStack));
+        });
     }
 
     @SubscribeEvent

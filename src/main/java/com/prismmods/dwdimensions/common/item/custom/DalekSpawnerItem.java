@@ -45,11 +45,10 @@ public class DalekSpawnerItem extends Item {
         }
     }
 
-    /*@Override
+    @Override
     public @NotNull Component getName(@NotNull ItemStack stack) {
-        return Component.translatable(this.getDescriptionId(stack), getDalekType(stack).getReadable());
-    }*/
-    //Make name mapper and use this for json predicates
+        return Component.translatable(this.getDescriptionId(stack), DalekSpawnType.getReadable(getDalekType(stack)));
+    }
 
     @Override
     public InteractionResult useOn(UseOnContext context) {

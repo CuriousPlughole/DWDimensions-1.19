@@ -1,6 +1,5 @@
-package com.prismmods.dwdimensions.common.item.custom;
+package com.prismmods.dwdimensions.common.item.custom.sonic;
 
-import com.prismmods.dwdimensions.client.renders.item.SonicScrewdriverRenderer;
 import com.prismmods.dwdimensions.common.blockentities.tardis.DoorStatus;
 import com.prismmods.dwdimensions.common.sound.DWDSounds;
 import net.minecraft.client.Minecraft;
@@ -40,8 +39,6 @@ public class SonicScrewdriverItem extends Item {
         super(properties);
     }
 
-
-
     /**
     FUNCTIONALITY
      */
@@ -77,7 +74,7 @@ public class SonicScrewdriverItem extends Item {
 
             //TODO: test creeper interaction
             if(livingTarget instanceof Creeper) {
-                ((Creeper)livingTarget).setSwellDir(15);
+                ((Creeper)livingTarget).setSwellDir(0);
             }
         }
         return super.interactLivingEntity(itemStack, player, livingTarget, hand);
@@ -173,6 +170,7 @@ public class SonicScrewdriverItem extends Item {
      SOUND
      */
     //FIXME: Currently has wrong sounds! Update when the actual sounds have been added.
+    //Use sound is wrong somehow
     public SoundEvent getSoundForModel(ScrewdriverModel model, Action action) {
         Holder<SoundEvent> SOUND = DWDSounds.SONIC_10_EXTEND.getHolder().get();
             if (action == Action.EXTEND) {
@@ -183,13 +181,13 @@ public class SonicScrewdriverItem extends Item {
             }
             if (action == Action.RETRACT) {
                 switch (model) {
-                    case CAPALDI -> SOUND = DWDSounds.SONIC_10_EXTEND.getHolder().get();
+                    case CAPALDI -> SOUND = DWDSounds.SONIC_11_RETRACT.getHolder().get();
                     default -> SOUND = DWDSounds.SONIC_11_RETRACT.getHolder().get();
                 }
             }
             if (action == Action.USE) {
                 switch (model) {
-                    case CAPALDI -> DWDSounds.SONIC_10_EXTEND.getHolder().get();
+                    case CAPALDI -> DWDSounds.SONIC_11_USE_SHORT.getHolder().get();
                     default -> DWDSounds.SONIC_11_USE_SHORT.getHolder().get();
                 }
             }
@@ -235,23 +233,6 @@ public class SonicScrewdriverItem extends Item {
             }
             return ScrewdriverModel.WHITTAKER;
         }
-    }
-
-    /**
-     * RENDER
-     */
-
-    @Override
-    public void initializeClient(Consumer<IClientItemExtensions> consumer) {
-        consumer.accept(new IClientItemExtensions() {
-
-            static final SonicScrewdriverRenderer INSTANCE = new SonicScrewdriverRenderer(Minecraft.getInstance().getBlockEntityRenderDispatcher(), Minecraft.getInstance().getEntityModels());
-
-            @Override
-            public BlockEntityWithoutLevelRenderer getCustomRenderer() {
-                return INSTANCE;
-            }
-        });
     }
 }
 

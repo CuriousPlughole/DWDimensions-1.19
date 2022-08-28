@@ -18,11 +18,33 @@ public enum DalekSpawnType {
         this.variants = variants;
     }
 
-
-
     public static String getRandomVariant(DalekSpawnType type) {
         int rnd = new Random().nextInt(type.variants.length);
         return type.variants[rnd];
+    }
+
+    public static String getCategoryName(DalekSpawnType type) {
+        String name;
+        switch(type) {
+            case WARRIOR -> name = "warrior";
+            case TIME_SQUAD -> name = "time_squad";
+            case AXIS_STRIKE -> name = "axis_strike";
+            case EMPEROR_GUARD -> name = "emperor_guard";
+            default -> name = "time_war";
+        }
+        return name;
+    }
+
+    public static String getReadable(DalekSpawnType type) {
+        String name;
+        switch(type) {
+            case WARRIOR -> name = "Warrior Dalek";
+            case TIME_SQUAD -> name = "Time Squad Dalek";
+            case AXIS_STRIKE -> name = "Axis Strike Dalek";
+            case EMPEROR_GUARD -> name = "Emperor Guard Dalek";
+            default -> name = "Time War Dalek";
+        }
+        return name;
     }
 
 }

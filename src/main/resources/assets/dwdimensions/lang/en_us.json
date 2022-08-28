@@ -8,6 +8,7 @@
     "item.dwdimensions.anti_radiation_pill": "Anti-Radiation Pill",
     "item.dwdimensions.raw_dalekanium": "Raw Dalekanium",
     "item.dwdimensions.dalekanium_ingot": "Dalekanium Ingot",
+    "item.dwdimensions.dalek_spawn_egg": "%s",
 
     "block.dwdimensions.structural_dalekanium_low": "Low Grade Structural Dalekanium",
     "block.dwdimensions.structural_dalekanium_high": "High Grade Structural Dalekanium",
@@ -112,6 +113,7 @@
     "entity.minecraft.villager.dwdimensions.radiotherapist": "Radiotherapist",
 	"itemGroup.dwdwiptab": "WIP",
     "itemGroup.dwdskarotab": "Skaro",
+    "itemGroup.dwdspawneggstab": "Spawn Eggs",
     "key.categories.dwdimensions": "DWDimensions",
     "key.dwdimensions.tardis_door": "Tardis Door",
     "effect.dwdimensions.radiation_sickness":"Radiation Sickness",

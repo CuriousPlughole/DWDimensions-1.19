@@ -19,4 +19,12 @@ public class DWDCreativeTabs {
             return new ItemStack(DWDItems.SKARO_DISK.get());
         }
     };
+
+    public static final CreativeModeTab DWDSpawnEggs = new CreativeModeTab("dwdspawneggstab") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(DWDItems.DALEK_SPAWN_EGG.get());
+        }
+    };
+
 }

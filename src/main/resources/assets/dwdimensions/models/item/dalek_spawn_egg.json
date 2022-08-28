@@ -1,0 +1,9 @@
+{
+	"overrides": [
+		{ "predicate": { "dwdimensions:dalek_type": 0}, "model": "dwdimensions:item/eggs/time_war"},
+		{ "predicate": { "dwdimensions:dalek_type": 1}, "model": "dwdimensions:item/eggs/time_squad"},
+		{ "predicate": { "dwdimensions:dalek_type": 2}, "model": "dwdimensions:item/eggs/axis_strike"},
+		{ "predicate": { "dwdimensions:dalek_type": 3}, "model": "dwdimensions:item/eggs/emperor_guard"},
+		{ "predicate": { "dwdimensions:dalek_type": 4}, "model": "dwdimensions:item/eggs/warrior"}
+	]
+}

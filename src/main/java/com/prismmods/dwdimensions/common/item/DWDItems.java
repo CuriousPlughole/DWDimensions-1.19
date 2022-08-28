@@ -4,6 +4,7 @@ import com.prismmods.dwdimensions.DWDimensions;
 import com.prismmods.dwdimensions.common.DWDCreativeTabs;
 import com.prismmods.dwdimensions.common.block.DWDBlocks;
 import com.prismmods.dwdimensions.common.item.custom.*;
+import com.prismmods.dwdimensions.common.item.custom.sonic.SonicScrewdriverItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.SignItem;
@@ -32,7 +33,7 @@ public class DWDItems {
     public static final RegistryObject<Item> PETRIFIED_JUNGLE_PLANK_SIGN = ITEMS.register("petrified_jungle_plank_sign", ()-> new SignItem(new Item.Properties().tab(DWDCreativeTabs.DWDSkaro).stacksTo(16), DWDBlocks.PETRIFIED_JUNGLE_PLANK_SIGN.get(), DWDBlocks.PETRIFIED_JUNGLE_PLANK_WALL_SIGN.get()));
     public static final RegistryObject<Item> SONIC_SCREWDRIVER = ITEMS.register("sonic_screwdriver", () -> new SonicScrewdriverItem(new Item.Properties()));
     public static final RegistryObject<Item> ANTI_RADIATION_PILL = ITEMS.register("anti_radiation_pill", () -> new AntiRadiationPillItem(new Item.Properties().tab(DWDCreativeTabs.DWDWIPTab)));
-    public static final RegistryObject<Item> DALEK_SPAWN_ITEM = ITEMS.register("dalek_spawn_item", () -> new DalekSpawnerItem(new Item.Properties().tab(DWDCreativeTabs.DWDSkaro)));
+    public static final RegistryObject<Item> DALEK_SPAWN_EGG = ITEMS.register("dalek_spawn_egg", () -> new DalekSpawnerItem(new Item.Properties().tab(DWDCreativeTabs.DWDSpawnEggs)));
 
 
     //Temporary functionality. For dev purposes

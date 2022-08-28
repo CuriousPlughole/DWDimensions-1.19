@@ -20,11 +20,13 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.MerchantOffer;
+import net.minecraft.world.phys.AABB;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
@@ -161,6 +163,14 @@ public class DWDEvents {
                 player.getCapability(RadiationCapabilityProvider.LIVING_ENTITY_RADIATION).ifPresent(radiation -> {
                     Network.sendToClient(new RadiationDataMessage(radiation.getRadiation()), player);
                 });
+            }
+
+            //Attempt to reduce sound spam. More stuff probably needed
+            if(event.getEntity() instanceof DalekEntity) {
+                int nearbyDaleks = event.getLevel().getNearbyEntities(LivingEntity.class, TargetingConditions.DEFAULT, (DalekEntity)event.getEntity(), event.getEntity().getBoundingBox().inflate(20.0d, 8.0d, 20.0d)).size();
+                if(nearbyDaleks > 6) {
+                    event.getEntity().setSilent(true);
+                }
             }
 
         }
