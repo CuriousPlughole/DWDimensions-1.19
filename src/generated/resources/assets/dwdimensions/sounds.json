@@ -29,6 +29,12 @@
     ],
     "subtitle": "sound.tardis.door.open"
   },
+  "entity.dalek.alarm": {
+    "sounds": [
+      "dwdimensions:entity/dalek/alarm"
+    ],
+    "subtitle": "sound.block.dalek.alarm"
+  },
   "entity.dalek.attacked": {
     "sounds": [
       "dwdimensions:entity/dalek/casing_hit"
@@ -92,6 +98,12 @@
       "dwdimensions:entity/dalek/hover_start"
     ],
     "subtitle": "sound.entity.dalek.hover"
+  },
+  "entity.dalek.hum": {
+    "sounds": [
+      "dwdimensions:entity/dalek/hum"
+    ],
+    "subtitle": "sound.block.dalek.hum"
   },
   "entity.dalek.mechanical": {
     "sounds": [

@@ -42,6 +42,7 @@ public class DWDBlocks {
 
 
     public static final RegistryObject<Block> RADIOTHERAPY_CABINET = registerBlock("radiotherapy_cabinet", () -> new Block(BlockBehaviour.Properties.copy(Blocks.LOOM)), DWDCreativeTabs.DWDWIPTab);
+    public static final RegistryObject<Block> DALEK_WALL_COMPUTER = registerBlock("dalek_wall_computer", ()-> new DalekComputerBlock(BlockBehaviour.Properties.copy(Blocks.GOLD_BLOCK)), DWDCreativeTabs.DWDWIPTab);
 
     //TODO: Add some custom effects for petrified plants. Some blindness or something? Not all negative; maybe "adrenaline" -> gives haste/strength etc
     //TODO: Special block types (Fences, stairs, slabs, etc)

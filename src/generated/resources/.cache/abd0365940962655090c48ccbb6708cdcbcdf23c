@@ -1,8 +1,9 @@
-// 1.19.2	2022-08-27T19:08:15.2732759	Item Models: dwdimensions
+// 1.19.2	2022-09-03T15:59:45.7926262	Item Models: dwdimensions
 106537de80a4063620a91e7e5a484c6aec7987ac assets/dwdimensions/models/item/anti_radiation_pill.json
 3dcd7d516c824e5c913cfdfb598530b365f6e1bd assets/dwdimensions/models/item/dalekanium_block.json
 17df5e5f35156b43eacef4056d2dc05efabd4df9 assets/dwdimensions/models/item/dalekanium_ingot.json
 a2bcb0a80fe10fc3b4c2a132ffe7f40303755b1c assets/dwdimensions/models/item/dalekanium_ore.json
+bf21a9e8fbc5a3846fb05b4fa0859e0917b2202f assets/dwdimensions/models/item/dalek_wall_computer.json
 a0d8f5ff13e1436864b48bf58d2ce8ee5e8ec058 assets/dwdimensions/models/item/deepslate_dalekanium_ore.json
 36d2d9f04812a903f0debffa0974cce18b17ed9b assets/dwdimensions/models/item/deepslate_zeiton_ore.json
 ac71d6f628cc60ee2ba80949e2ba0844dbab4171 assets/dwdimensions/models/item/devices_icon.json

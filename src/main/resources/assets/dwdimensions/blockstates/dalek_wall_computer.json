@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "disarmed=false,lit=false,occupied=false": {
+      "model": "dwdimensions:block/dalek_wall_computer/dalek_wall_computer"
+    },
+	"disarmed=false,lit=false,occupied=true": {
+      "model": "dwdimensions:block/dalek_wall_computer/dalek_wall_computer_using"
+    },
+	"disarmed=false,lit=true,occupied=false": {
+      "model": "dwdimensions:block/dalek_wall_computer/dalek_wall_computer_alarming"
+    },
+	"disarmed=false,lit=true,occupied=true": {
+      "model": "dwdimensions:block/dalek_wall_computer/dalek_wall_computer_alarming"
+    },
+	"disarmed=true,lit=false,occupied=false": {
+      "model": "dwdimensions:block/dalek_wall_computer/dalek_wall_computer_disabled"
+    },
+	"disarmed=true,lit=true,occupied=false": {
+      "model": "dwdimensions:block/dalek_wall_computer/dalek_wall_computer_alarming"
+    },
+	"disarmed=true,lit=false,occupied=true": {
+      "model": "dwdimensions:block/dalek_wall_computer/dalek_wall_computer_using"
+    },
+	"disarmed=true,lit=true,occupied=true": {
+      "model": "dwdimensions:block/dalek_wall_computer/dalek_wall_computer_alarming"
+    }
+}
+}	

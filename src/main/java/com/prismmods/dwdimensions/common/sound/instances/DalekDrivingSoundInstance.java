@@ -1,6 +1,7 @@
-package com.prismmods.dwdimensions.common.sound;
+package com.prismmods.dwdimensions.common.sound.instances;
 
 import com.prismmods.dwdimensions.common.entity.custom.dalek.DalekEntity;
+import com.prismmods.dwdimensions.common.sound.DWDSounds;
 import net.minecraft.client.resources.sounds.AbstractTickableSoundInstance;
 import net.minecraft.client.resources.sounds.SoundInstance;
 import net.minecraft.sounds.SoundEvent;

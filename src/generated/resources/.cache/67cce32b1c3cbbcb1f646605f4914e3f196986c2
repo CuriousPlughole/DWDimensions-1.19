@@ -1,6 +1,7 @@
-// 1.19.2	2022-08-27T19:08:15.2662693	LootTables
+// 1.19.2	2022-09-03T15:59:45.7916257	LootTables
 126d49d16e707ea47fcf81376bda8656c800cd31 data/dwdimensions/loot_tables/blocks/dalekanium_block.json
 68fe72a3ed7778bcb9b85a395a4d2fd3899abb8b data/dwdimensions/loot_tables/blocks/dalekanium_ore.json
+a740823f4d76b860207a454a180b52d3953e0889 data/dwdimensions/loot_tables/blocks/dalek_wall_computer.json
 1dacea81cdac41b817c0999504be6e3b38d4a22d data/dwdimensions/loot_tables/blocks/deepslate_dalekanium_ore.json
 c075bce1a8f7ac5b43ba2b81c50ab82da6549a81 data/dwdimensions/loot_tables/blocks/deepslate_zeiton_ore.json
 e909c9eb60c79f00046bf1b657ff7650560a0e5a data/dwdimensions/loot_tables/blocks/handmine_trap.json

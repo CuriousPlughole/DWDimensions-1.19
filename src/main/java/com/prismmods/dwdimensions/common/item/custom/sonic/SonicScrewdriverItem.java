@@ -123,7 +123,7 @@ public class SonicScrewdriverItem extends Item {
             //Detecting block with no custom interaction
             if(level.isClientSide) {
                 //This will do for now but maybe look into other ways of receiving data from the sonic. GUI?
-                player.sendSystemMessage(Component.translatable("item.sonic.block_detected" + level.getBlockState(pos).getBlock().toString()));
+                player.sendSystemMessage(Component.translatable("item.dwdimensions.sonic.block_detected" + level.getBlockState(pos).getBlock().toString()));
             }
 
             //Custom interactions
@@ -170,27 +170,26 @@ public class SonicScrewdriverItem extends Item {
      SOUND
      */
     //FIXME: Currently has wrong sounds! Update when the actual sounds have been added.
-    //Use sound is wrong somehow
-    public SoundEvent getSoundForModel(ScrewdriverModel model, Action action) {
-        Holder<SoundEvent> SOUND = DWDSounds.SONIC_10_EXTEND.getHolder().get();
-            if (action == Action.EXTEND) {
-                switch (model) {
-                    case CAPALDI -> SOUND = DWDSounds.SONIC_10_EXTEND.getHolder().get();
-                    default -> SOUND = DWDSounds.SONIC_11_EXTEND.getHolder().get();
-                }
+    public static SoundEvent getSoundForModel(ScrewdriverModel model, Action action) {
+        Holder<SoundEvent> SOUND = DWDSounds.DALEK_EMERGENCY.getHolder().get();
+        if (action == Action.EXTEND) {
+            switch (model) {
+                case CAPALDI -> SOUND = DWDSounds.SONIC_10_EXTEND.getHolder().get();
+                default -> SOUND = DWDSounds.SONIC_11_EXTEND.getHolder().get();
             }
-            if (action == Action.RETRACT) {
-                switch (model) {
-                    case CAPALDI -> SOUND = DWDSounds.SONIC_11_RETRACT.getHolder().get();
-                    default -> SOUND = DWDSounds.SONIC_11_RETRACT.getHolder().get();
-                }
+        }
+        if (action == Action.RETRACT) {
+            switch (model) {
+                case CAPALDI -> SOUND = DWDSounds.SONIC_11_RETRACT.getHolder().get();
+                default -> SOUND = DWDSounds.SONIC_11_RETRACT.getHolder().get();
             }
-            if (action == Action.USE) {
-                switch (model) {
-                    case CAPALDI -> DWDSounds.SONIC_11_USE_SHORT.getHolder().get();
-                    default -> DWDSounds.SONIC_11_USE_SHORT.getHolder().get();
-                }
+        }
+        if (action == Action.USE) {
+            switch (model) {
+                case CAPALDI -> SOUND = DWDSounds.SONIC_11_USE_SHORT.getHolder().get();
+                default -> SOUND = DWDSounds.SONIC_11_USE_SHORT.getHolder().get();
             }
+        }
         return SOUND.value();
     }
     public enum Action {

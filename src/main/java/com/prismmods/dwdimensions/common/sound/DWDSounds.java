@@ -30,6 +30,8 @@ public class DWDSounds {
     public static final RegistryObject<SoundEvent> DALEK_TEA = registerSoundEvent("entity.dalek.tea");
     public static final RegistryObject<SoundEvent> DALEK_ATTACKED = registerSoundEvent("entity.dalek.attacked");
     public static final RegistryObject<SoundEvent> DALEK_EMERGENCY = registerSoundEvent("entity.dalek.emergency");
+    public static final RegistryObject<SoundEvent> DALEK_ALARM = registerSoundEvent("entity.dalek.alarm");
+    public static final RegistryObject<SoundEvent> DALEK_AMBIENT_HUM = registerSoundEvent("entity.dalek.hum");
 
     public static final RegistryObject<SoundEvent> SONIC_11_EXTEND = registerSoundEvent("sonic.smith.extend");
     public static final RegistryObject<SoundEvent> SONIC_11_RETRACT = registerSoundEvent("sonic.smith.retract");

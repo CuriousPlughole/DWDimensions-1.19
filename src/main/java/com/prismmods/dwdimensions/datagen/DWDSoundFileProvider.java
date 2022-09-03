@@ -57,6 +57,10 @@ public class DWDSoundFileProvider extends SoundDefinitionsProvider {
                 .with(sound(new ResourceLocation(DWDimensions.MOD_ID, "entity/dalek/casing_hit"))));
         this.add(DWDSounds.DALEK_EMERGENCY.get(), definition().subtitle("sound.entity.dalek.attacked")
                 .with(sound(new ResourceLocation(DWDimensions.MOD_ID, "entity/dalek/emergency"))));
+        this.add(DWDSounds.DALEK_ALARM.get(), definition().subtitle("sound.block.dalek.alarm")
+                .with(sound(new ResourceLocation(DWDimensions.MOD_ID, "entity/dalek/alarm"))));
+        this.add(DWDSounds.DALEK_AMBIENT_HUM.get(), definition().subtitle("sound.block.dalek.hum")
+                .with(sound(new ResourceLocation(DWDimensions.MOD_ID, "entity/dalek/hum"))));
 
         this.add(DWDSounds.SONIC_10_EXTEND.get(), definition().subtitle("sound.sonic.extends")
                 .with(sound(new ResourceLocation(DWDimensions.MOD_ID, "sonic/tennant/extend"))));

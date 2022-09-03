@@ -19,6 +19,9 @@ public class DWDBlockEntities {
     public static final RegistryObject<BlockEntityType<TardisBlockEntity>> TARDIS = BLOCK_ENTITIES.register("tardis",
             () -> registerBlockEntity(TardisBlockEntity::new, DWDBlocks.TARDIS.get()));
 
+    public static final RegistryObject<BlockEntityType<DalekComputerBlockEntity>> DALEK_WALL_COMPUTER = BLOCK_ENTITIES.register("dalek_wall_computer",
+            () -> registerBlockEntity(DalekComputerBlockEntity::new, DWDBlocks.DALEK_WALL_COMPUTER.get()));
+
     public static final RegistryObject<BlockEntityType<DWDSignBlockEntity>> SIGN_BLOCK_ENTITIES = BLOCK_ENTITIES.register("sign_block_entity",
             () -> BlockEntityType.Builder.of(DWDSignBlockEntity::new, DWDBlocks.PETRIFIED_PLANK_WALL_SIGN.get(), DWDBlocks.PETRIFIED_PLANK_SIGN.get(),
                     DWDBlocks.PETRIFIED_JUNGLE_PLANK_WALL_SIGN.get(), DWDBlocks.PETRIFIED_JUNGLE_PLANK_SIGN.get()).build(null));
