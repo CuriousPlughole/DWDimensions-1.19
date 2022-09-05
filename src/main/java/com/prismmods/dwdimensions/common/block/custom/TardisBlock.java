@@ -8,9 +8,11 @@ import com.prismmods.dwdimensions.common.item.DWDItems;
 import com.prismmods.dwdimensions.common.item.custom.StattenheimRemoteItem;
 import com.prismmods.dwdimensions.common.sound.DWDSounds;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
@@ -171,6 +173,19 @@ public class TardisBlock extends BaseEntityBlock implements Fallable{
             }
         };
     }
+
+    /*
+    @Override
+    public void animateTick(BlockState state, Level level, BlockPos blockPos, RandomSource random) {
+        for(int i = 0; i<360; i++) {
+            if (i % 20 == 0) {
+                level.addParticle(ParticleTypes.ELECTRIC_SPARK, blockPos.getX() +0.5+ Math.cos(i), blockPos.getY() + 1.5d, blockPos.getZ() +0.5+ Math.sin(i), 0, 0.1, 0);
+            }
+            if(i%15 ==0) {
+                level.addAlwaysVisibleParticle(ParticleTypes.ENCHANTED_HIT, blockPos.getX() +0.5+ Math.cos(i), blockPos.getY() + 1.5d, blockPos.getZ() +0.5+ Math.sin(i), 0, 0.1, 0);
+            }
+        }
+    }*/
 
     //TODO: mess with these values for damage
     protected void falling(FallingTardisEntity fallingBlockEntity) {

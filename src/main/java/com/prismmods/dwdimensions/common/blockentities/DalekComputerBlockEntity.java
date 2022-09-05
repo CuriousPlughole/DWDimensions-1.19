@@ -1,6 +1,7 @@
 package com.prismmods.dwdimensions.common.blockentities;
 
 import com.prismmods.dwdimensions.common.block.custom.DalekComputerBlock;
+import com.prismmods.dwdimensions.common.entity.custom.dalek.DalekEntity;
 import com.prismmods.dwdimensions.common.sound.DWDSounds;
 import com.prismmods.dwdimensions.common.sound.instances.DalekAlarmSoundInstance;
 import net.minecraft.client.Minecraft;
@@ -14,12 +15,17 @@ import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.AABB;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class DalekComputerBlockEntity extends BlockEntity implements BlockEntityTicker<DalekComputerBlockEntity> {
 
@@ -30,12 +36,20 @@ public class DalekComputerBlockEntity extends BlockEntity implements BlockEntity
     private int alarmTicks = 0;
     private boolean changedFlag = false;
 
+    private List<DalekEntity> nearbyDaleks;
+
     public DalekComputerBlockEntity(BlockPos pos, BlockState state) {
         super(DWDBlockEntities.DALEK_WALL_COMPUTER.get(), pos, state);
     }
 
     @Override
     public void tick(Level level, BlockPos pos, BlockState state, DalekComputerBlockEntity computerBlockEntity) {
+
+        if(useCooldown <=0) {
+            useCooldown =0;
+        } else {
+            useCooldown--;
+        }
 
         //If the deactivated count is less than zero, the system is fully active.
         if(deactivated <= 0) {
@@ -70,6 +84,24 @@ public class DalekComputerBlockEntity extends BlockEntity implements BlockEntity
             changedFlag = false;
         }
     }
+
+    private void alertNearbyDaleks() {
+        BlockPos blockpos = this.getBlockPos();
+        if (this.nearbyDaleks == null) {
+            AABB aabb = (new AABB(blockpos)).inflate(48.0D);
+            this.nearbyDaleks = this.level.getEntitiesOfClass(DalekEntity.class, aabb);
+        }
+        if (!this.level.isClientSide) {
+            for(DalekEntity dalek : this.nearbyDaleks) {
+                if (dalek.isAlive() && !dalek.isRemoved() && blockpos.closerToCenterThan(dalek.position(), 32.0D)) {
+                    //dalek.moveTo(blockpos.getX(), blockpos.getY(), blockpos.getZ());
+                    //dalek.goalSelector.
+                }
+            }
+        }
+
+    }
+
 
     /**
      * DATA HANDLING
@@ -128,20 +160,33 @@ public class DalekComputerBlockEntity extends BlockEntity implements BlockEntity
         return deactivated > 0;
     }
     public void setAlarming(Boolean shouldAlarm) {
+        /*
+        if(shouldAlarm) {
+            this.alertNearbyDaleks();
+        }*/
         this.isAlarming = shouldAlarm;
         this.alarmTicks = 400;
     }
     public boolean isAlarming() {
         return this.isAlarming;
     }
-
     public void disableAlarmableFor(int ticks) {
         this.deactivated = ticks;
     }
-
     public boolean isInUse() {
         return this.inUse;
     }
+    public void setInUse(boolean using) {
+        this.inUse = using;
+        level.setBlockAndUpdate(this.worldPosition, this.getBlockState().setValue(DalekComputerBlock.IN_USE, using));
+    }
+    public void putUseCooldown(int cooldown) {
+        this.useCooldown = cooldown;
+    }
+    public int getUseCooldown() {
+        return this.useCooldown;
+    }
+
 
 
 }

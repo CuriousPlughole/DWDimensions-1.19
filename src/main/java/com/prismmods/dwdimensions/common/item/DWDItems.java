@@ -34,7 +34,7 @@ public class DWDItems {
     public static final RegistryObject<Item> SONIC_SCREWDRIVER = ITEMS.register("sonic_screwdriver", () -> new SonicScrewdriverItem(new Item.Properties()));
     public static final RegistryObject<Item> ANTI_RADIATION_PILL = ITEMS.register("anti_radiation_pill", () -> new AntiRadiationPillItem(new Item.Properties().tab(DWDCreativeTabs.DWDWIPTab)));
     public static final RegistryObject<Item> DALEK_SPAWN_EGG = ITEMS.register("dalek_spawn_egg", () -> new DalekSpawnerItem(new Item.Properties().tab(DWDCreativeTabs.DWDSpawnEggs)));
-
+    public static final RegistryObject<Item> DALEK_GUNSTICK = ITEMS.register("dalek_gunstick", () -> new DalekGunstick(new Item.Properties().tab(DWDCreativeTabs.DWDWIPTab)));
 
     //Temporary functionality. For dev purposes
     public static final RegistryObject<Item> STATTENHEIM_REMOTE = ITEMS.register("stattenheim_remote", () -> new StattenheimRemoteItem(new Item.Properties().stacksTo(1).tab(DWDCreativeTabs.DWDWIPTab)));

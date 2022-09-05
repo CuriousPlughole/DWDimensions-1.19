@@ -5,6 +5,7 @@ import com.prismmods.dwdimensions.common.entity.custom.dalek.DalekEntity;
 import com.prismmods.dwdimensions.common.entity.custom.FallingTardisEntity;
 import com.prismmods.dwdimensions.common.entity.custom.GiantSkaroEelEntity;
 import com.prismmods.dwdimensions.common.entity.custom.HandmineEntity;
+import com.prismmods.dwdimensions.common.entity.custom.projectile.DalekLaser;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -29,6 +30,10 @@ public class DWDEntityTypes {
 
     public static final RegistryObject<EntityType<DalekEntity>> DALEK = ENTITY_TYPES.register("dalek",
             () -> EntityType.Builder.of(DalekEntity::new, MobCategory.MONSTER).sized(0.7f, 1.8f).build(new ResourceLocation(DWDimensions.MOD_ID, "dalek").toString()));
+
+
+    public static final RegistryObject<EntityType<DalekLaser>> DALEK_LASER = ENTITY_TYPES.register("dalek_laser",
+            () -> EntityType.Builder.<DalekLaser>of(DalekLaser::new, MobCategory.MISC).sized(0.5f, 2.0f).clientTrackingRange(10).updateInterval(20).build(new ResourceLocation(DWDimensions.MOD_ID, "dalek_laser").toString()));
 
 
     public static void register(IEventBus eventBus) {

@@ -1,5 +1,7 @@
 package com.prismmods.dwdimensions.common.entity.custom.dalek;
 
+import com.prismmods.dwdimensions.common.entity.custom.dalek.goals.DalekRespondToAlarmGoal;
+import com.prismmods.dwdimensions.common.entity.custom.dalek.goals.DalekUseComputerGoal;
 import com.prismmods.dwdimensions.common.sound.DWDSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -30,7 +32,7 @@ import java.util.function.Predicate;
 
 public class DalekEntity extends Monster implements RangedAttackMob {
 
-    private static final Predicate<LivingEntity> NOT_DALEK = (livingEntity) -> !(livingEntity instanceof DalekEntity) && livingEntity.attackable();
+    public static final Predicate<LivingEntity> NOT_DALEK = (livingEntity) -> !(livingEntity instanceof DalekEntity) && livingEntity.attackable();
     private static final EntityDataAccessor<String> DALEK_TYPE = SynchedEntityData.defineId(DalekEntity.class, EntityDataSerializers.STRING);
     private static final EntityDataAccessor<Float> SPECIAL_STATE = SynchedEntityData.defineId(DalekEntity.class, EntityDataSerializers.FLOAT);
     //The special state data is a float that can be used in future for further custom animations etc.
@@ -99,9 +101,17 @@ public class DalekEntity extends Monster implements RangedAttackMob {
         this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1.0D));
         this.goalSelector.addGoal(2, new LookAtPlayerGoal(this, Player.class, 6));
         this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(6, new DalekUseComputerGoal(this, 1.1, 6));
+        this.goalSelector.addGoal(1, new DalekRespondToAlarmGoal(this, 1.3, 8));
 
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 0, false, false, NOT_DALEK));
         this.goalSelector.addGoal(2, new RangedAttackGoal(this, 1.0D, 20, 15.0F));
+
+    }
+
+    //In future may have damaged daleks without guns etc
+    public boolean isAbleToAttack() {
+        return true;
     }
 
     @Override

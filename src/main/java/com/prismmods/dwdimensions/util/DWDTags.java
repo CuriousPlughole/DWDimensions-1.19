@@ -34,6 +34,7 @@ public class DWDTags {
 
         public static final TagKey<Item> PETRIFIED_LOGS = createTag("petrified_logs");
         public static final TagKey<Item> PETRIFIED_JUNGLE_LOGS = createTag("petrified_jungle_logs");
+        public static final TagKey<Item> LASERS = createTag("lasers");
 
         private static TagKey<Item> createTag(String name) {
             return ItemTags.create(new ResourceLocation(DWDimensions.MOD_ID, name));

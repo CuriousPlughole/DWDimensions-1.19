@@ -15,4 +15,6 @@ public class DWDModelLayers {
     public static final ModelLayerLocation MEDIUM_DALEK = new ModelLayerLocation(new ResourceLocation(DWDimensions.MOD_ID, "model"), "medium_dalek");
     public static final ModelLayerLocation SMALL_DALEK = new ModelLayerLocation(new ResourceLocation(DWDimensions.MOD_ID, "model"), "small_dalek");
     public static final ModelLayerLocation BIG_DALEK = new ModelLayerLocation(new ResourceLocation(DWDimensions.MOD_ID, "model"), "big_dalek");
+
+    public static final ModelLayerLocation DALEK_LASER = new ModelLayerLocation(new ResourceLocation(DWDimensions.MOD_ID, "model"), "dalek_laser");
 }

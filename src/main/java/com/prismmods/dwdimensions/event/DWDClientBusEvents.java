@@ -12,11 +12,13 @@ import com.prismmods.dwdimensions.client.models.entity.HandmineRightModel;
 import com.prismmods.dwdimensions.client.models.entity.dalek.BigDalekModel;
 import com.prismmods.dwdimensions.client.models.entity.dalek.MediumDalekModel;
 import com.prismmods.dwdimensions.client.models.entity.dalek.SmallDalekModel;
+import com.prismmods.dwdimensions.client.models.entity.projectile.DalekLaserModel;
 import com.prismmods.dwdimensions.client.renders.blockentities.TardisRenderer;
 import com.prismmods.dwdimensions.client.renders.entity.DalekRenderer;
 import com.prismmods.dwdimensions.client.renders.entity.FallingTardisRenderer;
 import com.prismmods.dwdimensions.client.renders.entity.GiantSkaroEelRender;
 import com.prismmods.dwdimensions.client.renders.entity.HandmineRender;
+import com.prismmods.dwdimensions.client.renders.entity.projectile.DalekLaserRenderer;
 import com.prismmods.dwdimensions.common.block.DWDBlocks;
 import com.prismmods.dwdimensions.common.blockentities.DWDBlockEntities;
 import com.prismmods.dwdimensions.common.blockentities.sign.DWDWoodTypes;
@@ -72,6 +74,7 @@ public class DWDClientBusEvents {
         event.registerLayerDefinition(DWDModelLayers.BIG_DALEK, BigDalekModel::createBodyLayer);
         event.registerLayerDefinition(DWDModelLayers.MEDIUM_DALEK, MediumDalekModel::createBodyLayer);
         event.registerLayerDefinition(DWDModelLayers.SMALL_DALEK, SmallDalekModel::createBodyLayer);
+        event.registerLayerDefinition(DWDModelLayers.DALEK_LASER, DalekLaserModel::createBodyLayer);
     }
 
     //FIXME: Need to remove the .setRenderLayer. Instead add "render_type": "cutout" etc. to the json block model. -> Datagen
@@ -82,6 +85,7 @@ public class DWDClientBusEvents {
         EntityRenderers.register(DWDEntityTypes.FALLING_TARDIS.get(), FallingTardisRenderer::new);
         EntityRenderers.register(DWDEntityTypes.GIANT_SKARO_EEL.get(), GiantSkaroEelRender::new);
         EntityRenderers.register(DWDEntityTypes.DALEK.get(), DalekRenderer::new);
+        EntityRenderers.register(DWDEntityTypes.DALEK_LASER.get(), DalekLaserRenderer::new);
 
         ItemBlockRenderTypes.setRenderLayer(DWDBlocks.PETRIFIED_LEAVES.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(DWDBlocks.PETRIFIED_JUNGLE_LEAVES.get(), RenderType.cutout());
