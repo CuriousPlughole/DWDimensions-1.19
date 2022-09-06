@@ -33,8 +33,12 @@ public class DWDItemModelProvider extends ItemModelProvider {
         simpleItem(DWDItems.DEVICES_ICON);
         simpleItem(DWDItems.RAW_DALEKANIUM);
         simpleItem(DWDItems.DALEKANIUM_INGOT);
+        simpleItem(DWDItems.RAW_URANIUM);
+        simpleItem(DWDItems.REFINED_URANIUM);
 
-        blockItemModel(DWDBlocks.DALEK_WALL_COMPUTER);
+        blockItemModel(DWDBlocks.SKARO_DEEPSLATE_URANIUM_ORE);
+        blockItemModel(DWDBlocks.SKARO_URANIUM_ORE);
+        blockItemModel(DWDBlocks.SKARO_IRON_ORE);
         blockItemModel(DWDBlocks.RADIOTHERAPY_CABINET);
         blockItemModel(DWDBlocks.DALEKANIUM_BLOCK);
         blockItemModel(DWDBlocks.DALEKANIUM_ORE);
@@ -126,6 +130,7 @@ public class DWDItemModelProvider extends ItemModelProvider {
         plantItem(DWDBlocks.SKARO_SHRUB_SMALL);
         plantItem(DWDBlocks.PETRIFIED_JUNGLE_SAPLING);
         plantItem(DWDBlocks.SKARO_VINES);
+        plantItem(DWDBlocks.IRON_LADDER);
 
 
         /* Method for automatically registering blockItems. Probably gonna cause more issues than its worth though.

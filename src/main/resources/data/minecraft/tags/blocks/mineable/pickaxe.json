@@ -17,6 +17,9 @@
 	  "dwdimensions:dalekanium_block",
 	  "dwdimensions:structural_dalekanium_low",
 	  "dwdimensions:structural_dalekanium_high",
-	  "dwdimensions:structural_dalekanium_military"
+	  "dwdimensions:structural_dalekanium_military",
+	  "dwdimensions:skaro_uranium_ore",
+	  "dwdimensions:skaro_deepslate_uranium_ore",
+	  "dwdimensions:skaro_iron_ore"
   ]
 }

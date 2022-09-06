@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 0.2,
+  "ingredient": {
+    "item": "dwdimensions:skaro_deepslate_uranium_ore"
+  },
+  "result": "dwdimensions:refined_uranium"
+}

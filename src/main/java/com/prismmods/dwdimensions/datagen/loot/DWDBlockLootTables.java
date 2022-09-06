@@ -26,6 +26,8 @@ public class DWDBlockLootTables extends BlockLoot {
     @Override
     protected void addTables() {
 
+        this.dropSelf(DWDBlocks.IRON_LADDER.get());
+
         //GALLIFREY
         this.add(DWDBlocks.ZEITON_ORE.get(), (block) -> createOreDrop(DWDBlocks.ZEITON_ORE.get(), DWDItems.ZEITON_7.get()));
         this.add(DWDBlocks.DEEPSLATE_ZEITON_ORE.get(), (block) -> createOreDrop(DWDBlocks.DEEPSLATE_ZEITON_ORE.get(), DWDItems.ZEITON_7.get()));
@@ -128,6 +130,10 @@ public class DWDBlockLootTables extends BlockLoot {
         this.add(DWDBlocks.SKARO_VINES.get(), (block) -> createShearsOnlyDrop(block));
         this.add(DWDBlocks.DALEKANIUM_ORE.get(), (block) -> createOreDrop(DWDBlocks.DALEKANIUM_ORE.get(), DWDItems.RAW_DALEKANIUM.get()));
         this.add(DWDBlocks.DEEPSLATE_DALEKANIUM_ORE.get(), (block) -> createOreDrop(DWDBlocks.DEEPSLATE_DALEKANIUM_ORE.get(), DWDItems.RAW_DALEKANIUM.get()));
+
+        this.add(DWDBlocks.SKARO_URANIUM_ORE.get(), (block) -> createOreDrop(DWDBlocks.SKARO_URANIUM_ORE.get(), DWDItems.RAW_URANIUM.get()));
+        this.add(DWDBlocks.SKARO_DEEPSLATE_URANIUM_ORE.get(), (block) -> createOreDrop(DWDBlocks.SKARO_DEEPSLATE_URANIUM_ORE.get(), DWDItems.RAW_URANIUM.get()));
+        this.add(DWDBlocks.SKARO_IRON_ORE.get(), (block) -> createOreDrop(DWDBlocks.SKARO_IRON_ORE.get(), Items.RAW_IRON));
 
     }
 

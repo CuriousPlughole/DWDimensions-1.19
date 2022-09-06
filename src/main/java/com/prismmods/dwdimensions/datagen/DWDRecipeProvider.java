@@ -8,6 +8,7 @@ import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
@@ -126,6 +127,7 @@ public class DWDRecipeProvider extends RecipeProvider implements IConditionBuild
         RecipeProvider.nineBlockStorageRecipes(pFinishedRecipeConsumer, DWDItems.DALEKANIUM_INGOT.get(), DWDBlocks.DALEKANIUM_BLOCK.get());
 
         //Parameters: item to smelt, result, experience gained, cooking time.
+        //ORES
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(DWDBlocks.ZEITON_ORE.get().asItem()), DWDItems.ZEITON_7.get(), 0.1F, 200)
                 .unlockedBy("has_zeiton_ore", inventoryTrigger(ItemPredicate.Builder.item().of(DWDBlocks.ZEITON_ORE.get()).build()))
                 .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "smelt_zeiton_ore"));
@@ -138,7 +140,6 @@ public class DWDRecipeProvider extends RecipeProvider implements IConditionBuild
         SimpleCookingRecipeBuilder.blasting(Ingredient.of(DWDBlocks.DEEPSLATE_ZEITON_ORE.get().asItem()), DWDItems.ZEITON_7.get(), 0.1F, 100)
                 .unlockedBy("has_deepslate_zeiton_ore", inventoryTrigger(ItemPredicate.Builder.item().of(DWDBlocks.DEEPSLATE_ZEITON_ORE.get()).build()))
                 .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "blast_deepslate_zeiton_ore"));
-
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(DWDBlocks.DALEKANIUM_ORE.get().asItem()), DWDItems.DALEKANIUM_INGOT.get(), 0.2F, 200)
                 .unlockedBy("has_dalekanium_ore", has(DWDBlocks.DALEKANIUM_ORE.get()))
                 .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "smelt_dalekanium_ore"));
@@ -152,13 +153,28 @@ public class DWDRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_deepslate_dalekanium_ore", has(DWDBlocks.DEEPSLATE_DALEKANIUM_ORE.get()))
                 .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "blast_deepslate_dalekanium_ore"));
 
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(DWDBlocks.HIGH_GRADE_STRUCTURAL_DALEKANIUM.get().asItem()), DWDBlocks.MILITARY_GRADE_STRUCTURAL_DALEKANIUM.get(), 0.1F, 100)
-                .unlockedBy("has_high_grade_structural_dalekanium", has(DWDBlocks.HIGH_GRADE_STRUCTURAL_DALEKANIUM.get()))
-                .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "smelt_high_grade_structural_dalekanium"));
-        SimpleCookingRecipeBuilder.blasting(Ingredient.of(DWDBlocks.HIGH_GRADE_STRUCTURAL_DALEKANIUM.get().asItem()), DWDBlocks.MILITARY_GRADE_STRUCTURAL_DALEKANIUM.get(), 0.1F, 50)
-                .unlockedBy("has_high_grade_structural_dalekanium", has(DWDBlocks.HIGH_GRADE_STRUCTURAL_DALEKANIUM.get()))
-                .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "blast_high_grade_structural_dalekanium"));
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(DWDBlocks.SKARO_IRON_ORE.get().asItem()), Items.IRON_INGOT, 0.2F, 200)
+                .unlockedBy("has_skaro_iron_ore", has(DWDBlocks.SKARO_IRON_ORE.get()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "smelt_skaro_iron_ore"));
+        SimpleCookingRecipeBuilder.blasting(Ingredient.of(DWDBlocks.SKARO_IRON_ORE.get().asItem()), Items.IRON_INGOT, 0.2F, 100)
+                .unlockedBy("has_skaro_iron_ore", has(DWDBlocks.SKARO_IRON_ORE.get()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "blast_skaro_iron_ore"));
 
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(DWDBlocks.SKARO_URANIUM_ORE.get().asItem()), DWDItems.REFINED_URANIUM.get(), 0.2F, 200)
+                .unlockedBy("has_skaro_uranium_ore", has(DWDBlocks.SKARO_URANIUM_ORE.get()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "smelt_skaro_uranium_ore"));
+        SimpleCookingRecipeBuilder.blasting(Ingredient.of(DWDBlocks.SKARO_URANIUM_ORE.get().asItem()), DWDItems.REFINED_URANIUM.get(), 0.2F, 100)
+                .unlockedBy("has_skaro_uranium_ore", has(DWDBlocks.SKARO_URANIUM_ORE.get()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "blast_skaro_uranium_ore"));
+
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(DWDBlocks.SKARO_DEEPSLATE_URANIUM_ORE.get().asItem()), DWDItems.REFINED_URANIUM.get(), 0.2F, 200)
+                .unlockedBy("has_skaro_deepslate_uranium_ore", has(DWDBlocks.SKARO_DEEPSLATE_URANIUM_ORE.get()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "smelt_skaro_deepslate_uranium_ore"));
+        SimpleCookingRecipeBuilder.blasting(Ingredient.of(DWDBlocks.SKARO_DEEPSLATE_URANIUM_ORE.get().asItem()), DWDItems.REFINED_URANIUM.get(), 0.2F, 100)
+                .unlockedBy("has_skaro_deepslate_uranium_ore", has(DWDBlocks.SKARO_DEEPSLATE_URANIUM_ORE.get()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "blast_skaro_deepslate_uranium_ore"));
+
+        //RAW TO INGOT
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(DWDItems.RAW_DALEKANIUM.get()), DWDItems.DALEKANIUM_INGOT.get(), 0.1F, 200)
                 .unlockedBy("has_raw_dalekanium", has(DWDItems.RAW_DALEKANIUM.get()))
                 .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "smelt_raw_dalekanium"));
@@ -166,7 +182,20 @@ public class DWDRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_raw_dalekanium", has(DWDItems.RAW_DALEKANIUM.get()))
                 .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "blast_raw_dalekanium"));
 
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(DWDItems.RAW_URANIUM.get()), DWDItems.REFINED_URANIUM.get(), 0.1F, 200)
+                .unlockedBy("has_raw_uranium", has(DWDItems.RAW_URANIUM.get()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "smelt_raw_uranium"));
+        SimpleCookingRecipeBuilder.blasting(Ingredient.of(DWDItems.RAW_URANIUM.get()), DWDItems.REFINED_URANIUM.get(), 0.1F, 100)
+                .unlockedBy("has_raw_uranium", has(DWDItems.RAW_URANIUM.get()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "blast_raw_uranium"));
 
+        //OTHER COOKING
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(DWDBlocks.HIGH_GRADE_STRUCTURAL_DALEKANIUM.get().asItem()), DWDBlocks.MILITARY_GRADE_STRUCTURAL_DALEKANIUM.get(), 0.1F, 100)
+                .unlockedBy("has_high_grade_structural_dalekanium", has(DWDBlocks.HIGH_GRADE_STRUCTURAL_DALEKANIUM.get()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "smelt_high_grade_structural_dalekanium"));
+        SimpleCookingRecipeBuilder.blasting(Ingredient.of(DWDBlocks.HIGH_GRADE_STRUCTURAL_DALEKANIUM.get().asItem()), DWDBlocks.MILITARY_GRADE_STRUCTURAL_DALEKANIUM.get(), 0.1F, 50)
+                .unlockedBy("has_high_grade_structural_dalekanium", has(DWDBlocks.HIGH_GRADE_STRUCTURAL_DALEKANIUM.get()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation(DWDimensions.MOD_ID, "blast_high_grade_structural_dalekanium"));
 
     }
 }

@@ -49,6 +49,16 @@ public class DWDConfiguredFeatures {
     public static final RegistryObject<ConfiguredFeature<?,?>> DALEKANIUM_ORE = CONFIGURED_FEATURES.register("dalekanium_ore",
             () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(SKARO_DALEKANIUM_ORES.get(), 6)));
 
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> SKARO_URANIUM_ORES = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, DWDBlocks.SKARO_URANIUM_ORE.get().defaultBlockState()),
+            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, DWDBlocks.SKARO_DEEPSLATE_URANIUM_ORE.get().defaultBlockState())));
+    public static final RegistryObject<ConfiguredFeature<?,?>> SKARO_URANIUM_ORE = CONFIGURED_FEATURES.register("skaro_uranium_ore",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(SKARO_URANIUM_ORES.get(), 4)));
+
+    public static final Supplier<List<OreConfiguration.TargetBlockState>> SKARO_IRON_ORES = Suppliers.memoize(() -> List.of(
+            OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, DWDBlocks.SKARO_IRON_ORE.get().defaultBlockState())));
+    public static final RegistryObject<ConfiguredFeature<?,?>> SKARO_IRON_ORE = CONFIGURED_FEATURES.register("skaro_iron_ore",
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(SKARO_IRON_ORES.get(), 8)));
 
 
     /**

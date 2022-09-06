@@ -51,7 +51,7 @@ public class SonicScrewdriverItem extends Item {
         BlockPos pos = player.blockPosition();
 
         if(mode == Setting.BLOCK) {
-            //In block mode, so we don't want any interactions to work. Maybe add an "error sound" or message here to remind players
+            //In block mode, so we don't want any interactions to work. TODO: Maybe add an "error sound" or message here to remind players
         }
 
         //In entity mode, so interactions can continue
@@ -61,16 +61,12 @@ public class SonicScrewdriverItem extends Item {
             //Detecting entity with no custom interaction
             if(level.isClientSide) {
                 //This will do for now but maybe look into other ways of receiving data from the sonic. GUI?
-                player.sendSystemMessage(Component.translatable("item.sonic.entity_detected" + livingTarget.toString()));
+                player.sendSystemMessage(Component.translatable(("item.dwdimensions.sonic.entity_detected"))
+                        .append(livingTarget.getName()));
             }
 
             //Custom interactions
-            if(livingTarget.isCurrentlyGlowing()) {
-                livingTarget.setGlowingTag(false);
-                if(level.isClientSide) {
-                    player.sendSystemMessage(Component.translatable("item.sonic.entity_glowing_stopped"));
-                }
-            }
+
 
             //TODO: test creeper interaction
             if(livingTarget instanceof Creeper) {
@@ -123,14 +119,13 @@ public class SonicScrewdriverItem extends Item {
             //Detecting block with no custom interaction
             if(level.isClientSide) {
                 //This will do for now but maybe look into other ways of receiving data from the sonic. GUI?
-                player.sendSystemMessage(Component.translatable("item.dwdimensions.sonic.block_detected" + level.getBlockState(pos).getBlock().toString()));
+                player.sendSystemMessage(Component.translatable(("item.dwdimensions.sonic.block_detected"))
+                        .append(Component.translatable(level.getBlockState(pos).getBlock().getDescriptionId())));
             }
 
             //Custom interactions
             //etc
         }
-
-
 
             return super.useOn(context);
     }

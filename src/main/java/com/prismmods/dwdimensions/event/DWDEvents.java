@@ -1,6 +1,7 @@
 package com.prismmods.dwdimensions.event;
 
 import com.prismmods.dwdimensions.DWDimensions;
+import com.prismmods.dwdimensions.api.RadiationHandler;
 import com.prismmods.dwdimensions.common.capability.radiation.RadiationCapability;
 import com.prismmods.dwdimensions.common.capability.radiation.RadiationCapabilityProvider;
 import com.prismmods.dwdimensions.common.entity.custom.dalek.DalekEntity;
@@ -143,13 +144,13 @@ public class DWDEvents {
                         //After y=126 is reached, heightModifier becomes 0, then negative as pos increases.
                         //Hence no radiation occurs above y=126
 
-                        if(radiation.getRadiation() < RadiationCapability.getMaxRadiation() && entity.getRandom().nextFloat() < (surfaceRadiationRate * heightModifier)) {
-                            radiation.addRadiation(1);
-                            if(entity instanceof Player) {
-                                Network.sendToClient(new RadiationDataMessage(radiation.getRadiation()), (ServerPlayer) entity);
-                            }
-                        }
+                        RadiationHandler.applyRadiation(entity, (surfaceRadiationRate * heightModifier));
+
                     }
+
+
+
+
                 });
             }
         }

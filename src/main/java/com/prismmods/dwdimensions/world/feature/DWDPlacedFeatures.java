@@ -51,6 +51,13 @@ public class DWDPlacedFeatures {
             () -> new PlacedFeature(DWDConfiguredFeatures.DALEKANIUM_ORE.getHolder().get(),
                     commonOrePlacement(7, HeightRangePlacement.triangle(VerticalAnchor.absolute(-50), VerticalAnchor.absolute(80)))));
 
+    public static final RegistryObject<PlacedFeature> SKARO_URANIUM_ORE_PLACED = PLACED_FEATURES.register("skaro_uranium_ore_placed",
+            () -> new PlacedFeature(DWDConfiguredFeatures.SKARO_URANIUM_ORE.getHolder().get(),
+                    commonOrePlacement(4, HeightRangePlacement.triangle(VerticalAnchor.absolute(-70), VerticalAnchor.absolute(50)))));
+
+    public static final RegistryObject<PlacedFeature> SKARO_IRON_ORE_PLACED = PLACED_FEATURES.register("skaro_iron_ore_placed",
+            () -> new PlacedFeature(DWDConfiguredFeatures.SKARO_IRON_ORE.getHolder().get(),
+                    commonOrePlacement(10, HeightRangePlacement.triangle(VerticalAnchor.absolute(-24), VerticalAnchor.absolute(56)))));
 
     public static List<PlacementModifier> orePlacement(PlacementModifier p_195347_, PlacementModifier p_195348_) {
         return List.of(p_195347_, InSquarePlacement.spread(), p_195348_, BiomeFilter.biome());

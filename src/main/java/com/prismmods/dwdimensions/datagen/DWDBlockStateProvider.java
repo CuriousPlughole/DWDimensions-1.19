@@ -36,6 +36,9 @@ public class DWDBlockStateProvider extends BlockStateProvider {
         axisBlock((RotatedPillarBlock) DWDBlocks.STRIPPED_PETRIFIED_WOOD.get(), new ResourceLocation(DWDimensions.MOD_ID, "block/stripped_petrified_log"), new ResourceLocation(DWDimensions.MOD_ID, "block/stripped_petrified_log"));
         axisBlock((RotatedPillarBlock) DWDBlocks.STRIPPED_PETRIFIED_JUNGLE_WOOD.get(), new ResourceLocation(DWDimensions.MOD_ID, "block/stripped_petrified_jungle_log"), new ResourceLocation(DWDimensions.MOD_ID, "block/stripped_petrified_jungle_log"));
 
+        simpleBlock(DWDBlocks.SKARO_IRON_ORE.get());
+        simpleBlock(DWDBlocks.SKARO_URANIUM_ORE.get());
+        simpleBlock(DWDBlocks.SKARO_DEEPSLATE_URANIUM_ORE.get());
         simpleBlock(DWDBlocks.DALEKANIUM_BLOCK.get());
         simpleBlock(DWDBlocks.HIGH_GRADE_STRUCTURAL_DALEKANIUM.get());
         simpleBlock(DWDBlocks.LOW_GRADE_STRUCTURAL_DALEKANIUM.get());
@@ -112,6 +115,7 @@ public class DWDBlockStateProvider extends BlockStateProvider {
         wallBlock((WallBlock) DWDBlocks.SKARO_HIGHLANDS_COBBLESTONE_WALL.get(), blockTexture(DWDBlocks.SKARO_HIGHLANDS_COBBLESTONE.get()));
         wallBlock((WallBlock) DWDBlocks.SKARO_STONE_WALL.get(), blockTexture(DWDBlocks.SKARO_STONE.get()));
         wallBlock((WallBlock) DWDBlocks.SKARO_HIGHLANDS_STONE_WALL.get(), blockTexture(DWDBlocks.SKARO_HIGHLANDS_STONE.get()));
+
 
 
 

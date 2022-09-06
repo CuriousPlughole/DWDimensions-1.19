@@ -6,6 +6,13 @@ import net.minecraft.world.item.ItemStack;
 
 public class DWDCreativeTabs {
     //Probably just a temporary tab, can rearrange things later
+    public static final CreativeModeTab DWDMaterialsTab = new CreativeModeTab("dwdmaterialstab") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(DWDItems.DALEKANIUM_INGOT.get());
+        }
+    };
+
     public static final CreativeModeTab DWDWIPTab = new CreativeModeTab("dwdwiptab") {
         @Override
         public ItemStack makeIcon() {

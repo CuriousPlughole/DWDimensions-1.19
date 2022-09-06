@@ -6,6 +6,10 @@
     "dwdimensions:skaro_minefield",
     "dwdimensions:skaro_jungle"
   ],
-  "features": "dwdimensions:dalekanium_ore_placed",
+  "features": [
+    "dwdimensions:dalekanium_ore_placed",
+    "dwdimensions:skaro_uranium_ore_placed",
+    "dwdimensions:skaro_iron_ore_placed"
+  ],
   "step": "underground_ores"
 }

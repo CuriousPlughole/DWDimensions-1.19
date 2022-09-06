@@ -10,6 +10,8 @@
     "dwdimensions:structural_dalekanium_low_slab",
     "dwdimensions:structural_dalekanium_high_slab",
     "dwdimensions:structural_dalekanium_low_wall",
-    "dwdimensions:structural_dalekanium_high_wall"
+    "dwdimensions:structural_dalekanium_high_wall",
+    "dwdimensions:skaro_uranium_ore",
+    "dwdimensions:skaro_deepslate_uranium_ore"
   ]
 }

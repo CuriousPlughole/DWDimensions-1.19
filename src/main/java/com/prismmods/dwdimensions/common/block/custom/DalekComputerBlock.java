@@ -6,6 +6,7 @@ import com.prismmods.dwdimensions.common.item.custom.StattenheimRemoteItem;
 import com.prismmods.dwdimensions.common.item.custom.sonic.SonicScrewdriverItem;
 import com.prismmods.dwdimensions.common.sound.DWDSounds;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
@@ -58,7 +59,7 @@ public class DalekComputerBlock extends BaseEntityBlock {
     public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         if(level.isClientSide) {
             return InteractionResult.SUCCESS;
-        }  else {
+        } else {
             BlockEntity blockEntity = level.getBlockEntity(blockPos);
             if (blockEntity instanceof DalekComputerBlockEntity computerBlockEntity) {
 
@@ -78,6 +79,7 @@ public class DalekComputerBlock extends BaseEntityBlock {
                                     SoundSource.PLAYERS, 1.0f, 1.0f);
                             computerBlockEntity.disableAlarmableFor(600); //Alarm not triggerable for 30 seconds
                             isAlarmDisabled = true;
+
                         }
                     } else {
                         //If the sonic is in the wrong mode, the alarm should trigger
