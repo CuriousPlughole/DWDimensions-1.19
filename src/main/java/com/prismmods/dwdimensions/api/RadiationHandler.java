@@ -2,9 +2,11 @@ package com.prismmods.dwdimensions.api;
 
 import com.prismmods.dwdimensions.common.capability.radiation.RadiationCapability;
 import com.prismmods.dwdimensions.common.capability.radiation.RadiationCapabilityProvider;
+import com.prismmods.dwdimensions.common.item.DWDItems;
 import com.prismmods.dwdimensions.network.Network;
 import com.prismmods.dwdimensions.network.messages.RadiationDataMessage;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 
@@ -24,4 +26,14 @@ public class RadiationHandler {
             }
         });
     }
+
+    public static boolean isProtectedFromBackgroundRadiation(LivingEntity entity) {
+        if(entity.getItemBySlot(EquipmentSlot.HEAD).getItem() == DWDItems.SPACE_SUIT_HELMET.get()
+                && entity.getItemBySlot(EquipmentSlot.CHEST).getItem() == DWDItems.SPACE_SUIT.get()
+                && entity.getItemBySlot(EquipmentSlot.LEGS).getItem() == DWDItems.SPACE_SUIT_BOTTOM.get()) {
+            return true;
+        }
+        return false;
+    }
+
 }

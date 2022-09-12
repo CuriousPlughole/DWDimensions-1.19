@@ -17,4 +17,6 @@ public class DWDModelLayers {
     public static final ModelLayerLocation BIG_DALEK = new ModelLayerLocation(new ResourceLocation(DWDimensions.MOD_ID, "model"), "big_dalek");
 
     public static final ModelLayerLocation DALEK_LASER = new ModelLayerLocation(new ResourceLocation(DWDimensions.MOD_ID, "model"), "dalek_laser");
+    public static final ModelLayerLocation SPACE_SUIT = new ModelLayerLocation(new ResourceLocation(DWDimensions.MOD_ID, "model"), "space_suit");
+    public static final ModelLayerLocation GRAVITY_BOOTS = new ModelLayerLocation(new ResourceLocation(DWDimensions.MOD_ID, "model"), "gravity_boots");
 }

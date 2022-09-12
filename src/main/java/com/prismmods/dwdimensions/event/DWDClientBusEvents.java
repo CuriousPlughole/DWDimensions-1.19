@@ -9,6 +9,8 @@ import com.prismmods.dwdimensions.client.models.blockentity.tardis.TardisWhittak
 import com.prismmods.dwdimensions.client.models.entity.GiantSkaroEelModel;
 import com.prismmods.dwdimensions.client.models.entity.HandmineLeftModel;
 import com.prismmods.dwdimensions.client.models.entity.HandmineRightModel;
+import com.prismmods.dwdimensions.client.models.entity.armor.GravityBootsModel;
+import com.prismmods.dwdimensions.client.models.entity.armor.SpaceSuitModel;
 import com.prismmods.dwdimensions.client.models.entity.dalek.BigDalekModel;
 import com.prismmods.dwdimensions.client.models.entity.dalek.MediumDalekModel;
 import com.prismmods.dwdimensions.client.models.entity.dalek.SmallDalekModel;
@@ -23,7 +25,6 @@ import com.prismmods.dwdimensions.common.block.DWDBlocks;
 import com.prismmods.dwdimensions.common.blockentities.DWDBlockEntities;
 import com.prismmods.dwdimensions.common.blockentities.sign.DWDWoodTypes;
 import com.prismmods.dwdimensions.common.entity.DWDEntityTypes;
-import com.prismmods.dwdimensions.common.entity.custom.GiantSkaroEelEntity;
 import com.prismmods.dwdimensions.common.entity.custom.dalek.DalekSpawnType;
 import com.prismmods.dwdimensions.common.fluid.DWDFluids;
 import com.prismmods.dwdimensions.common.item.DWDItems;
@@ -75,6 +76,8 @@ public class DWDClientBusEvents {
         event.registerLayerDefinition(DWDModelLayers.MEDIUM_DALEK, MediumDalekModel::createBodyLayer);
         event.registerLayerDefinition(DWDModelLayers.SMALL_DALEK, SmallDalekModel::createBodyLayer);
         event.registerLayerDefinition(DWDModelLayers.DALEK_LASER, DalekLaserModel::createBodyLayer);
+        event.registerLayerDefinition(DWDModelLayers.SPACE_SUIT, SpaceSuitModel::createBodyLayer);
+        event.registerLayerDefinition(DWDModelLayers.GRAVITY_BOOTS, GravityBootsModel::createBodyLayer);
     }
 
     //FIXME: Need to remove the .setRenderLayer. Instead add "render_type": "cutout" etc. to the json block model. -> Datagen

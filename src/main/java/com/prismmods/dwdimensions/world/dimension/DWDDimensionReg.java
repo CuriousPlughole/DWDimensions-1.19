@@ -14,6 +14,10 @@ public class DWDDimensionReg {
             new ResourceLocation(DWDimensions.MOD_ID, "skaro"));
     public static final ResourceKey<DimensionType> SKARO_TYPE = ResourceKey.create(Registry.DIMENSION_TYPE_REGISTRY, new ResourceLocation(DWDimensions.MOD_ID, "skaro"));
 
+    public static final ResourceKey<Level> SPACE_KEY = ResourceKey.create(Registry.DIMENSION_REGISTRY,
+            new ResourceLocation(DWDimensions.MOD_ID, "space"));
+    public static final ResourceKey<DimensionType> SPACE_TYPE = ResourceKey.create(Registry.DIMENSION_TYPE_REGISTRY, new ResourceLocation(DWDimensions.MOD_ID, "space"));
+
     public static void register() {
         System.out.println("ModDimensions registered for " + DWDimensions.MOD_ID);
     }

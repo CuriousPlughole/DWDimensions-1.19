@@ -36,6 +36,11 @@ public class DWDItemModelProvider extends ItemModelProvider {
         simpleItem(DWDItems.RAW_URANIUM);
         simpleItem(DWDItems.REFINED_URANIUM);
 
+        simpleItem(DWDItems.SPACE_SUIT_HELMET);
+        simpleItem(DWDItems.SPACE_SUIT);
+        simpleItem(DWDItems.SPACE_SUIT_BOTTOM);
+        simpleItem(DWDItems.GRAVITY_BOOTS);
+
         blockItemModel(DWDBlocks.SKARO_DEEPSLATE_URANIUM_ORE);
         blockItemModel(DWDBlocks.SKARO_URANIUM_ORE);
         blockItemModel(DWDBlocks.SKARO_IRON_ORE);

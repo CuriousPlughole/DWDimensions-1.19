@@ -5,6 +5,8 @@ import com.prismmods.dwdimensions.common.DWDCreativeTabs;
 import com.prismmods.dwdimensions.common.block.DWDBlocks;
 import com.prismmods.dwdimensions.common.item.custom.*;
 import com.prismmods.dwdimensions.common.item.custom.sonic.SonicScrewdriverItem;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.SignItem;
@@ -24,6 +26,12 @@ public class DWDItems {
     public static final RegistryObject<Item> DEVICES_ICON = ITEMS.register("devices_icon", () -> new Item(new Item.Properties()));
 
     //Items
+
+    public static final RegistryObject<Item> SPACE_SUIT_HELMET = ITEMS.register("space_suit_helmet", () -> new ClothingItem(ArmorMaterials.LEATHER, EquipmentSlot.HEAD, new Item.Properties().tab(DWDCreativeTabs.DWDWIPTab)));
+    public static final RegistryObject<Item> SPACE_SUIT = ITEMS.register("space_suit", () -> new ClothingItem(ArmorMaterials.LEATHER, EquipmentSlot.CHEST, new Item.Properties().tab(DWDCreativeTabs.DWDWIPTab)));
+    public static final RegistryObject<Item> SPACE_SUIT_BOTTOM = ITEMS.register("space_suit_bottom", () -> new ClothingItem(ArmorMaterials.LEATHER, EquipmentSlot.LEGS, new Item.Properties().tab(DWDCreativeTabs.DWDWIPTab)));
+    public static final RegistryObject<Item> GRAVITY_BOOTS = ITEMS.register("gravity_boots", () -> new ClothingItem(ArmorMaterials.IRON, EquipmentSlot.FEET, new Item.Properties().tab(DWDCreativeTabs.DWDWIPTab)));
+
     public static final RegistryObject<Item> ZEITON_7 = ITEMS.register("zeiton_7", () -> new Item(new Item.Properties().tab(DWDCreativeTabs.DWDMaterialsTab)));
     public static final RegistryObject<Item> RAW_DALEKANIUM = ITEMS.register("raw_dalekanium", () -> new Item(new Item.Properties().tab(DWDCreativeTabs.DWDMaterialsTab)));
     public static final RegistryObject<Item> DALEKANIUM_INGOT = ITEMS.register("dalekanium_ingot", () -> new Item(new Item.Properties().tab(DWDCreativeTabs.DWDMaterialsTab)));
