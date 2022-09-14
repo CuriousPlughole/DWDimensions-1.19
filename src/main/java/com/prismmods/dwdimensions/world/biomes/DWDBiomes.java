@@ -17,6 +17,7 @@ public class DWDBiomes {
     public static ResourceKey<Biome> SKARO_JUNGLE_KEY;
 
     public static ResourceKey<Biome> SPACE_VOID_KEY;
+    public static ResourceKey<Biome> SPACE_ASTEROID_FIELD_KEY;
 
     public static final DeferredRegister<Biome> BIOMES = DeferredRegister.create(ForgeRegistries.BIOMES, DWDimensions.MOD_ID);
 
@@ -27,6 +28,7 @@ public class DWDBiomes {
         SKARO_JUNGLE_KEY = ResourceKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(DWDimensions.MOD_ID, "skaro_jungle"));
 
         SPACE_VOID_KEY = ResourceKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(DWDimensions.MOD_ID, "space_void"));
+        SPACE_ASTEROID_FIELD_KEY = ResourceKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(DWDimensions.MOD_ID, "space_asteroid_field"));
 
     }
 

@@ -120,6 +120,7 @@
     "key.dwdimensions.tardis_door": "Tardis Door",
     "effect.dwdimensions.radiation_sickness":"Radiation Sickness",
     "effect.dwdimensions.radioactive":"Radioactive",
-    "death.attack.dwdimensions.radiation.sickness":"%s died from radiation sickness"
+    "death.attack.dwdimensions.radiation.sickness":"%s died from radiation sickness",
+    "death.attack.dwdimensions.space":"%s discovered the vacuum of space"
 	
 }

@@ -19,6 +19,7 @@ import com.prismmods.dwdimensions.util.ClientUtil;
 import com.prismmods.dwdimensions.world.biomes.DWDBiomes;
 import com.prismmods.dwdimensions.world.dimension.DWDDimensionReg;
 import com.prismmods.dwdimensions.world.feature.DWDConfiguredFeatures;
+import com.prismmods.dwdimensions.world.feature.DWDFeatures;
 import com.prismmods.dwdimensions.world.feature.DWDPlacedFeatures;
 import com.prismmods.dwdimensions.world.feature.tree.decorator.DWDTreeDecorators;
 import com.prismmods.dwdimensions.world.structures.DWDStructures;
@@ -61,6 +62,7 @@ public class DWDimensions {
         DWDEffectRegistry.register(modEventBus);
         DWDBiomes.register(modEventBus);
         DWDDimensionReg.register();
+        DWDFeatures.register(modEventBus);
         DWDConfiguredFeatures.register(modEventBus);
         DWDPlacedFeatures.register(modEventBus);
         DWDStructures.register(modEventBus);

@@ -27,6 +27,7 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlac
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.List;
@@ -36,6 +37,10 @@ public class DWDConfiguredFeatures {
 
     public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURES = DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, DWDimensions.MOD_ID);
 
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CONFIGURED_LARGE_IRON_ASTEROID = CONFIGURED_FEATURES.register("large_iron_asteroid",
+            ()-> new ConfiguredFeature<>(DWDFeatures.LARGE_IRON_ASTEROID.get(), new ProbabilityFeatureConfiguration(0.5F)));
+    public static final RegistryObject<ConfiguredFeature<?, ?>> CONFIGURED_SMALL_IRON_ASTEROID = CONFIGURED_FEATURES.register("small_iron_asteroid",
+            ()-> new ConfiguredFeature<>(DWDFeatures.SMALL_IRON_ASTEROID.get(), new ProbabilityFeatureConfiguration(0.3F)));
 
     /**
      * ORES
@@ -76,20 +81,7 @@ public class DWDConfiguredFeatures {
                     .add(DWDBlocks.SKARO_PETRIFIED_FUNGUS.get().defaultBlockState(), 2).add(DWDBlocks.SKARO_PETRIFIED_FLOWER_1.get().defaultBlockState(), 1)
                     .add(DWDBlocks.SKARO_PETRIFIED_FLOWER_2.get().defaultBlockState(), 1)), 64)));
 
-    //SKARO
-            /*
-    public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> NORMAL_PATCH_SKARO_GRASS =
-            FeatureUtils.register("skaro_patch_grass", Feature.RANDOM_PATCH, grassPatch(BlockStateProvider.simple(DWDBlocks.SKARO_TALL_GRASS.get()), 32));
 
-    public static final Holder<ConfiguredFeature<SimpleBlockConfiguration, ?>> SINGLE_PIECE_OF_SKARO_GRASS =
-            FeatureUtils.register("single_piece_of_skaro_grass", Feature.SIMPLE_BLOCK,
-                    new SimpleBlockConfiguration(BlockStateProvider.simple(DWDBlocks.SKARO_TALL_GRASS.get().defaultBlockState())));
-
-    public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> PETRIFIED_FLOWERS_ALL =
-            FeatureUtils.register("petrified_flowers_all", Feature.FLOWER, grassPatch(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
-                    .add(DWDBlocks.SKARO_PETRIFIED_FUNGUS.get().defaultBlockState(), 2).add(DWDBlocks.SKARO_PETRIFIED_FLOWER_1.get().defaultBlockState(), 1)
-                    .add(DWDBlocks.SKARO_PETRIFIED_FLOWER_2.get().defaultBlockState(), 1)), 64));
-*/
 
     /**
      * GENERIC METHODS

@@ -5,7 +5,7 @@
     "settings": "dwdimensions:space",
     "biome_source": {
       "type": "minecraft:fixed",
-      "biome": "dwdimensions:space_void"
+      "biome": "dwdimensions:space_asteroid_field"
     }
   }
 }

@@ -47,6 +47,7 @@ public class DWDTags {
 
     public static class Entities {
         public static final TagKey<EntityType<?>> RADIATION_IMMUNE = createTag("radiation_immune");
+        public static final TagKey<EntityType<?>> SPACE_IMMUNE = createTag("space_immune");
         private static TagKey<EntityType<?>> createTag(String name) {
             return TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation(DWDimensions.MOD_ID, name));
         }

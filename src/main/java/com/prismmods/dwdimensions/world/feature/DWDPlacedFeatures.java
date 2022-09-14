@@ -22,6 +22,24 @@ public class DWDPlacedFeatures {
 
     public static final DeferredRegister<PlacedFeature> PLACED_FEATURES = DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, DWDimensions.MOD_ID);
 
+    /**
+    ASTEROIDS
+     */
+
+    public static final RegistryObject<PlacedFeature> LARGE_IRON_ASTEROID_PLACED = PLACED_FEATURES.register("large_iron_asteroid_placed",
+            () -> new PlacedFeature(DWDConfiguredFeatures.CONFIGURED_LARGE_IRON_ASTEROID.getHolder().get(),
+                    List.of(RarityFilter.onAverageOnceEvery(24), PlacementUtils.countExtra(1, 0.25F, 1), InSquarePlacement.spread(),
+                            HeightRangePlacement.uniform(VerticalAnchor.absolute(-40), VerticalAnchor.absolute(100)), BiomeFilter.biome())));
+
+    public static final RegistryObject<PlacedFeature> ASTEROID_PLACED = PLACED_FEATURES.register("small_iron_asteroid_placed",
+            () -> new PlacedFeature(DWDConfiguredFeatures.CONFIGURED_SMALL_IRON_ASTEROID.getHolder().get(),
+                    List.of(RarityFilter.onAverageOnceEvery(32), PlacementUtils.countExtra(1, 0.25F, 1), InSquarePlacement.spread(),
+                            HeightRangePlacement.uniform(VerticalAnchor.absolute(-30), VerticalAnchor.absolute(70)), BiomeFilter.biome())));
+
+    /**
+    TREES
+     */
+
     //Placing the tree in the world
     public static final RegistryObject<PlacedFeature> PETRIFIED_PLACED = PLACED_FEATURES.register("petrified_placed",
             () -> new PlacedFeature((Holder<ConfiguredFeature<?,?>>)(Holder<? extends ConfiguredFeature<?,?>>) DWDConfiguredTrees.PETRIFIED_SPAWN,

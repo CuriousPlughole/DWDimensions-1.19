@@ -4,6 +4,7 @@ import com.prismmods.dwdimensions.common.block.DWDBlocks;
 import com.prismmods.dwdimensions.common.entity.DWDEntityTypes;
 import com.prismmods.dwdimensions.common.entity.custom.HandmineEntity;
 import com.prismmods.dwdimensions.common.sound.DWDSounds;
+import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
@@ -15,7 +16,9 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -79,8 +82,12 @@ public class HandmineTrapBlock extends Block {
                     double modifiedSpawnX = (positiveX) ? spawnX + rand.nextDouble() : spawnX - rand.nextDouble();
                     double modifiedSpawnZ = (positiveZ) ? spawnZ + rand.nextDouble() : spawnZ - rand.nextDouble();
 
+                    //FIXME: HANDMINES NOT ROTATING GRRR
+
                     if (level.getBlockState(new BlockPos(spawnX, y + 1, spawnZ)) == Blocks.AIR.defaultBlockState()) {
                         handmine.setPos(modifiedSpawnX, y+1, modifiedSpawnZ);
+                        handmine.setYBodyRot(rand.nextFloat());
+                        handmine.setYHeadRot(rand.nextFloat());
                         handmine.setPose(Pose.EMERGING);
                         if(!level.isClientSide) {
                             level.addFreshEntity(handmine);
