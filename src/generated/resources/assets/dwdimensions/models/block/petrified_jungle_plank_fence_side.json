@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/fence_side",
-  "textures": {
-    "texture": "dwdimensions:block/petrified_jungle_planks"
-  }
-}

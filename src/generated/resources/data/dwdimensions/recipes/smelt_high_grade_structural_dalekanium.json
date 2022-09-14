@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "cookingtime": 100,
-  "experience": 0.1,
-  "ingredient": {
-    "item": "dwdimensions:structural_dalekanium_high"
-  },
-  "result": "dwdimensions:structural_dalekanium_military"
-}

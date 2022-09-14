@@ -1,6 +1,0 @@
-{
-	"parent": "minecraft:item/generated",
-	"textures": {
-    "layer0": "dwdimensions:block/varga_bush_stage3"
-  }
-}

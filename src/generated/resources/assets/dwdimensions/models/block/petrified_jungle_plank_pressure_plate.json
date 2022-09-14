@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/pressure_plate_up",
-  "textures": {
-    "texture": "dwdimensions:block/petrified_jungle_planks"
-  }
-}

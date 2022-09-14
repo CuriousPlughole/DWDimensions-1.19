@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/door_bottom_left",
-  "textures": {
-    "bottom": "dwdimensions:block/petrified_jungle_plank_door_bottom",
-    "top": "dwdimensions:block/petrified_jungle_plank_door_top"
-  }
-}

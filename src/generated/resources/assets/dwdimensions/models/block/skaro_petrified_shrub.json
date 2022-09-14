@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "dwdimensions:block/skaro_petrified_shrub"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "dwdimensions:block/petrified_planks",
-    "side": "dwdimensions:block/petrified_planks",
-    "top": "dwdimensions:block/petrified_planks"
-  }
-}

@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "dwdimensions:item/petrified_jungle_plank_door"
-  }
-}

@@ -1,6 +1,0 @@
-{
-	"overrides": [
-		{ "predicate": { "dwdimensions:screwdriver_model": 0, "dwdimensions:screwdriver_setting": 0}, "model": "dwdimensions:item/sonic/capaldi_blockmode"},
-		{ "predicate": { "dwdimensions:screwdriver_model": 0, "dwdimensions:screwdriver_setting": 1}, "model": "dwdimensions:item/sonic/capaldi_entitymode"}
-	]
-}

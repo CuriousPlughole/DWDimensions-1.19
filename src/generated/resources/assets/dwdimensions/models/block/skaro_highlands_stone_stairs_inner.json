@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "dwdimensions:block/skaro_highlands_stone",
-    "side": "dwdimensions:block/skaro_highlands_stone",
-    "top": "dwdimensions:block/skaro_highlands_stone"
-  }
-}

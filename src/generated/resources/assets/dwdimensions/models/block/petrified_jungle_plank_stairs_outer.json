@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "dwdimensions:block/petrified_jungle_planks",
-    "side": "dwdimensions:block/petrified_jungle_planks",
-    "top": "dwdimensions:block/petrified_jungle_planks"
-  }
-}
