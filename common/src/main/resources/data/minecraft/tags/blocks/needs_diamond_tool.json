@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "dwdimensions:dalekanium_ore",
+    "dwdimensions:deepslate_dalekanium_ore",
+    "dwdimensions:structural_dalekanium_military",
+    "dwdimensions:structural_dalekanium_military_wall",
+    "dwdimensions:structural_dalekanium_military_stairs",
+    "dwdimensions:structural_dalekanium_military_slab",
+    "dwdimensions:dalekanium_block"
+  ]
+}

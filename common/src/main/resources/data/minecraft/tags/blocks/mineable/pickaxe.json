@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+	  "dwdimensions:zeiton_ore",
+	  "dwdimensions:deepslate_zeiton_ore",
+	  "dwdimensions:skaro_stone",
+	  "dwdimensions:skaro_cobblestone",
+	  "dwdimensions:skaro_highlands_stone",
+	  "dwdimensions:skaro_highlands_cobblestone",
+	  "#dwdimensions:stone_walls",
+	  "#dwdimensions:stone_slabs",
+	  "#dwdimensions:stone_stairs",
+	  "dwdimensions:skaro_sandstone",
+	  "dwdimensions:skaro_packed_mud",
+	  "dwdimensions:dalekanium_ore",
+	  "dwdimensions:deepslate_dalekanium_ore",
+	  "dwdimensions:dalekanium_block",
+	  "dwdimensions:structural_dalekanium_low",
+	  "dwdimensions:structural_dalekanium_high",
+	  "dwdimensions:structural_dalekanium_military",
+	  "dwdimensions:skaro_uranium_ore",
+	  "dwdimensions:skaro_deepslate_uranium_ore",
+	  "dwdimensions:skaro_iron_ore"
+  ]
+}

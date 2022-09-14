@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#dwdimensions:skaro_soil",
+	"#dwdimensions:skaro_grit"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_inventory",
+  "textures": {
+    "texture": "dwdimensions:block/petrified_jungle_planks"
+  }
+}

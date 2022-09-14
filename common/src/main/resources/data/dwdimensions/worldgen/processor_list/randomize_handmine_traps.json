@@ -1,0 +1,28 @@
+{
+    // Processor lists will run a processor for every block placed by the nbt file.
+    // The resultant block of the processor list is the block that actually gets placed in the world.
+  "processors": [
+    {
+      "processor_type": "minecraft:rule",
+      "rules": [
+        {
+          //5% chance to spawn a handmine trap
+          "input_predicate": {
+            "block": "dwdimensions:skaro_mud",
+            "probability": 0.05,
+            "predicate_type": "minecraft:random_block_match"
+          },
+            // This is always true
+            // Village roads have this part look for water so roads can be replaced with oak planks instead
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+            // The actual block to place if the above conditions return true
+          "output_state": {
+            "Name": "dwdimensions:handmine_trap"
+          }
+        }
+      ]
+    }
+  ]
+}

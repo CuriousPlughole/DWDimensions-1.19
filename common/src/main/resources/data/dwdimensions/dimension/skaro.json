@@ -1,0 +1,60 @@
+{
+  "type": "dwdimensions:skaro",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "dwdimensions:skaro",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "dwdimensions:skaro_desert",
+          "parameters": {
+            "temperature": 0.55,
+            "humidity": -0.35,
+            "continentalness": 0.03,
+            "erosion": 0.45,
+            "weirdness": -1,
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "dwdimensions:skaro_plains",
+          "parameters": {
+            "temperature": 0.34,
+            "humidity": 0.75,
+            "continentalness": 0.2,
+            "erosion": 0.05,
+            "weirdness": 0.5,
+            "depth": 0.1,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "dwdimensions:skaro_minefield",
+          "parameters": {
+            "temperature": -0.45,
+            "humidity": -1,
+            "continentalness": -0.11,
+            "erosion": 0.55,
+            "weirdness": 0.05,
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "dwdimensions:skaro_jungle",
+          "parameters": {
+            "temperature": 0.9,
+            "humidity": 0.5,
+            "continentalness": 0.7,
+            "erosion": 0.1,
+            "weirdness": 0.02,
+            "depth": 0.5,
+            "offset": 0
+          }
+        }
+      ]
+    }
+  }
+}

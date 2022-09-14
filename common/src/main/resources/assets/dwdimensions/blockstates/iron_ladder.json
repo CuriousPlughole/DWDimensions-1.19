@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "dwdimensions:block/iron_ladder",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "dwdimensions:block/iron_ladder"
+    },
+    "facing=south": {
+      "model": "dwdimensions:block/iron_ladder",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "dwdimensions:block/iron_ladder",
+      "y": 270
+    }
+  }
+}
